@@ -1,0 +1,912 @@
+body {
+  margin: 0;
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 1rem;
+}
+.navbar {
+  background-color: #1E5D8D;
+  padding: 0;
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  height: 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+}
+.navbar-nav {
+  height:56px;
+}
+.nav-item{
+  width: auto;
+  color: #FFF;
+  text-align: center;
+  font-family: "Konkhmer Sleokchher";
+  font-size: 24px;
+  margin-right: 40px;
+}
+.nav-link{
+  padding: 0px;
+  padding-top: 8px;
+  width: 136px;
+  height: 40px;
+}
+.logo {
+  width: 184px;
+  height: 56px;
+  margin-right: 280px;
+  margin-left: 40px;
+}
+.container-md {
+  margin: 0;
+}
+.fondo {
+  margin-top: 8%;
+}
+.Inicio{
+  margin-left: 4px;
+  width: auto;
+}
+.Bienvenida {
+  color: #000;
+  width: 912px;
+  height: 128px;
+  text-align: center;
+  font-family: "Suez One", serif;
+  font-size: 48px;
+}
+.descripcion {
+  text-align: justify;
+  width: 704px;
+  height: 200px;
+  color: #000;
+  font-family: Khmer;
+  font-size: 24px;
+}
+.imgInicio {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+}
+.imagen_inicio {
+  margin: 0 auto;
+  margin-top: 16px;
+  width: 100%;
+  height: auto;
+  max-width: 592px;
+}
+.btn_empezar {
+  padding: 24px;
+  color: #000;
+  text-align: center;
+  font-family: "Konkhmer Sleokchher";
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: normal;
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 24px;
+  background: #7FA5E5;
+  margin: 16px auto;
+  display: block;
+}
+
+/* Para pantallas más pequeñas (móviles) */
+@media (max-width: 768px) {
+  .Bienvenida {
+    font-size: 32px;
+    width: 366px;
+    height: 160px;
+    margin-bottom: 24px;
+  }
+  .descripcion {
+    font-family: Khmer;
+    margin: 0 1rem;
+    width: 336px;
+    height: 264px;
+    color: #000;
+    text-align: justify;
+    font-family: Khmer;
+    font-size: 22px;
+  }
+  .imgInicio {
+    display: block;
+    margin: 2rem auto;
+    max-width: 90%;
+  }
+  .imagen_inicio {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+  }
+  .logo {
+    max-width: 10rem;
+    max-height: 3rem;
+    margin: 0;
+  }
+  .btn_empezar {
+    font-size: 1.2rem;
+    width: 80%;
+    max-width: 250px;
+    margin: 24px auto;
+  }
+  .navbar {
+    padding: 0.5rem;
+    height: auto;
+    justify-content: space-between;
+    width: auto;
+  }
+  .navbar-nav {
+    height: auto;
+    width: auto;
+  }
+  .nav {
+    height: auto;
+    width: auto;
+    flex-direction: column;
+    align-items: center;
+  }
+  .nav-item {
+    width: auto;
+    padding: 1rem 0;
+  }
+  .login {
+    margin: 0px;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+
+/* Para pantallas más grandes (tabletas y escritorios) */
+@media (min-width: 769px) {
+  .Bienvenida {
+    font-size: 3rem;
+    height: auto;
+    margin-bottom: 48px;
+    padding-top: 80px;
+  }
+  .descripcion {
+    font-size: 24px;
+    margin: 0 4rem;
+    height: auto;
+    margin-bottom: 48px;
+  }
+  .imgInicio {
+    float: right;
+    max-width: 45%;
+    margin: 0;
+  }
+  .imagen_inicio {
+    width: 100%;
+    height: auto;
+  }
+  .login {
+    margin-left: 120px;
+  }
+}
+
+.feature-section {
+  background-color: #F1F7FF; 
+  padding: 8px 0;
+}
+.feature-title {
+    font-family: "Suez One";
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #000000; 
+    padding: 50px 0;
+    margin-top: 16%;
+    font-weight: 400;
+}
+.feature-item {
+    text-align: center;
+    padding: 20px;
+}
+.feature-item h4 {
+    font-family: "Konkhmer Sleokchher";
+    font-weight: 400;
+    margin-top: 15px;
+    color: #000000; 
+    font-size: 20px;
+}
+.feature-item p {
+    color: #555; 
+    font-size: 16px;
+    line-height: 1.6;
+}
+.feature-icon {
+    font-size: 48px; 
+    color: #F38181; 
+    margin-bottom: 15px;
+}
+
+@media (max-width: 767px) {
+    .feature-item {
+        padding: 15px;
+    }
+    .feature-title {
+        font-size: 24px;
+    }
+    .feature-icon {
+        font-size: 40px;
+    }
+}
+
+.pedido{
+    text-align: justify;
+    color: #000;
+    font-family: Khmer;
+    margin-left: 79px;
+    font-size: 24px;
+    height: auto;
+}
+#txtPedido {
+  font-family: khmer;
+}
+
+/* Para pantallas más pequeñas (móviles) */
+@media (max-width: 768px) {
+  .feature-section {
+    width: 350px;
+    margin: 0 16px;
+  }
+  .pedido {
+    margin: 0;
+    width: 304px;
+  height: 177px;
+  flex-shrink: 0;
+  color: #000;
+  text-align: justify;
+  font-family: Khmer;
+    font-size: 22px;
+    margin: 0 24px;
+  }
+  .feature-title {
+    margin: 40px;
+    padding: 0;
+  }
+}
+
+.Explora{
+    margin-top: 150px; 
+    color: #000;
+text-align: center;
+font-family: "Suez One";
+font-size: 40px;
+font-style: normal;
+line-height: normal;
+}
+.slid{
+    background: #F1F3FF;
+    margin-top: 50px; 
+}
+.carousel-inner {
+    margin-left: 260px;
+    padding: 40px 20px; 
+    border-radius: 8px; 
+    width: 748px;
+    max-height: 500px;
+}
+.descrip {
+    padding: 5px;
+    color: #000;
+    text-align: center;
+    font-family: "Konkhmer Sleokchher";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+}
+
+/* Para pantallas más pequeñas (móviles) */
+@media (max-width: 768px) {
+  .carousel-inner {
+    margin: 0;
+    padding: 40 8;
+    width: 376px;
+  }
+  .carousel-item {
+    width: 336px;
+  }
+  .Explora {
+    margin-top: 96px;
+  }
+  .descrip {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.funcio{
+    padding-left: 60px;
+    margin-top: 232px;
+height: 72px;
+flex-shrink: 0;
+    color: #000;
+text-align: left;
+font-family: "Suez One";
+font-size: 40px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+.gesti{
+    color: #000;
+    text-align: justify;
+    font-family: Khmer;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+height: 120px;
+flex-shrink: 0;
+}
+.dise{
+    padding-top: 20px;
+    color: #000;
+    text-align: justify;
+    font-family: Khmer;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+height: 120px;
+flex-shrink: 0;
+}
+
+.benefits .benefit-item {
+    border-radius: 40px;
+background: #E5F2FF;
+color: #000;
+    padding: 10px;
+    padding-top: 25px; /*distancia entre los lados pa no perderme */
+    margin-bottom: 40px; /*distancia entre botones */
+    border-radius: 5px;
+    text-align: center;
+    font-family: "Konkhmer Sleokchher";
+    font-size: 24px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+height: 90px;
+width: 576px;
+flex-shrink: 0;
+  }
+.barra{
+    padding: 0px;
+    margin-top: 168px;
+    margin-left: 50px;
+}
+
+/* Para pantallas más pequeñas (móviles) */
+@media (max-width: 768px) {
+  .barra {
+    width: 350px;
+    margin-left: 0;
+    margin-top: 24px;
+  }
+  .benefit-item{
+    padding: auto;
+    width: 376px;
+  }
+  .benefits{
+    width: 376px;
+    height: auto;
+  }
+  #ben {
+    width: 376px;
+    height: auto;
+  }
+  .funcio {
+    margin: 0;
+    margin-top: 80px;
+    margin-bottom: 24px;
+    height: auto;
+    padding: 0;
+    text-align: center;
+    width: 376px;
+  }
+  .gesti{
+    height: auto;
+  }
+  .dise {
+    height: auto;
+  }
+}
+
+.beneficios{
+    color: #000;
+    padding: 0px;
+text-align: center;
+font-family: "Suez One";
+font-size: 40px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+height: 80px;
+flex-shrink: 0;
+}
+
+.experiencia{
+    color: #000;
+text-align: center;
+font-family: "Konkhmer Sleokchher";
+font-size: 32px;
+font-style: normal;
+line-height: normal;
+flex-shrink: 0;
+margin-left: 0px;
+}
+.si{
+    color: #000;
+    text-align: justify;
+    font-family: Khmer;
+    font-size: 24px;
+    font-style: normal;
+    line-height: normal;
+flex-shrink: 0;
+}
+
+.bene{
+  background: #F1F7FF;
+  flex-shrink: 0;
+  text-align: center;
+  margin-top: 96px;
+}
+
+
+
+.pricing-card {
+    background: #E2EEFF; 
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .pricing-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(57, 22, 255, 0.2);
+  }
+  
+ 
+  .card-price {
+    color: #000;
+font-family: "Konkhmer Sleokchher";
+font-size: 40px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+flex-shrink: 0;
+  }
+
+  .plan{
+    color: #000;
+text-align: center;
+font-family: "Konkhmer Sleokchher";
+font-size: 32px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+flex-shrink: 0;
+  }
+
+  @media (min-width: 768px) {
+    .pricing-card-basic, .pricing-card-standard {
+      margin-top: 30px; /*para bajar los dos planes */
+    }
+  }
+
+  .row.justify-content-center > div {
+    margin-left: -15px;
+    margin-right: -10px;
+  }
+.azu{
+    background: #C3D9F9;
+    border-radius: 5px;
+}
+
+.planes{
+    color: #000;
+text-align: center;
+font-family: "Suez One";
+font-size: 40px;
+font-style: normal;
+line-height: normal;
+flex-shrink: 0;
+height: 64px;
+flex-shrink: 0;
+}
+
+.usuario{
+    color: #000;
+    font-family: Khmer;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    flex-shrink: 0;
+    text-align: left;
+}
+
+.btn-custom {
+    border-radius: 16px;
+background: #7FA5E5; 
+    color: #000000; 
+    border-radius: 8px; /* Bordes redondeados */
+    border: none; 
+    padding: 10px 20px; /* Espacio interno para hacerlo más grande */
+    font-weight: bold; /* Texto en negrita */
+    font-size: 1rem; /* Tamaño del texto */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición para el hover */
+  }
+  .btn-custom:hover {
+    transform: translateY(-3px); /* Elevar un poco el botón */
+    box-shadow: 0px 4px 10px rgb(79, 123, 255); /* Sombra al pasar el cursor */
+    background-color: #3482fe98; 
+  }
+ 
+
+
+  .prueba{
+    color: #000;
+font-family: "Suez One";
+font-size: 40px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+flex-shrink: 0;
+margin: 0;
+    margin-left: 750px;
+    padding-left: 35px;
+  }
+
+  .gratuita{
+    width: 704px;
+    height: 600px;
+    float: left;
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: cover;
+    border-radius: 2px;
+    overflow: hidden; 
+  }
+  .prue {
+    margin-top: 40px;
+}
+
+/* Para pantallas más pequeñas (móviles) */
+@media (max-width: 768px) {
+  .gratuita {
+    width: 376px;
+    height: 232px;
+    text-align: center;
+  }
+  .prueba {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    width: 376px;
+  }
+  .contamos {
+    margin: 0;
+    padding: 0px;
+  }
+  .list-unstyled{
+    margin: 0;
+  }
+}
+
+.contamos{
+    color: #000;
+text-align: justify;
+font-family: Khmer;
+font-size: 20px;
+font-style: normal;
+line-height: normal;
+padding-left: 50px;
+padding-top: 20px;
+font-weight: 400;
+
+}
+.ilimitados{
+    color: #000;
+font-family: Khmer;
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+padding-right: 20px;
+}
+.espaciado{
+    padding: 5px 0;
+}
+  
+.btn_obtener {
+    text-align: center;
+    font-family: "Konkhmer Sleokchher";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    flex-shrink: 0;
+    background: #7FA5E5;
+}
+  
+.socios{
+    color: #000;
+    text-align: center;
+    font-family: "Suez One";
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0;
+}
+
+.confianza{
+    color: #000;
+    text-align: center;
+    font-family: Khmer;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.carlos{
+    color: #000;
+text-align: center;
+font-family: "Konkhmer Sleokchher";
+font-size: 24px;
+flex-shrink: 0;
+}
+.car{
+    color: #000;
+text-align: center;
+font-family: "Konkhmer Sleokchher";
+font-size: 24px;
+font-style: normal;
+line-height: normal;
+flex-shrink: 0;
+width: 390px;
+padding-right: 38px;
+}
+.car1{
+    color: #000;
+    text-align: center;
+    font-family: "Konkhmer Sleokchher";
+    font-size: 24px;
+    font-style: normal;
+    line-height: normal;
+    flex-shrink: 0;
+    width: 450px;
+    padding-right: 80px;
+}
+
+.funcionalidad{
+    color: #000;
+    text-align: justify;
+    font-family: Khmer;
+    font-size: 21px;
+    font-style: normal;
+
+}
+
+
+.testimonial-card {
+    background-color: rgba(230, 241, 255, 1); /* Fondo azul claro */
+    
+  }
+  
+  /* Tamaño de la imagen y margen */
+  .testimonial-img img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    
+    box-shadow: 0 4px 8px rgba(230, 241, 255, 1);
+  }
+  .move-down {
+    margin-top: 50px; /* Ajusta el valor según lo que necesites */
+  }
+
+  /* Para pantallas más pequeñas (móviles) */
+@media (max-width: 768px) {
+  .testimonial-card {
+    margin: 0;
+    padding: 0;
+  }
+  .car1 {
+    padding: 0;
+    width: 350px;
+  }
+}
+
+ .rese{
+    color: #000;
+    text-align: center;
+    font-family: "Suez One";
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+flex-shrink: 0;
+ }
+ .comen{
+    color: #000;
+    text-align: center;
+    font-family: Khmer;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    flex-shrink: 0;
+ }
+  
+  .review-card {
+    background-color: rgba(229, 238, 250, 1);
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  .POS::after {
+    content: '';
+    display: block;
+    width: 90%; /* Ajusta el ancho de la línea */
+    height: 2px;
+    background: #B7CAE4;
+    margin: 20px auto 0; /* Espacio encima del nombre */
+  }
+  
+  .review-author {
+    margin-bottom: 0;
+    margin-top: 5px auto; /* Espacio entre la línea y el nombre */
+  }
+
+  .review-stars {
+    font-size: 25px; /* Ajusta el tamaño de las estrellas */
+    color: #FDFF84;
+    -webkit-text-stroke: 1px #A2B403;
+    display: flex;
+    justify-content: left;
+    margin-bottom: 15px;
+    gap: 15px; /* Espacio entre estrellas */
+  }
+  
+  .POS {
+    color: #000;
+text-align: justify;
+font-family: Khmer;
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+width: 330px;
+height: 200px;
+flex-shrink: 0;
+  }
+  
+  .review-author {
+    color: #000;
+font-family: Khmer;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+  }
+  
+  .review-position {
+    color: #000;
+    font-family: Khmer;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  
+  .review-img {
+     border-radius: 96px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .author-info {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    margin-top: 10px;
+  }
+  .review-card-margin {
+    margin-top: 40px; /* Ajusta esntre el cuadro de jorge y ana */
+  }
+
+
+  
+  .contact-form {
+    background: linear-gradient(180deg, #EAEFFF 36%, #EFF3FF 99.99%);
+box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    padding: 40px;
+    border-radius: 15px;
+    max-width: 700px;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+flex-shrink: 0;
+  }
+  
+  .form-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .form-subtitle {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 30px;
+  }
+  
+  .form-group label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+  }
+  
+  .form-control {
+    background-color: #fff;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
+    font-size: 16px;
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  
+.submit-btn {
+  background-color: #5e73e4;
+  color: rgb(0, 0, 0);
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s;
+  }
+.espa {
+  padding-top: 80px;
+}
+footer {
+  margin-top: 80px;
+}
+.cuadrado {
+  background: #5CA3D9;
+  color: #000;
+  border-radius: 24px;
+  border: 2px solid #000;
+  text-align: center;
+  font-family: "Suez One";
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  width: 1728px;
+  height: 192px;
+  font-size: 48px;
+  padding-top: 24px;
+}
