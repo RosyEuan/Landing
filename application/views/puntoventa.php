@@ -30,18 +30,135 @@
                   <a class="nav-link text-white" href="#">Beneficios</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-white" href="#">Planes</a>
+                  <a class="nav-link text-white" href="#planes">Planes</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link text-white" href="#">Contacto</a>
                 </li>
-                <li class="nav-item">
-                  <a href="#"><img class="login" id="iconoLogin" src="imagenes/lgin.png" alt="Icono de login"></a>
+                <li class="nav-item dropdown">
+                  <a class="nav-link text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img class="login" id="iconoLogin" src="imagenes/lgin.png" alt="Icono de login">
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item " data-bs-toggle="modal" data-bs-target="#loginModal">Iniciar sesión</a>
+                  </li>
+                    <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#crearCuentaModal">Crear cuenta</a></li>
+                  </ul>
                 </li>
               </ul>
             </div>
           </div>
         </nav>
+      </div>
+    </div>
+
+    <!-- Modal de Iniciar Sesión -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="loginModalLabel">Iniciar sesión</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="login-container">
+              <div class="si">
+                <div class="logi">
+                  <div class="circu">
+                    <div class="text-center">
+                      <img src="/Punto_Venta/imagenes/log.png" class="img" alt="Logo Cytisum">
+                    </div>
+                  </div>
+                  <div class="mover">
+                    <p class="sesion">Iniciar sesión</p>
+                    <form>
+                      <div class="mb-3 con">
+                        <input type="text" class="form-control" id="usuario" placeholder="Usuario">
+                      </div>
+                      <div class="mb-3 con">
+                        <input type="password" class="form-control" id="contrasena" placeholder="Contraseña">
+                      </div>
+                      <div class="mb-3 text-center">
+                        <a href="#" class="contra">¿Olvidaste tu contraseña?</a>
+                      </div>
+                      <div class="text-center">
+                        <button type="submit" class="btn btn-primary ingresar">Ingresar</button>
+                      </div>
+                    </form>
+                    <div class="footer-links mt-3">
+                      <p>¿No tienes cuenta? <a href="#" data-bs-toggle="modal" data-bs-target="#crearCuentaModal">Crear una cuenta</a></p>
+                      <p><a href="#">Aviso de privacidad</a> | <a href="#">Términos y condiciones</a></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal para Crear Cuenta -->
+    <div class="modal fade" id="crearCuentaModal" tabindex="-1" aria-labelledby="crearCuentaModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="crearCuentaModalLabel">Crear Cuenta</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="custom-container">
+              <div class="distancia">
+                <div class="relleno">
+                  <div class="informacion"></div>
+                  <div class="text-center">
+                    <img src="/Punto_Venta/imagenes/log.png" class="img" alt="Logo Cytisum">
+                  </div>
+                  <form class="cont">
+                    <p class="infocue">Información de su cuenta</p>
+                    <div class="row mb-3 control">
+                      <div class="col">
+                        <label for="nombre" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" placeholder="Nombre">
+                      </div>
+                      <div class="col">
+                        <label for="apellido" class="form-label">Apellido</label>
+                        <input type="text" class="form-control" id="apellido" placeholder="Apellido">
+                      </div>
+                    </div>
+                    <div class="row mb-3 control">
+                      <div class="col">
+                        <label for="correo" class="form-label">Correo electrónico</label>
+                        <input type="email" class="form-control" id="correo" placeholder="Gmail">
+                      </div>
+                      <div class="col">
+                        <label for="telefono" class="form-label">Teléfono</label>
+                        <input type="text" class="form-control" id="telefono" placeholder="Teléfono">
+                      </div>
+                    </div>
+                    <div class="mb-3 control">
+                      <label for="usuario" class="form-label">Usuario</label>
+                      <input type="text" class="form-control" id="usuario" placeholder="Usuario">
+                    </div>
+                    <div class="mb-3 control">
+                      <label for="contrasena" class="form-label">Contraseña</label>
+                      <input type="password" class="form-control" id="contrasena" placeholder="Contraseña">
+                    </div>
+                    <div class="text-center">
+                      <button type="submit" class="btn btn-primary crear">CREAR CUENTA</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -79,7 +196,7 @@
               <img src="img/control.png" alt="img1">
             </div>
             <h4>Control total</h4>
-            <div class="pedido" id="txtPedido">
+            <div class="pedido">
               <p class="col-md-9">Gestiona tus ventas, inventarios y
                 más. Accede a información en
                 tiempo real, toma decisiones rápidas
@@ -93,7 +210,7 @@
               <img src="img/pedidos.png" alt="img1">
             </div>
             <h4>Optimiza tus pedidos</h4>
-            <div class="pedido" id="txtPedido">
+            <div class="pedido">
               <p class="col-md-9">Procesa cada orden de manera más 
                 eficiente, permitiendo ofrecer un
                 servicio rápido y de calidad, sin
@@ -107,7 +224,7 @@
               <img src="img/uso.png" alt="img1">
             </div>
             <h4>Facilidad de uso</h4>
-            <div class="pedido" id="txtPedido">
+            <div class="pedido">
               <p class="col-md-9">Interfaz intuitiva que permite que tu 
                 equipo se adapte rápidamente, sin 
                 largas capacitaciones. Todos podrán
@@ -162,12 +279,12 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-6">
-          <h2 class="funcio">¿Cómo funciona Cytisum?</h2>
-          <p class="gesti">Permite gestionar de manera eficiente las operaciones diarias del 
+          <h2 class="funcio offset-1">¿Cómo funciona Cytisum?</h2>
+          <p class="gesti offset-1">Permite gestionar de manera eficiente las operaciones diarias del 
             negocio, desde la toma de pedidos hasta la gestión de pagos y la 
             administración de inventarios.
           </p>
-          <p class="dise">está diseñado para optimizar todas las operaciones del 
+          <p class="dise offset-1">está diseñado para optimizar todas las operaciones del 
             restaurante, mejorando la eficiencia, la precisión y la experiencia
             tanto para el personal como para los clientes.
           </p>
@@ -180,6 +297,7 @@
               <div class="benefit-item" id="ben">Integración con Sistemas Contables</div>
               <div class="benefit-item" id="ben">Seguimiento y Control de Reservaciones</div>
             </div>
+          </div>
         </div>
       </div>
     </div>
@@ -238,7 +356,7 @@
 
     <!-- Planes -->
     <div class="container py-5">
-      <h2 class="text-center fw-bold mb-4 planes">Planes</h2>
+      <h2 class="text-center fw-bold mb-4 planes" id="planes">Planes</h2>
       <div class="row justify-content-center">
         <!-- Plan Básico -->
         <div class="col-md-4 mb-4  pricing-card-basic align-plan-basic">
@@ -256,7 +374,7 @@
                 <li>✗ Reportes Financieros</li>
               </ul>
               <div class="card-body justify-content-between text-center">
-                <button class="btn btn-custom mt-auto">Adquirir plan</button>
+                <button class="btn btn-custom mt-auto" data-bs-toggle="modal" data-bs-target="#adquirirModal">Adquirir plan</button>
               </div>
             </div>
           </div>
@@ -277,7 +395,7 @@
                 <li>✓ Reportes Financieros</li>
               </ul>
               <div class="card-body justify-content-between text-center">
-                <button class="btn btn-custom mt-auto">Adquirir plan</button>
+                <button class="btn btn-custom mt-auto" data-bs-toggle="modal" data-bs-target="#adquirirModal">Adquirir plan</button>
               </div>
             </div>
           </div>
@@ -298,10 +416,122 @@
                   <li>✗ Reportes Financieros</li>
                 </ul>
                 <div class="card-body justify-content-between text-center">
-                  <button class="btn btn-custom mt-auto">Adquirir plan</button>
+                <button class="btn btn-custom mt-auto" data-bs-toggle="modal" data-bs-target="#adquirirModal">Adquirir plan</button>
                 </div>
               </div>
             </div>
+          </div>
+      </div>
+    </div>
+
+    <!-- Modal para el formulario de compra -->
+    <div class="modal fade" id="adquirirModal" tabindex="-1" aria-labelledby="adquirirModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="adquirirModalLabel">Formulario de Compra</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <!-- Formulario para las compras -->
+            <div class="compra-container">
+              <div class="mov">
+                <div class="rell">
+                  <div class="cir">
+                    <div class="text-center">
+                      <img src="/Punto_Venta/imagenes/log.png" class="imge" alt="Logo Cytisum">
+                    </div>
+                  </div>
+                  <form class="toc">
+                    <div class="row mb-3 conti">
+                      <div class="col">
+                        <label for="companyNombre" class="form-label">Nombre de la empresa(comercial o legal)</label>
+                        <input type="text" class="form-control" id="companyNombre" placeholder="Empresa">
+                        <div class="col">
+                          <label for="tiponegocio" class="form-label">Giro comercial</label>
+                          <input type="text" class="form-control" id="tiponegocio" placeholder="En qué se dedica tu negocio">
+                        </div>
+                        <div class="col-5">
+                          <label for="empleados" class="form-label">Número de empleados</label>
+                          <select class="form-select" id="empleados">
+                            <option value="1">Menos de 5 empleados</option>
+                            <option value="2">De 5 a 10 empleados</option>
+                            <option value="3">Más de 10 empleados</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="text-center">
+                      <a class="btn btn-primary continuar" data-bs-toggle="modal" data-bs-target="#pagoModal">Continuar</a>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal de tipo de pago -->
+    <div class="modal fade" id="pagoModal" tabindex="-1" aria-labelledby="pagoModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="pagoModalLabel">Formulario de Pago</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <!-- Formulario de pago -->
+            <div class="payment-container">
+              <div class="mov">
+                <div class="relle">
+                  <div class="circ">
+                    <div class="text-center">
+                      <img src="/Punto_Venta/imagenes/log.png" class="img" alt="Logo Cytisum">
+                    </div>
+                  </div>
+                  <form class="todo">
+                    <div class="row mb-3 cont">
+                      <div class="col">
+                        <label for="numeroTarjeta" class="form-label">Número de la tarjeta</label>
+                        <input type="text" class="form-control" id="numeroTarjeta" placeholder="XXXX-XXXX-XXXX-XXXX">
+                      </div>
+                      <div class="col">
+                        <label for="titularTarjeta" class="form-label">Titular de la tarjeta</label>
+                        <input type="text" class="form-control" id="titularTarjeta" placeholder="Nombre de titular">
+                      </div>
+                    </div>
+                    <div class="row mb-3 cont">
+                      <div class="col">
+                        <label for="vencimiento" class="form-label">Vencimiento</label>
+                        <input type="text" class="form-control" id="vencimiento" placeholder="dd/mm/aa">
+                      </div>
+                      <div class="col">
+                        <label for="cvv" class="form-label">CVV</label>
+                        <input type="text" class="form-control" id="cvv" placeholder="XXX">
+                      </div>
+                      <div class="col">
+                        <label for="tipoTarjeta" class="form-label">Tipo de tarjeta</label>
+                        <select class="form-select" id="tipoTarjeta">
+                          <option selected>Débito</option>
+                          <option>Crédito</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="text-center">
+                      <button type="submit" class="btn btn-primary elige">Elige tu plan</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
           </div>
         </div>
       </div>
@@ -527,14 +757,13 @@
       <section class="d-flex justify-content-center p-4">
         <p class="text-center">*El precio de los planes puede variar según el país en donde se encuentre la empresa compradora</p>
       </section>
-      <!-- Cuadrado con texto (No ha funcionado) -->
+      <!-- Cuadrado con texto -->
       <section class="cnt-cuadro d-flex justify-content-center p-2 border-bottom">
         <div class="cuadrado"> 
-          <h6>¡Empieza a Contactarnos!</h6>
-          <h6>(998)-345-7079</h6>
+          <h2>¡Empieza a Contactarnos!</h2>
+          <h2>(998)-345-7079</h2>
         </div>
       </section>
-      <!-- Cuadrado con texto (No ha funcionado) -->
 
       <!-- Section: Social media -->
 
@@ -574,16 +803,15 @@
             <!-- Grid column -->
             <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
               <h6 class="text-uppercase fw-bold mb-4">Nuestras redes</h6>
-              <div class="margin-right-20">
-                <p>
-                  <a href="#!" class="text-reset"><img src="imagenes/fc.png" class="rounded mx-auto" alt="Link_Facebook"></a>
-                  <a href="#!" class="text-reset"><img src="imagenes/ig.png" class="rounded mx-auto" alt="Link_Instagram"></a>
-                </p>
-                <p>
-                  <a href="#!" class="text-reset"><img src="imagenes/x.png" class="rounded mx-auto" alt="Link_Facebook"></a>
-                  <a href="#!" class="text-reset"><img src="imagenes/in.png" class="rounded mx-auto" alt="Link_Instagram"></a>
-                </p>
-              </div>
+              
+              <section class="social-media">
+                <div class="social-icons">
+                  <a href="#!" class="text-reset"><img src="imagenes/fc.png" class="rounded mx-auto" alt="Facebook"></a>
+                  <a href="#!" class="text-reset"><img src="imagenes/ig.png" class="rounded mx-auto" alt="Instagram"></a>
+                  <a href="#!" class="text-reset"><img src="imagenes/x.png" class="rounded mx-auto" alt="X"></a>
+                  <a href="#!" class="text-reset"><img src="imagenes/in.png" class="rounded mx-auto" alt="LinkedIn"></a>
+                </div>
+              </section>
             </div>
             <!-- Grid column -->
           </div>

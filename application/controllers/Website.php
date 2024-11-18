@@ -22,7 +22,5 @@ class Website extends CI_Controller {
 	{
 	    /*sirve para cargar una vista*/
 		$this->load->view('puntoventa');
-
-
 	}
 }

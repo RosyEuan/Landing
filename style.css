@@ -1,47 +1,56 @@
 body {
   margin: 0;
 }
-.nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  padding: 0 1rem;
-}
 .navbar {
   background-color: #1E5D8D;
-  padding: 0;
+  padding: 0.5rem 1rem;
   position: fixed;
+  top: 0;
+  left: 0;
   z-index: 1000;
   width: 100%;
-  height: 5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 1rem;
 }
 .navbar-nav {
-  height:56px;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
 }
-.nav-item{
-  width: auto;
-  color: #FFF;
-  text-align: center;
-  font-family: "Konkhmer Sleokchher";
+.nav-item {
+  padding: 0 1rem;
   font-size: 24px;
-  margin-right: 40px;
+  font-family: "Konkhmer Sleokchher";
+
 }
-.nav-link{
-  padding: 0px;
-  padding-top: 8px;
-  width: 136px;
-  height: 40px;
+.navbar-toggler {
+  border-color: #fff;
 }
-.logo {
-  width: 184px;
-  height: 56px;
-  margin-right: 280px;
-  margin-left: 40px;
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem;
+  }
+  .logo {
+    max-width: 150px;
+  }
+  .navbar-nav {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 1rem;
+  }
+  .nav-item {
+    margin: 0.5rem 0;
+  font-family: "Konkhmer Sleokchher";
+  font-size: 22px;
+
+  }
+  .nav-link {
+    font-size: 18px;
+  }
+  .login {
+    margin-top: 1rem;
+  }
 }
 .container-md {
   margin: 0;
@@ -98,73 +107,42 @@ body {
   margin: 16px auto;
   display: block;
 }
-
 /* Para pantallas más pequeñas (móviles) */
 @media (max-width: 768px) {
   .Bienvenida {
     font-size: 32px;
-    width: 366px;
-    height: 160px;
+    width: 100%;
+    height: auto;
     margin-bottom: 24px;
   }
+
   .descripcion {
-    font-family: Khmer;
+    font-size: 20px;
     margin: 0 1rem;
-    width: 336px;
-    height: 264px;
+    width: 100%;
+    height: auto;
     color: #000;
     text-align: justify;
-    font-family: Khmer;
-    font-size: 22px;
   }
+
   .imgInicio {
-    display: block;
     margin: 2rem auto;
     max-width: 90%;
   }
+
   .imagen_inicio {
     width: 100%;
     max-width: 400px;
     height: auto;
   }
-  .logo {
-    max-width: 10rem;
-    max-height: 3rem;
-    margin: 0;
-  }
+
   .btn_empezar {
     font-size: 1.2rem;
     width: 80%;
     max-width: 250px;
     margin: 24px auto;
   }
-  .navbar {
-    padding: 0.5rem;
-    height: auto;
-    justify-content: space-between;
-    width: auto;
-  }
-  .navbar-nav {
-    height: auto;
-    width: auto;
-  }
-  .nav {
-    height: auto;
-    width: auto;
-    flex-direction: column;
-    align-items: center;
-  }
-  .nav-item {
-    width: auto;
-    padding: 1rem 0;
-  }
-  .login {
-    margin: 0px;
-    width: 2.5rem;
-    height: 2.5rem;
-  }
 }
-
 /* Para pantallas más grandes (tabletas y escritorios) */
 @media (min-width: 769px) {
   .Bienvenida {
@@ -187,9 +165,6 @@ body {
   .imagen_inicio {
     width: 100%;
     height: auto;
-  }
-  .login {
-    margin-left: 120px;
   }
 }
 
@@ -219,39 +194,22 @@ body {
     color: #000000; 
     font-size: 20px;
 }
-.feature-item p {
-    color: #555; 
-    font-size: 16px;
-    line-height: 1.6;
-}
+
+
 .feature-icon {
     font-size: 48px; 
     color: #F38181; 
     margin-bottom: 15px;
 }
 
-@media (max-width: 767px) {
-    .feature-item {
-        padding: 15px;
-    }
-    .feature-title {
-        font-size: 24px;
-    }
-    .feature-icon {
-        font-size: 40px;
-    }
-}
-
 .pedido{
     text-align: justify;
     color: #000;
     font-family: Khmer;
+    font-style: normal;
+    line-height: normal;
     margin-left: 79px;
     font-size: 24px;
-    height: auto;
-}
-#txtPedido {
-  font-family: khmer;
 }
 
 /* Para pantallas más pequeñas (móviles) */
@@ -895,18 +853,354 @@ flex-shrink: 0;
 footer {
   margin-top: 80px;
 }
+/* Estilos para el contenedor de las imágenes */
+.social-media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;  /* Para permitir que las imágenes se envuelvan */
+  gap: 20px;  /* Espacio entre las imágenes */
+  margin-top: 20px;
+}
+
+/* Estilos para cada imagen de red social */
+.social-icons a {
+  display: block;
+  width: 60px;  /* Puedes ajustar el tamaño de las imágenes */
+  height: 60px;
+}
+
+.social-icons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);  /* Dos imágenes por fila */
+  gap: 20px;  /* Espacio entre las imágenes */
+  justify-items: center;  /* Centra las imágenes en su celda */
+}
+
+/* Ajustes para pantallas más pequeñas (responsive) */
+@media (max-width: 768px) {
+  .social-icons {
+    grid-template-columns: 1fr;  /* En móviles, las imágenes se apilan en una sola columna */
+  }
+}
+
+
 .cuadrado {
   background: #5CA3D9;
   color: #000;
   border-radius: 24px;
   border: 2px solid #000;
+  justify-content: center;
   text-align: center;
-  font-family: "Suez One";
+  font-family: "Suez One", serif;
   font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  width: 1728px;
+  width: 100%;
   height: 192px;
   font-size: 48px;
-  padding-top: 24px;
+  padding: 32px;
+  margin: 0 auto;
+}
+.cuadrado h2 {
+  margin: 0;
+  margin-bottom: 24px;
+}
+@media (max-width: 768px) {
+  .cuadrado {
+    font-size: 28px;
+    padding: 30px; 
+    width: 90%;
+  }
+  .cuadrado h2 {
+    margin: 0;
+    margin-bottom: 22px;
+  }
+}
+
+/*Formulario de login*/
+.logi {
+  max-width: 400px;
+  margin: auto;
+  padding: 2rem;
+  background-color: #f8f9fa;
+  border-radius: 16px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  padding-top: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+.circu {
+  text-align: center;
+  background: linear-gradient(180deg, rgba(235, 234, 255, 0.00) 49.9%, rgba(64, 89, 255, 0.20) 100%), #D0E3FF;
+  padding: 1rem;
+  border-radius: 16px 16px 0 0;
+  margin-bottom: 1rem;
+  height: 120px;
+  width: 100%;
+  border-bottom-left-radius: 200%;
+  border-bottom-right-radius: 200%;
+  padding-bottom: 20%;
+  margin-bottom: -15%;
+}
+.img{
+  padding: 0;
+  padding-top: 0;
+  padding-left: 0;
+  padding-right: 0;
+  font-size: 24px;
+  margin-bottom: 5px;
+  width: 204px;
+  padding-top:10px;
+}
+.form-control {
+  font-size: 16px;
+  padding: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  width: 100%;
+  color: #919191;
+  font-family: Khmer;
+  background: #EDEDED;
+}
+.form-label {
+  font-weight: bold;
+  padding: 0 40px;
+padding-top: 0;
+padding-left: 0;
+padding-right: 0;
+}
+.footer-links {
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  color: #A191FB;
+  font-family: Khmer;
+font-size: 16px;
+}
+.footer-links a {
+    color: #A191FB;
+  text-decoration: none;
+  font-family: Khmer;
+  font-size: 16px;
+}
+.footer-links a:hover {
+  text-decoration: underline;
+}
+.iniciar{
+  padding: 0 40px;
+  padding-top: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+.si{
+  padding: 40px;
+}
+.mover{
+  padding-top:80px;
+}
+.ingresar{
+  border-radius: 16px;
+  background: #7FA5E5;
+  color: rgb(0, 0, 0);
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s; 
+}
+.con{
+  padding: 0 40px;
+}
+.sesion{
+  text-align:center;
+  color: #000;
+  font-family: "Konkhmer Sleokchher";
+  font-size: 24px;
+  font-style: normal;
+}
+.contra{
+  color: #A191FB;
+  font-family: Khmer;
+  font-size: 16px;
+}
+
+/* Formulario de compras */
+.mov{
+  padding-top: 40px;
+}
+.rell{
+    max-width: 800px;
+    height: 500px;
+  margin: auto;
+  padding: 2rem;
+  background: linear-gradient(180deg, #FFF 36%, #F3F6FF 99.99%);
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  padding: 40px;
+padding-top: 0;
+padding-left: 0;
+padding-right: 0;
+}
+.cir{
+    text-align: center;
+background: linear-gradient(180deg, rgba(235, 234, 255, 0.00) 49.9%, rgba(64, 89, 255, 0.20) 100%), #D0E3FF;
+  padding: 10px;
+  border-bottom-left-radius: 100%;
+border-bottom-right-radius: 100%;
+padding-bottom: 2%;
+margin-bottom: -15%;
+
+}
+.imge{
+padding: 0;
+padding-top: 0;
+padding-left: 0;
+padding-right: 0;
+font-size: 24px;
+margin-bottom: 5px;
+width: 204px;
+padding-top:40px;
+}
+
+.form-label {
+    font-weight: bold;
+  padding: 0 40px;
+padding-top: 0;
+padding-left: 0;
+padding-right: 0;
+max-width: 600px;
+font-family: "Konkhmer Sleokchher";
+font-size: 22px;
+padding:5px;
+}
+
+.conti{
+    padding: 0 40px;
+}
+.toc{
+    padding-top:150px;
+}
+.continuar{
+    border-radius: 16px;
+background: #7FA5E5;
+color: rgb(0, 0, 0);
+font-size: 16px;
+font-weight: bold;
+padding: 10px 20px;
+border: none;
+box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+transition: background-color 0.3s; 
+}
+.form-control{
+    border-radius: 8px;
+background: #EDEDED;
+color: #919191;
+font-family: Khmer;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+.form-select{
+    font-family: Khmer;
+font-size: 16px;
+}
+
+/*Formulario de tipo de pago*/
+.mov{
+  padding-top: 40px;
+}
+.relle {
+max-width: 800px;
+height: 500px;
+margin: auto;
+padding: 2rem;
+background: linear-gradient(180deg, #FFF 36%, #F3F6FF 99.99%);
+border-radius: 10px;
+box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+padding: 40px;
+padding-top: 0;
+padding-left: 0;
+padding-right: 0;
+}
+.circ {
+text-align: center;
+background: linear-gradient(180deg, rgba(235, 234, 255, 0.00) 49.9%, rgba(64, 89, 255, 0.20) 100%), #D0E3FF;
+padding: 10px;
+border-bottom-left-radius: 100%;
+border-bottom-right-radius: 100%;
+padding-bottom: 2%;
+margin-bottom: -15%;
+
+}
+.img{
+padding: 0;
+padding-top: 0;
+padding-left: 0;
+padding-right: 0;
+font-size: 24px;
+margin-bottom: 5px;
+width: 204px;
+padding-top:40px;
+}
+
+.form-label {
+font-weight: bold;
+padding: 0 40px;
+padding-top: 0;
+padding-left: 0;
+padding-right: 0;
+max-width: 600px;
+font-family: "Konkhmer Sleokchher";
+font-size: 22px;
+}
+
+.cont{
+padding: 0 40px;
+}
+.todo{
+padding-top:150px;
+}
+.elige{
+border-radius: 16px;
+background: #7FA5E5;
+color: rgb(0, 0, 0);
+font-size: 16px;
+font-weight: bold;
+padding: 10px 20px;
+border: none;
+box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+transition: background-color 0.3s; 
+}
+.form-control{
+border-radius: 8px;
+background: #EDEDED;
+color: #919191;
+font-family: Khmer;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+.form-select{
+font-family: Khmer;
+font-size: 16px;
+}
+/* Estilo personalizado para el icono de login */
+.login {
+  cursor: pointer;
+  width: 45px; /* Ajusta el tamaño del icono */
+  height: 45px;
+  border-radius: 50%; /* Si deseas que sea redondeado */
+}
+
+/* Opcional: Espaciado para la lista desplegable */
+.dropdown-menu {
+  min-width: 180px; /* Ajusta el ancho del dropdown */
+}
+
+/* Opcional: Estilo cuando el dropdown se despliega */
+.dropdown-menu .dropdown-item {
+  font-size: 14px; /* Ajusta el tamaño de la fuente */
 }
