@@ -173,12 +173,11 @@
             <h1 class="Bienvenida">Control total, más ventas menos estrés. ¡Descubre el mejor punto de venta!</h1>
             <p class="descripcion">
               Nuestro sistema de Punto de Venta es mucho más que una caja
-              registradora. Es una herramienta diseñada para hacer tu vida más
-              fácil: control total sobre tus ventas, inventarios y más, con la
-              tecnología más avanzada del mercado. ¡El futuro de la gestión
-              restaurantera está aquí!
+              registradora. Es una herramienta diseñada para hacer tu vida más fácil: 
+              control total sobre tus ventas, inventarios y más, con la tecnología más 
+              avanzada del mercado. ¡El futuro de la gestión restaurantera está aquí!
             </p>
-            <div class="boton-ver text-center">
+            <div class="boton-ver text-center ">
               <button type="button" class="btn_empezar btn-light"><h3>¡Empieza ahora!</h3></button>
             </div>
           </section>
@@ -188,16 +187,16 @@
 
     <!-- Porque elegirnos -->
     <div class="container">
-      <h2 class="feature-title">¿Por qué elegir Cytisum?</h2>
+      <h2 class="feature-title ">¿Por qué elegir Cytisum?</h2>
       <div class="feature-section">
         <div class="row">
           <div class="col-md-4 feature-item">
             <div class="feature-icon">
-              <img src="img/control.png" alt="img1">
+              <img class="ft_icon" src="img/control.png" alt="Img. de Control total">
             </div>
             <h4>Control total</h4>
             <div class="pedido">
-              <p class="col-md-9">Gestiona tus ventas, inventarios y
+              <p class="txt_pedido">Gestiona tus ventas, inventarios y
                 más. Accede a información en
                 tiempo real, toma decisiones rápidas
                 y lleva el control de tu restaurante
@@ -207,11 +206,11 @@
           </div>
           <div class="col-md-4 feature-item">
             <div class="feature-icon">
-              <img src="img/pedidos.png" alt="img1">
+              <img class="ft_icon" src="img/pedidos.png" alt="Img. de Optimizar pedidos">
             </div>
             <h4>Optimiza tus pedidos</h4>
             <div class="pedido">
-              <p class="col-md-9">Procesa cada orden de manera más 
+              <p class="txt_pedido">Procesa cada orden de manera más 
                 eficiente, permitiendo ofrecer un
                 servicio rápido y de calidad, sin
                 importar la cantidad de pedidos 
@@ -221,11 +220,11 @@
           </div>
           <div class="col-md-4 feature-item">
             <div class="feature-icon">
-              <img src="img/uso.png" alt="img1">
+              <img class="ft_icon" src="img/uso.png" alt="Img. de Facilidad de uso">
             </div>
             <h4>Facilidad de uso</h4>
             <div class="pedido">
-              <p class="col-md-9">Interfaz intuitiva que permite que tu 
+              <p class="txt_pedido">Interfaz intuitiva que permite que tu 
                 equipo se adapte rápidamente, sin 
                 largas capacitaciones. Todos podrán
                 utilizar el sistema sin problemas 
@@ -259,7 +258,7 @@
           </div>
           <!-- Controles de navegación -->
           <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="carousel-control-prev-icon"  aria-hidden="true"></span>
             <span class="visually-hidden">Anterior</span>
           </button>
           <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">

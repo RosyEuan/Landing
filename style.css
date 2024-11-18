@@ -11,6 +11,8 @@ body {
   width: 100%;
 }
 .navbar-nav {
+  align-items: center;
+  gap: 40px;
   display: flex;
   justify-content: flex-end;
   width: 100%;
@@ -24,7 +26,6 @@ body {
 .navbar-toggler {
   border-color: #fff;
 }
-
 /* Ajustes para pantallas pequeñas */
 @media (max-width: 768px) {
   .navbar {
@@ -43,7 +44,6 @@ body {
     margin: 0.5rem 0;
   font-family: "Konkhmer Sleokchher";
   font-size: 22px;
-
   }
   .nav-link {
     font-size: 18px;
@@ -58,6 +58,8 @@ body {
 .fondo {
   margin-top: 8%;
 }
+
+/* INCIO */
 .Inicio{
   margin-left: 4px;
   width: auto;
@@ -72,7 +74,7 @@ body {
 }
 .descripcion {
   text-align: justify;
-  width: 704px;
+  width: 688px;
   height: 200px;
   color: #000;
   font-family: Khmer;
@@ -108,34 +110,28 @@ body {
   display: block;
 }
 /* Para pantallas más pequeñas (móviles) */
-@media (max-width: 768px) {
+@media (max-width: 800px) {
   .Bienvenida {
     font-size: 32px;
     width: 100%;
     height: auto;
     margin-bottom: 24px;
   }
-
   .descripcion {
     font-size: 20px;
-    margin: 0 1rem;
     width: 100%;
     height: auto;
-    color: #000;
     text-align: justify;
   }
-
   .imgInicio {
     margin: 2rem auto;
     max-width: 90%;
   }
-
   .imagen_inicio {
     width: 100%;
     max-width: 400px;
     height: auto;
   }
-
   .btn_empezar {
     font-size: 1.2rem;
     width: 80%;
@@ -144,7 +140,7 @@ body {
   }
 }
 /* Para pantallas más grandes (tabletas y escritorios) */
-@media (min-width: 769px) {
+@media (min-width: 801px) {
   .Bienvenida {
     font-size: 3rem;
     height: auto;
@@ -153,7 +149,7 @@ body {
   }
   .descripcion {
     font-size: 24px;
-    margin: 0 4rem;
+    margin: 0 6rem;
     height: auto;
     margin-bottom: 48px;
   }
@@ -168,105 +164,124 @@ body {
   }
 }
 
+/* ¿POR QUE ELEGIR CYTISUM? */
 .feature-section {
   background-color: #F1F7FF; 
-  padding: 8px 0;
+  padding: 8px 72px;
 }
 .feature-title {
-    font-family: "Suez One";
-    font-size: 40px;
-    font-weight: bold;
-    margin-bottom: 30px;
-    text-align: center;
-    color: #000000; 
-    padding: 50px 0;
-    margin-top: 16%;
-    font-weight: 400;
+  font-family: "Suez One";
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #000000; 
+  padding: 50px 0;
+  margin-top: 13%;
+  font-weight: 400;
 }
 .feature-item {
-    text-align: center;
-    padding: 20px;
+  text-align: center;
+  padding: 24px;
+  align-items: center;
 }
 .feature-item h4 {
-    font-family: "Konkhmer Sleokchher";
-    font-weight: 400;
-    margin-top: 15px;
-    color: #000000; 
-    font-size: 20px;
+  font-family: "Konkhmer Sleokchher";
+  font-weight: 400;
+  margin-top: 24px;
+  margin-bottom: 16px;
+  color: #000000; 
+  font-size: 20px;
 }
-
-
 .feature-icon {
-    font-size: 48px; 
-    color: #F38181; 
-    margin-bottom: 15px;
+  font-size: 48px; 
+  color: #F38181; 
+  margin-bottom: 24px;
 }
-
 .pedido{
-    text-align: justify;
-    color: #000;
-    font-family: Khmer;
-    font-style: normal;
-    line-height: normal;
-    margin-left: 79px;
-    font-size: 24px;
+  text-align: justify;
+  color: #000;
+  font-family: Khmer;
+  font-style: normal;
+  line-height: normal;
+  font-size: 24px;
 }
-
 /* Para pantallas más pequeñas (móviles) */
 @media (max-width: 768px) {
   .feature-section {
-    width: 350px;
-    margin: 0 16px;
+    width: 100%;
+    padding: 0 16px;
   }
   .pedido {
     margin: 0;
-    width: 304px;
-  height: 177px;
-  flex-shrink: 0;
-  color: #000;
-  text-align: justify;
-  font-family: Khmer;
+    width: auto;
+    height: auto;
+    flex-shrink: 0;
+    color: #000;
+    text-align: justify;
+    font-family: Khmer;
     font-size: 22px;
     margin: 0 24px;
   }
   .feature-title {
     margin: 40px;
+    margin-top: 64px;
     padding: 0;
+  }
+  .feature-icon {
+    width: auto;
+    height: auto;
+  }
+  .ft_icon{
+    width: 35%;
+    height: auto;
   }
 }
 
+/* EXPLORA EL PUNTO DE VENTA */
 .Explora{
-    margin-top: 150px; 
-    color: #000;
-text-align: center;
-font-family: "Suez One";
-font-size: 40px;
-font-style: normal;
-line-height: normal;
+  margin-top: 150px; 
+  color: #000;
+  text-align: center;
+  font-family: "Suez One";
+  font-size: 40px;
+  font-style: normal;
+  line-height: normal;
 }
 .slid{
-    background: #F1F3FF;
-    margin-top: 50px; 
+  align-items: center;
+  background: #F1F3FF;
+  margin-top: 50px; 
+}
+
+.carousel-control-prev-icon::after{
+  content: '‹'; /* Personaliza con flechas unicode si no usas SVG */
+  font-size: 4rem; /* Tamaño ajustable */
+  color: black; /* Cambia el color a negro */
+}
+.carousel-control-next-icon::after {
+  content: '›'; /* Personaliza con flechas unicode si no usas SVG */
+  font-size: 4rem; /* Tamaño ajustable */
+  color: black; /* Cambia el color a negro */
 }
 .carousel-inner {
-    margin-left: 260px;
-    padding: 40px 20px; 
-    border-radius: 8px; 
-    width: 748px;
-    max-height: 500px;
+  align-items: center;
+  margin-left: 32px;
+  padding: 40px 20px; 
+  border-radius: 8px; 
+  width: 748px;
+  max-height: 500px;
 }
 .descrip {
-    padding: 5px;
-    color: #000;
-    text-align: center;
-    font-family: "Konkhmer Sleokchher";
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-
+  padding: 5px;
+  color: #000;
+  text-align: center;
+  font-family: "Konkhmer Sleokchher";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
-
 /* Para pantallas más pequeñas (móviles) */
 @media (max-width: 768px) {
   .carousel-inner {
@@ -286,85 +301,83 @@ line-height: normal;
   }
 }
 
+/* COMO FUNCIONA CYTISUM */
 .funcio{
-    padding-left: 60px;
-    margin-top: 232px;
-height: 72px;
-flex-shrink: 0;
-    color: #000;
-text-align: left;
-font-family: "Suez One";
-font-size: 40px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
+  padding-left: 60px;
+  margin-top: 216px;
+  height: 12%;
+  width: 100%;
+  flex-shrink: 0;
+  color: #000;
+  text-align: left;
+  font-family: "Suez One";
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
-
 .gesti{
-    color: #000;
-    text-align: justify;
-    font-family: Khmer;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-height: 120px;
-flex-shrink: 0;
+  color: #000;
+  text-align: justify;
+  font-family: Khmer;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  height: 24%;
+  flex-shrink: 0;
 }
 .dise{
-    padding-top: 20px;
-    color: #000;
-    text-align: justify;
-    font-family: Khmer;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-height: 120px;
-flex-shrink: 0;
+  color: #000;
+  text-align: justify;
+  font-family: Khmer;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  height: 20%;
+  flex-shrink: 0;
 }
-
 .benefits .benefit-item {
-    border-radius: 40px;
-background: #E5F2FF;
-color: #000;
-    padding: 10px;
-    padding-top: 25px; /*distancia entre los lados pa no perderme */
-    margin-bottom: 40px; /*distancia entre botones */
-    border-radius: 5px;
-    text-align: center;
-    font-family: "Konkhmer Sleokchher";
-    font-size: 24px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-height: 90px;
-width: 576px;
-flex-shrink: 0;
-  }
-.barra{
-    padding: 0px;
-    margin-top: 168px;
-    margin-left: 50px;
+  border-radius: 40px;
+  background: #E5F2FF;
+  color: #000;
+  padding: 10px;
+  padding-top: 25px; /*distancia entre los lados pa no perderme */
+  margin-bottom: 40px; /*distancia entre botones */
+  border-radius: 5px;
+  text-align: center;
+  font-family: "Konkhmer Sleokchher";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  height: 90px;
+  width: 576px;
+  flex-shrink: 0;
 }
-
+.barra{
+  padding: 0px;
+  margin-top: 168px;
+  margin-left: 50px;
+}
 /* Para pantallas más pequeñas (móviles) */
-@media (max-width: 768px) {
+@media (max-width: 800px) {
   .barra {
-    width: 350px;
+    width: 100%;
     margin-left: 0;
     margin-top: 24px;
   }
   .benefit-item{
     padding: auto;
-    width: 376px;
+    width: 100%;
   }
   .benefits{
-    width: 376px;
+    width: auto;
     height: auto;
   }
   #ben {
-    width: 376px;
+    width: 100%;
     height: auto;
   }
   .funcio {
@@ -374,16 +387,19 @@ flex-shrink: 0;
     height: auto;
     padding: 0;
     text-align: center;
-    width: 376px;
+    width: 100%;
   }
   .gesti{
     height: auto;
+    margin: 0;
   }
   .dise {
+    margin: 0;
     height: auto;
   }
 }
 
+/* BENEFICIOS */
 .beneficios{
     color: #000;
     padding: 0px;
@@ -1187,20 +1203,17 @@ line-height: normal;
 font-family: Khmer;
 font-size: 16px;
 }
-/* Estilo personalizado para el icono de login */
+
+/*login*/
 .login {
   cursor: pointer;
-  width: 45px; /* Ajusta el tamaño del icono */
+  width: 45px;
   height: 45px;
-  border-radius: 50%; /* Si deseas que sea redondeado */
+  border-radius: 50%;
 }
-
-/* Opcional: Espaciado para la lista desplegable */
 .dropdown-menu {
-  min-width: 180px; /* Ajusta el ancho del dropdown */
+  min-width: 180px;
 }
-
-/* Opcional: Estilo cuando el dropdown se despliega */
 .dropdown-menu .dropdown-item {
-  font-size: 14px; /* Ajusta el tamaño de la fuente */
+  font-size: 14px;
 }
