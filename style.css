@@ -112,13 +112,13 @@ body {
 /* Para pantallas más pequeñas (móviles) */
 @media (max-width: 800px) {
   .Bienvenida {
-    font-size: 32px;
+    font-size: 37px;
     width: 100%;
     height: auto;
     margin-bottom: 24px;
   }
   .descripcion {
-    font-size: 20px;
+    font-size: 22px;
     width: 100%;
     height: auto;
     text-align: justify;
@@ -167,7 +167,9 @@ body {
 /* ¿POR QUE ELEGIR CYTISUM? */
 .feature-section {
   background-color: #F1F7FF; 
-  padding: 8px 72px;
+  padding: 8px 64px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
 }
 .feature-title {
   font-family: "Suez One";
@@ -182,7 +184,7 @@ body {
 }
 .feature-item {
   text-align: center;
-  padding: 24px;
+  padding: 24px 48px;
   align-items: center;
 }
 .feature-item h4 {
@@ -191,7 +193,7 @@ body {
   margin-top: 24px;
   margin-bottom: 16px;
   color: #000000; 
-  font-size: 20px;
+  font-size: 24px;
 }
 .feature-icon {
   font-size: 48px; 
@@ -224,9 +226,10 @@ body {
     margin: 0 24px;
   }
   .feature-title {
-    margin: 40px;
+    margin: 32px;
     margin-top: 64px;
     padding: 0;
+    font-size: 32px;
   }
   .feature-icon {
     width: auto;
@@ -236,68 +239,107 @@ body {
     width: 35%;
     height: auto;
   }
+  .feature-item h4 {
+    font-size: 22px;
+  }
 }
 
 /* EXPLORA EL PUNTO DE VENTA */
 .Explora{
-  margin-top: 150px; 
+  margin-top: 168px; 
   color: #000;
   text-align: center;
-  font-family: "Suez One";
+  font-family: "Suez One", sans-serif;
   font-size: 40px;
   font-style: normal;
-  line-height: normal;
+  line-height: normal;
+}
+.titulos {
+  font-family: "Konkhmer Sleokchher";
+  text-align: center;
+  font-weight: 400;
+  margin-bottom: 24px;
+  color: #000000; 
+  font-size: 24px;
 }
 .slid{
   align-items: center;
   background: #F1F3FF;
-  margin-top: 50px; 
+  margin-top: 32px; 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
 }
-
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-image: none !important;
+}
 .carousel-control-prev-icon::after{
-  content: '‹'; /* Personaliza con flechas unicode si no usas SVG */
-  font-size: 4rem; /* Tamaño ajustable */
-  color: black; /* Cambia el color a negro */
+  content: '\2039';
+  font-size: 4.5rem;
+  color: black;
+  font-weight: bold; 
 }
 .carousel-control-next-icon::after {
-  content: '›'; /* Personaliza con flechas unicode si no usas SVG */
-  font-size: 4rem; /* Tamaño ajustable */
-  color: black; /* Cambia el color a negro */
+  content: '\203A';
+  font-size: 4.5rem;
+  color: black;
+  font-weight: bold; 
 }
 .carousel-inner {
   align-items: center;
-  margin-left: 32px;
+  margin-left: auto;
+  margin-right: auto;
   padding: 40px 20px; 
   border-radius: 8px; 
-  width: 748px;
+  width: 100%;
+  max-width: 748px;
   max-height: 500px;
 }
 .descrip {
-  padding: 5px;
+  padding: 8px;
   color: #000;
   text-align: center;
-  font-family: "Konkhmer Sleokchher";
+  font-family: "Konkhmer Sleokchher", sans-serif;
   font-size: 24px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 65%;
+  margin: 0 auto;
+  min-height: 100px;
+}
+.texto {
+  margin-bottom: 32px;
+  margin-top: 24px;
 }
 /* Para pantallas más pequeñas (móviles) */
-@media (max-width: 768px) {
+@media (max-width: 800px) {
+  .titulos {
+    font-size: 22px;
+  }
   .carousel-inner {
     margin: 0;
-    padding: 40 8;
-    width: 376px;
+    padding: 20px;
+    width: 100%;
   }
   .carousel-item {
-    width: 336px;
+    width: 100%;
   }
   .Explora {
     margin-top: 96px;
+    font-size: 32px;
   }
   .descrip {
-    margin: 0;
-    padding: 0;
+    font-size: 22px;
+    width: 65%;
+    margin: 0 auto;
+    min-height: 100px;
+    text-align: center;
+  }
+  .carousel-control-prev-icon::after,
+  .carousel-control-next-icon::after {
+    font-size: 2.5rem;
   }
 }
 
@@ -381,6 +423,7 @@ body {
     height: auto;
   }
   .funcio {
+    font-size: 32px;
     margin: 0;
     margin-top: 80px;
     margin-bottom: 24px;
@@ -401,164 +444,213 @@ body {
 
 /* BENEFICIOS */
 .beneficios{
-    color: #000;
-    padding: 0px;
-text-align: center;
-font-family: "Suez One";
-font-size: 40px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-height: 80px;
-flex-shrink: 0;
+  color: #000;
+  padding: 0px;
+  text-align: center;
+  font-family: "Suez One";
+  font-size: 40px;
+  font-style: normal;
+  height: 80px;
 }
-
 .experiencia{
-    color: #000;
-text-align: center;
-font-family: "Konkhmer Sleokchher";
-font-size: 32px;
-font-style: normal;
-line-height: normal;
-flex-shrink: 0;
-margin-left: 0px;
+  align-items: center;
+  color: #000;
+  text-align: center;
+  font-family: "Konkhmer Sleokchher";
+  font-size: 32px;
+  margin: 10px 10px;
+  width: 464px;
+  padding: 32px 40px;
+  background-color: #FFF;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  flex: 1 1 30%;
+  max-width: 464px;
 }
 .si{
-    color: #000;
-    text-align: justify;
-    font-family: Khmer;
-    font-size: 24px;
-    font-style: normal;
-    line-height: normal;
-flex-shrink: 0;
+  color: #000;
+  text-align: justify;
+  font-family: Khmer;
+  font-size: 24px;
+  padding: 24px 0;
+  padding-bottom: 0;
 }
-
 .bene{
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   background: #F1F7FF;
-  flex-shrink: 0;
   text-align: center;
-  margin-top: 96px;
+  padding: 50px 32px;
+  margin-top: 160px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.experiencia img{
+  width: 100%;
+  height: auto;
+  max-width: 200px;
+  max-height: 100px;
+  object-fit: contain;
+  margin-top: 20px;
+}
+/* Para pantallas más pequeñas (móviles) */
+@media (max-width: 768px) {
+  .beneficios {
+    font-size: 32px;
+  }
+  .bene {
+    flex-direction: column;
+    align-items: center;
+  }
+  .experiencia {
+    font-size: 22px;
+    margin: 15px 0;
+    flex: 1 1 100%;
+    max-width: none;
+  }
+  .si {
+    font-size: 22px;
+    padding: 0 10px;
+  }
+  .experiencia img {
+    max-width: 30%;
+    max-height: none;
+  }
 }
 
-
-
+/* PLANES */
 .pricing-card {
-    background: #E2EEFF; 
-    border-radius: 8px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: #E2EEFF; 
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.pricing-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(57, 22, 255, 0.2);
+}
+.card-price {
+  color: #000;
+  font-family: "Konkhmer Sleokchher";
+  font-size: 32px;
+  font-weight: 400;
+  margin-top: 16px;
+}
+.plan{
+  color: #000;
+  text-align: center;
+  font-family: "Konkhmer Sleokchher";
+  font-size: 32px;
+  font-weight: 400;
+  margin-top: 40px;
+  margin-bottom: 16px;
+}
+@media (min-width: 768px) {
+  .pricing-card-basic, .pricing-card-standard {
+    margin-top: 30px; /*para bajar los dos planes */
   }
-  
-  .pricing-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(57, 22, 255, 0.2);
-  }
-  
- 
-  .card-price {
-    color: #000;
-font-family: "Konkhmer Sleokchher";
-font-size: 40px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-flex-shrink: 0;
-  }
-
-  .plan{
-    color: #000;
-text-align: center;
-font-family: "Konkhmer Sleokchher";
-font-size: 32px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-flex-shrink: 0;
-  }
-
-  @media (min-width: 768px) {
-    .pricing-card-basic, .pricing-card-standard {
-      margin-top: 30px; /*para bajar los dos planes */
-    }
-  }
-
-  .row.justify-content-center > div {
-    margin-left: -15px;
-    margin-right: -10px;
-  }
+}
+.row.justify-content-center > div {
+  margin-left: -15px;
+  margin-right: -10px;
+}
 .azu{
-    background: #C3D9F9;
-    border-radius: 5px;
+  background: #C3D9F9;
+  border-radius: 5px;
 }
-
 .planes{
-    color: #000;
-text-align: center;
-font-family: "Suez One";
-font-size: 40px;
-font-style: normal;
-line-height: normal;
-flex-shrink: 0;
-height: 64px;
-flex-shrink: 0;
+  text-align: center;
+  font-family: "Suez One";
+  font-size: 40px;
+  height: 64px;
+  margin-top: 160px;
 }
-
 .usuario{
-    color: #000;
-    font-family: Khmer;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    flex-shrink: 0;
-    text-align: left;
+  color: #000;
+  font-family: Khmer;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-align: left;
+  margin-left: 24px;
 }
-
 .btn-custom {
-    border-radius: 16px;
-background: #7FA5E5; 
-    color: #000000; 
-    border-radius: 8px; /* Bordes redondeados */
-    border: none; 
-    padding: 10px 20px; /* Espacio interno para hacerlo más grande */
-    font-weight: bold; /* Texto en negrita */
-    font-size: 1rem; /* Tamaño del texto */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición para el hover */
-  }
+  border-radius: 16px;
+  background: #7FA5E5; 
+  color: #000000; 
+  border-radius: 8px;
+  border: none; 
+  padding: 10px 20px;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
   .btn-custom:hover {
-    transform: translateY(-3px); /* Elevar un poco el botón */
-    box-shadow: 0px 4px 10px rgb(79, 123, 255); /* Sombra al pasar el cursor */
+    transform: translateY(-3px);
+    box-shadow: 0px 4px 10px rgb(79, 123, 255);
     background-color: #3482fe98; 
   }
- 
-
-
-  .prueba{
-    color: #000;
-font-family: "Suez One";
-font-size: 40px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-flex-shrink: 0;
-margin: 0;
-    margin-left: 750px;
-    padding-left: 35px;
+ /* Para pantallas más pequeñas (móviles) */
+@media (max-width: 768px) {
+  .pricing-card {
+    margin-bottom: 30px;
   }
-
-  .gratuita{
-    width: 704px;
-    height: 600px;
-    float: left;
-    background-repeat: no-repeat;
-    background-position: left;
-    background-size: cover;
-    border-radius: 2px;
-    overflow: hidden; 
+  .col-md-4 {
+    width: 100%;
   }
-  .prue {
-    margin-top: 40px;
+  .plan {
+    font-size: 24px;
+  }
+  .card-price {
+    font-size: 24px;
+  }
+  .planes{
+    font-size: 32px;
+  }
+  .usuario {
+    font-size: 22px;
+  }
+  .btn-custom {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+  }
+  .usuario li {
+    padding-left: 10px;
+  }
 }
 
+/* OBTENER PRUBA GRATIS */
+.prueba{
+  color: #000;
+  font-family: "Suez One";
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0;
+  margin-left: 64px;
+  padding-left: 35px;
+}
+.gratuita{
+  width: 704px;
+  height: 600px;
+  float: left;
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: cover;
+  border-radius: 2px;
+  overflow: hidden; 
+}
+.obt {
+  margin-top: 160px;
+
+}
 /* Para pantallas más pequeñas (móviles) */
 @media (max-width: 768px) {
   .gratuita {
@@ -607,14 +699,17 @@ padding-right: 20px;
 }
   
 .btn_obtener {
-    text-align: center;
-    font-family: "Konkhmer Sleokchher";
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    flex-shrink: 0;
-    background: #7FA5E5;
+  padding: 12px 20px;
+  color: #000;
+  text-align: center;
+  font-family: "Konkhmer Sleokchher";
+  font-size: 20px;
+  font-weight: 400;
+  line-height: normal;
+  width: 100%;
+  max-width: 150px;
+  border-radius: 24px;
+  background: #7FA5E5;
 }
   
 .socios{
@@ -731,12 +826,13 @@ flex-shrink: 0;
     background-color: rgba(229, 238, 250, 1);
     padding: 20px;
     border-radius: 10px;
+    
   }
 
   .POS::after {
     content: '';
     display: block;
-    width: 90%; /* Ajusta el ancho de la línea */
+    width: 100%; /* Ajusta el ancho de la línea */
     height: 2px;
     background: #B7CAE4;
     margin: 20px auto 0; /* Espacio encima del nombre */
@@ -747,7 +843,7 @@ flex-shrink: 0;
     margin-top: 5px auto; /* Espacio entre la línea y el nombre */
   }
 
-  .review-stars {
+.review-stars {
     font-size: 25px; /* Ajusta el tamaño de las estrellas */
     color: #FDFF84;
     -webkit-text-stroke: 1px #A2B403;
@@ -755,20 +851,21 @@ flex-shrink: 0;
     justify-content: left;
     margin-bottom: 15px;
     gap: 15px; /* Espacio entre estrellas */
-  }
+}
   
-  .POS {
-    color: #000;
-text-align: justify;
-font-family: Khmer;
-font-size: 20px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-width: 330px;
-height: 200px;
-flex-shrink: 0;
-  }
+.POS {
+  color: #000;
+  text-align: justify;
+  align-items: center;
+  font-family: Khmer;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  width: 400px;
+  height: 200px;
+  padding: 0 32px;
+}
   
   .review-author {
     color: #000;
@@ -1007,9 +1104,6 @@ font-size: 16px;
   padding-top: 0;
   padding-left: 0;
   padding-right: 0;
-}
-.si{
-  padding: 40px;
 }
 .mover{
   padding-top:80px;

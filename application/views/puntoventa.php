@@ -17,7 +17,7 @@
       <div class="row">
         <nav class="navbar navbar-expand-lg navbar-light">
           <div class="container-md">
-            <img class="logo text-white" src="imagenes/cytisum.png" alt="Logo Cytisum">
+            <a  aria-current="page" href="#"><img class="logo text-white" src="imagenes/cytisum.png" alt="Logo Cytisum"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -27,13 +27,13 @@
                   <a class="nav-link text-white" aria-current="page" href="#">Inicio</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-white" href="#">Beneficios</a>
+                  <a class="nav-link text-white" href="#linkbeneficio">Beneficios</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link text-white" href="#planes">Planes</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-white" href="#">Contacto</a>
+                  <a class="nav-link text-white" href="#contactoo">Contacto</a>
                 </li>
                 <li class="nav-item dropdown">
                   <a class="nav-link text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -186,7 +186,7 @@
     </div>
 
     <!-- Porque elegirnos -->
-    <div class="container">
+    <div class="container-fluid">
       <h2 class="feature-title ">¿Por qué elegir Cytisum?</h2>
       <div class="feature-section">
         <div class="row">
@@ -245,15 +245,43 @@
           <div class="carousel-inner">
             <!-- Slide 1 -->
             <div class="carousel-item active">
-              <img src="img/Rectangle 200.png" class="d-block w-100" alt="Vista del punto de venta 1">
+              <h4 class="titulos">Vista del Inicio de Sesión</h4>
+              <img src="imagenes/vistaLogin.png" class="d-block w-100" alt="Vista del Inicio de Sesion">
             </div>
             <!-- Slide 2 -->
             <div class="carousel-item">
-              <img src="img/Rectangle 200.png" class="d-block w-100" alt="Vista del punto de venta 2">
+              <h4 class="titulos">Vista de los Reportes</h4>
+              <img src="imagenes/vistaReportes.png" class="d-block w-100" alt="Vista de los Reportes">
             </div>
             <!-- Slide 3 -->
             <div class="carousel-item">
-              <img src="img/Rectangle 200.png" class="d-block w-100" alt="Vista del punto de venta 3">
+              <h4 class="titulos">Vista de las Mesas</h4>
+              <img src="imagenes/vistaMesas.png" class="d-block w-100" alt="Vista de las Mesas">
+            </div>
+            <!-- Slide 4 -->
+            <div class="carousel-item">
+              <h4 class="titulos">Vista de las Reservaciones</h4>
+              <img src="imagenes/vistaReservaciones.png" class="d-block w-100" alt="Vista de las Reservaciones">
+            </div>
+            <!-- Slide 5 -->
+            <div class="carousel-item">
+              <h4 class="titulos">Vista del Menú</h4>
+              <img src="imagenes/vistaMenu.png" class="d-block w-100" alt="Vista del Menu">
+            </div>
+            <!-- Slide 6 -->
+            <div class="carousel-item">
+              <h4 class="titulos">Vista del Inventario</h4>
+              <img src="imagenes/vistaProductos.png" class="d-block w-100" alt="Vista del Inventario">
+            </div>
+            <!-- Slide 7 -->
+            <div class="carousel-item">
+              <h4 class="titulos">Vista de los Pedidos</h4>
+              <img src="imagenes/vistaPedidos.png" class="d-block w-100" alt="Vista de los Pedidos">
+            </div>
+            <!-- Slide 8 -->
+            <div class="carousel-item">
+              <h4 class="titulos">Vista del Personal</h4>
+              <img src="imagenes/vistaPersonal.png" class="d-block w-100" alt="Vista del Personal">
             </div>
           </div>
           <!-- Controles de navegación -->
@@ -267,7 +295,7 @@
           </button>
         </div>
         <div class="descrip">
-          <p class="col-md-8 offset-2"> Con la facilidad y comodidad de nuestro software, no perderás ni una 
+          <p class="texto"> Con la facilidad y comodidad de nuestro software, no perderás ni una 
             venta y podrás aumentar tus ganancias con mayor facilidad.
           </p>
         </div>
@@ -302,7 +330,7 @@
     </div>
 
     <!-- Beneficios -->
-    <div class="container-fluid">
+    <div class="container-fluid" id="linkbeneficio">
       <div class="bene">
         <h2 class="beneficios">Beneficios</h2>
         <div class="row">
@@ -354,8 +382,8 @@
     </div>
 
     <!-- Planes -->
-    <div class="container py-5">
-      <h2 class="text-center fw-bold mb-4 planes" id="planes">Planes</h2>
+    <div class="container py-1" id="planes">
+      <h2 class="text-center mb-4 planes" >Planes</h2>
       <div class="row justify-content-center">
         <!-- Plan Básico -->
         <div class="col-md-4 mb-4  pricing-card-basic align-plan-basic">
@@ -497,7 +525,7 @@
                     <div class="row mb-3 cont">
                       <div class="col">
                         <label for="numeroTarjeta" class="form-label">Número de la tarjeta</label>
-                        <input type="text" class="form-control" id="numeroTarjeta" placeholder="XXXX-XXXX-XXXX-XXXX">
+                        <input type="text" class="form-control" id="numeroTarjeta" maxlength="16" placeholder="XXXX-XXXX-XXXX-XXXX">
                       </div>
                       <div class="col">
                         <label for="titularTarjeta" class="form-label">Titular de la tarjeta</label>
@@ -539,34 +567,32 @@
     <!-- Obten una prueba gratuita -->
     <div class="container-fluid">
       <div class="row">
-        <div class="prue">
-          <section class="col-12">
-            <div class="gratuita col-6">
-              <img src="imagenes/gratis.png">
-            </div>
-            <h2 class="prueba col-6">Obtén una prueba gratuita</h2> 
-            <p class="contamos col-md-5 offset-6 ">
-              ¡Contamos con una prueba completamente gratuita que 
-              incluye el plan basico por 2 semanas, para que puedas
-              disfrutar de la comodidad de nuestro software!
-            </p>
-            <ul class="list-unstyled ilimitados col-md-4 offset-8">
-              <li  class="espaciado">✓ 1 Usuario</li>
-              <li class="espaciado" >✓ Productos y Ventas ilimitados</li>
-              <li class="espaciado">✓ Facturas limitadas</li>
-              <li class="espaciado">✗ Gestión de Inventario</li>
-              <li class="espaciado">✗ Gestión de Mesas y Reservaciones</li>
-              <li class="espaciado">✗ Integración con Sistemas de Pago</li>
-              <li class="espaciado">✗ Reportes Financieros</li>
-            </ul>
-            <div class="card-body justify-content-between text-center">
-              <button type="button" class="btn_obtener btn-light">¡Obtener!</button>
-            </div>
-          </section>
-        </div>
+        <section class="obt col-12">
+          <div class="img_gratuita text-center">
+            <img class="gratuita img-fluid"  src="imagenes/gratis.png" alt="Prueba gratuita">
+          </div>
+          <h2 class="prueba text-center">Obtén una prueba gratuita</h2>
+          <p class="contamos">
+            ¡Contamos con una prueba completamente gratuita que 
+            incluye el plan básico por 2 semanas, para que puedas 
+            disfrutar de la comodidad de nuestro software!
+          </p>
+          <ul class="list-unstyled ilimitados">
+            <li class="espaciado">✓ 1 Usuario</li>
+            <li class="espaciado">✓ Productos y Ventas ilimitados</li>
+            <li class="espaciado">✓ Facturas limitadas</li>
+            <li class="espaciado">✗ Gestión de Inventario</li>
+            <li class="espaciado">✗ Gestión de Mesas y Reservaciones</li>
+            <li class="espaciado">✗ Integración con Sistemas de Pago</li>
+            <li class="espaciado">✗ Reportes Financieros</li>
+          </ul>
+          <div class="text-center">
+            <button type="button" class="btn_obtener btn-light">¡Obtener!</button>
+          </div>
+        </section>
       </div>
     </div>
-    
+
     <!-- Nuestros socios -->
     <div class="container my-5">
       <h2 class="socios">Nuestros socios</h2>
@@ -726,7 +752,7 @@
     </div>
 
     <!-- Contacto -->
-    <div class="container-fluid">
+    <div class="container-fluid" id="contactoo">
       <div class="espa">
         <div class="contact-form">
           <h2 class="form-title">¿Quieres saber más sobre nosotros?</h2>
