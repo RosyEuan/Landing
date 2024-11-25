@@ -16,7 +16,7 @@
     <div class="container-fluid">
       <div class="row">
         <nav class="navbar navbar-expand-lg navbar-light">
-          <div class="container-md">
+          <div class="container-md cont_logo">
             <a  aria-current="page" href="#"><img class="logo text-white" src="imagenes/cytisum.png" alt="Logo Cytisum"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -62,21 +62,21 @@
           </div>
           <div class="modal-body">
             <div class="login-container">
-              <div class="si">
+              <div class="sip">
                 <div class="logi">
                   <div class="circu">
                     <div class="text-center">
-                      <img src="/Punto_Venta/imagenes/log.png" class="img" alt="Logo Cytisum">
+                      <img src="/Punto_Venta/imagenes/log.png" class="img_cytisumLogin" alt="Logo Cytisum">
                     </div>
                   </div>
                   <div class="mover">
                     <p class="sesion">Iniciar sesión</p>
                     <form>
                       <div class="mb-3 con">
-                        <input type="text" class="form-control" id="usuario" placeholder="Usuario">
+                        <input type="text" class="form-control inicio_sesion" id="usuario" placeholder="Usuario">
                       </div>
                       <div class="mb-3 con">
-                        <input type="password" class="form-control" id="contrasena" placeholder="Contraseña">
+                        <input type="password" class="form-control inicio_sesion" id="contrasena" placeholder="Contraseña">
                       </div>
                       <div class="mb-3 text-center">
                         <a href="#" class="contra">¿Olvidaste tu contraseña?</a>
@@ -87,7 +87,7 @@
                     </form>
                     <div class="footer-links mt-3">
                       <p>¿No tienes cuenta? <a href="#" data-bs-toggle="modal" data-bs-target="#crearCuentaModal">Crear una cuenta</a></p>
-                      <p><a href="#">Aviso de privacidad</a> | <a href="#">Términos y condiciones</a></p>
+                      <p><a href="#">Aviso de privacidad</a> | <a href="#" data-bs-toggle="modal" data-bs-target="#perfilModal">Términos y condiciones</a></p>
                     </div>
                   </div>
                 </div>
@@ -103,8 +103,8 @@
 
     <!-- Modal para Crear Cuenta -->
     <div class="modal fade" id="crearCuentaModal" tabindex="-1" aria-labelledby="crearCuentaModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
+      <div class="modal-dialog modal_cuenta">
+        <div class="modal-content cuenta_cont">
           <div class="modal-header">
             <h5 class="modal-title" id="crearCuentaModalLabel">Crear Cuenta</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -121,31 +121,34 @@
                     <p class="infocue">Información de su cuenta</p>
                     <div class="row mb-3 control">
                       <div class="col">
-                        <label for="nombre" class="form-label">Nombre</label>
-                        <input type="text" class="form-control" id="nombre" placeholder="Nombre">
+                        <label for="nombre" class="form-label lb_cuenta">Nombre(s)</label>
+                        <input type="text" class="form-control cr_cuenta" id="nombre" placeholder="Nombre">
                       </div>
                       <div class="col">
-                        <label for="apellido" class="form-label">Apellido</label>
-                        <input type="text" class="form-control" id="apellido" placeholder="Apellido">
+                        <label for="apellido" class="form-label lb_cuenta">Apellidos</label>
+                        <input type="text" class="form-control cr_cuenta" id="apellido" placeholder="Apellido">
                       </div>
                     </div>
                     <div class="row mb-3 control">
                       <div class="col">
-                        <label for="correo" class="form-label">Correo electrónico</label>
-                        <input type="email" class="form-control" id="correo" placeholder="Gmail">
+                        <label for="correo" class="form-label lb_cuenta">Correo electrónico</label>
+                        <input type="email" class="form-control cr_cuenta" id="correo" placeholder="Gmail">
                       </div>
                       <div class="col">
-                        <label for="telefono" class="form-label">Teléfono</label>
-                        <input type="text" class="form-control" id="telefono" placeholder="Teléfono">
+                        <label for="telefono" class="form-label lb_cuenta">Teléfono</label>
+                        <input type="text" class="form-control cr_cuenta" id="telefono" placeholder="Teléfono">
                       </div>
                     </div>
-                    <div class="mb-3 control">
-                      <label for="usuario" class="form-label">Usuario</label>
-                      <input type="text" class="form-control" id="usuario" placeholder="Usuario">
-                    </div>
-                    <div class="mb-3 control">
-                      <label for="contrasena" class="form-label">Contraseña</label>
-                      <input type="password" class="form-control" id="contrasena" placeholder="Contraseña">
+                    <p class="infocue">Información de acceso</p>
+                    <div class="row mb-3 control">
+                      <div class="col">
+                        <label for="usuario" class="form-label lb_cuenta">Usuario</label>
+                        <input type="text" class="form-control cr_cuenta" id="usuario" placeholder="Usuario">
+                      </div>
+                      <div class="col">
+                        <label for="contrasena" class="form-label lb_cuenta">Contraseña</label>
+                        <input type="password" class="form-control cr_cuenta" id="contrasena" placeholder="Contraseña"> 
+                      </div>
                     </div>
                     <div class="text-center">
                       <button type="submit" class="btn btn-primary crear">CREAR CUENTA</button>
@@ -178,7 +181,7 @@
               avanzada del mercado. ¡El futuro de la gestión restaurantera está aquí!
             </p>
             <div class="boton-ver text-center ">
-              <button type="button" class="btn_empezar btn-light"><h3>¡Empieza ahora!</h3></button>
+              <a href="#planes"><button type="button" class="btn_empezar btn-light" href="#planes"><h3>¡Empieza ahora!</h3></button></a>
             </div>
           </section>
         </div>
@@ -460,38 +463,69 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <!-- Formulario para las compras -->
             <div class="compra-container">
-              <div class="mov">
+              <div class="mov_compra">
                 <div class="rell">
                   <div class="cir">
                     <div class="text-center">
                       <img src="/Punto_Venta/imagenes/log.png" class="imge" alt="Logo Cytisum">
                     </div>
                   </div>
-                  <form class="toc">
+                  <div class="toc">
+                  <form>
                     <div class="row mb-3 conti">
                       <div class="col">
-                        <label for="companyNombre" class="form-label">Nombre de la empresa(comercial o legal)</label>
-                        <input type="text" class="form-control" id="companyNombre" placeholder="Empresa">
-                        <div class="col">
-                          <label for="tiponegocio" class="form-label">Giro comercial</label>
-                          <input type="text" class="form-control" id="tiponegocio" placeholder="En qué se dedica tu negocio">
-                        </div>
-                        <div class="col-5">
-                          <label for="empleados" class="form-label">Número de empleados</label>
-                          <select class="form-select" id="empleados">
-                            <option value="1">Menos de 5 empleados</option>
-                            <option value="2">De 5 a 10 empleados</option>
-                            <option value="3">Más de 10 empleados</option>
-                          </select>
-                        </div>
+                        <label for="companyNombre" class="form-label_compra">Nombre de la empresa (comercial o legal)</label>
+                        <input type="text" class="form-control compra" id="companyNombre" placeholder="Empresa">
                       </div>
                     </div>
-                    <div class="text-center">
+                    <div class="row mb-3 conti">
+                      <div class="col">
+                        <label for="tiponegocio" class="form-label_compra">Giro comercial</label>
+                        <input type="text" class="form-control compra" id="tiponegocio" placeholder="¿En qué se dedica tu negocio?">
+                      </div>
+                    </div>
+                    <div class="row mb-3 conti">
+                      <div class="col-5">
+                        <!-- Número de empleados -->
+                        <label for="empleados" class="form-label_compra">Número de empleados</label>
+                        <select class="form-select_compra" id="empleados">
+                          <option value="0">Seleccione una opción</option>
+                          <option value="1">Menos de 5 empleados</option>
+                          <option value="2">De 5 a 10 empleados</option>
+                          <option value="3">Más de 10 empleados</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="text-center conti">
                       <a class="btn btn-primary continuar" data-bs-toggle="modal" data-bs-target="#pagoModal">Continuar</a>
                     </div>
                   </form>
+                  <!-- <form>
+                      <div class="row mb-3 conti">
+                        <div class="col">
+                          <label for="companyNombre" class="form-label_compra">Nombre de la empresa(comercial o legal)</label>
+                          <input type="text" class="form-control" id="companyNombre" placeholder="Empresa">
+                          <div class="col">
+                            <label for="tiponegocio" class="form-label_compra">Giro comercial</label>
+                            <input type="text" class="form-control" id="tiponegocio" placeholder="En qué se dedica tu negocio">
+                          </div>
+                          <div class="col-5">
+                            <label for="empleados" class="form-label_compra">Número de empleados</label>
+                            <select class="form-select" id="empleados">
+                              <option value="1">Seleccione una opción</option>
+                              <option value="1">Menos de 5 empleados</option>
+                              <option value="2">De 5 a 10 empleados</option>
+                              <option value="3">Más de 10 empleados</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="text-center">
+                        <a class="btn btn-primary continuar" data-bs-toggle="modal" data-bs-target="#pagoModal">Continuar</a>
+                      </div>
+                    </form>-->
+                  </div>
                 </div>
               </div>
             </div>
@@ -512,46 +546,52 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <!-- Formulario de pago -->
             <div class="payment-container">
               <div class="mov">
                 <div class="relle">
                   <div class="circ">
                     <div class="text-center">
-                      <img src="/Punto_Venta/imagenes/log.png" class="img" alt="Logo Cytisum">
+                      <img src="/Punto_Venta/imagenes/log.png" class="img_cytisum_pago" alt="Logo Cytisum">
                     </div>
                   </div>
                   <form class="todo">
-                    <div class="row mb-3 cont">
+                    <div class="row mb-3 cont_pago">
                       <div class="col">
-                        <label for="numeroTarjeta" class="form-label">Número de la tarjeta</label>
-                        <input type="text" class="form-control" id="numeroTarjeta" maxlength="16" placeholder="XXXX-XXXX-XXXX-XXXX">
+                        <label for="numeroTarjeta" class="form-label lb_tip">Número de la tarjeta</label>
+                        <input type="text" class="form-control tip" id="numeroTarjeta" maxlength="16" placeholder="XXXX-XXXX-XXXX-XXXX">
                       </div>
                       <div class="col">
-                        <label for="titularTarjeta" class="form-label">Titular de la tarjeta</label>
-                        <input type="text" class="form-control" id="titularTarjeta" placeholder="Nombre de titular">
+                        <label for="titularTarjeta" class="form-label lb_tip">Titular de la tarjeta</label>
+                        <input type="text" class="form-control tip" id="titularTarjeta" placeholder="Nombre de titular">
                       </div>
                     </div>
-                    <div class="row mb-3 cont">
+                    <div class="row mb-3 cont_pago">
                       <div class="col">
-                        <label for="vencimiento" class="form-label">Vencimiento</label>
-                        <input type="text" class="form-control" id="vencimiento" placeholder="dd/mm/aa">
+                        <label for="vencimiento" class="form-label lb_tip">Vencimiento</label>
+                        <input type="text" class="form-control tip" id="vencimiento" placeholder="dd/mm/aa">
                       </div>
                       <div class="col">
-                        <label for="cvv" class="form-label">CVV</label>
-                        <input type="text" class="form-control" id="cvv" placeholder="XXX">
+                        <label for="cvv" class="form-label lb_tip">CVV</label>
+                        <input type="text" class="form-control tip" id="cvv" placeholder="XXX">
                       </div>
                       <div class="col">
-                        <label for="tipoTarjeta" class="form-label">Tipo de tarjeta</label>
+                        <label for="tipoTarjeta" class="form-label lb_tip">Tipo de tarjeta</label>
                         <select class="form-select" id="tipoTarjeta">
                           <option selected>Débito</option>
                           <option>Crédito</option>
                         </select>
                       </div>
                     </div>
-                    <div class="text-center">
-                      <button type="submit" class="btn btn-primary elige">Elige tu plan</button>
+                    <div class="row mb-3 cont_pago">
+                      <div class="col">
+                        <label for="plan" class="form-label lb_tip">Plan</label>
+                        <input type="text" class="form-control tip" id="plan" placeholder="XXX">
+                      </div>
                     </div>
+                    <div class="text-center">
+                      <button type="submit" class="btn btn-primary elige">Pagar</button>
+                    </div>
+                    
                   </form>
                 </div>
               </div>
@@ -571,8 +611,8 @@
           <div class="img_gratuita text-center">
             <img class="gratuita img-fluid"  src="imagenes/gratis.png" alt="Prueba gratuita">
           </div>
-          <h2 class="prueba text-center">Obtén una prueba gratuita</h2>
-          <p class="contamos">
+          <h2 class="prueba justify-content-center">Obtén una prueba gratuita</h2>
+          <p class="contamos justify-content-center" width="100">
             ¡Contamos con una prueba completamente gratuita que 
             incluye el plan básico por 2 semanas, para que puedas 
             disfrutar de la comodidad de nuestro software!
@@ -587,7 +627,7 @@
             <li class="espaciado">✗ Reportes Financieros</li>
           </ul>
           <div class="text-center">
-            <button type="button" class="btn_obtener btn-light">¡Obtener!</button>
+            <button type="button" class="btn_obtener btn-light" data-bs-toggle="modal" data-bs-target="#adquirirModal">¡Obtener!</button>
           </div>
         </section>
       </div>
@@ -755,27 +795,36 @@
     <div class="container-fluid" id="contactoo">
       <div class="espa">
         <div class="contact-form">
-          <h2 class="form-title">¿Quieres saber más sobre nosotros?</h2>
-          <p class="form-subtitle">Déjanos tus datos y te llamamos</p>
-          <form>
-            <div class="form-group">
-              <label for="name">Nombre</label>
-              <input type="text" id="name" class="form-control" placeholder="Nombre">
+          <div class="cir_contacto">
+            <div class="text-center">
+              <h2 class="form-title">¿Quieres saber más sobre nosotros?</h2>
+              <p class="form-subtitle">Déjanos tus datos y te llamamos</p>
             </div>
-            <div class="form-group">
-              <label for="phone">Teléfono</label>
-              <input type="text" id="phone" class="form-control" placeholder="Teléfono">
-            </div>
-            <div class="form-group">
-              <label for="email">Correo electrónico</label>
-              <input type="email" id="email" class="form-control" placeholder="Correo electrónico">
-            </div>
-            <button type="submit" class="btn btn-primary submit-btn">Continuar</button>
-          </form>
+          </div>
+          <div class="formulario">
+            <form>
+              <div class="form-group">
+                <label for="name">Nombre</label>
+                <input type="text" id="name" class="form-control contacto_to" placeholder="Nombre">
+              </div>
+              <div class="form-group">
+                <label for="phone">Teléfono</label>
+                <input type="text" id="phone" class="form-control contacto_to" placeholder="Teléfono">
+              </div>
+              <div class="form-group">
+                <label for="email">Correo electrónico</label>
+                <input type="email" id="email" class="form-control contacto_to" placeholder="Correo electrónico">
+              </div>
+
+
+              <button type="submit" class="btn btn-primary submit-btn">Continuar</button>
+            </form>  
+          </div>
+          
         </div>
       </div>
     </div>
-
+    
     <!-- Footer -->
     <footer class="text-center" style="background-color: #5CA3D9;">
       <!-- Section: Social media -->
@@ -867,6 +916,120 @@
         </section>
       </div>
     </footer>
+
+    <!-- Modal para el Perfil -->
+    <div class="modal fade" id="perfilModal" tabindex="-1" aria-labelledby="perfilModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="perfilModalLabel">Perfil de Usuario</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="container mt-5">
+              <h2 class="titulo_perfil">Perfil</h2>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="cuadro_perfil">
+                    <form class="todito">
+                      <div class="form-row align-items-center mb-3">
+                        <div class="col-4">
+                          <label for="usuario" class="lis">Usuario</label>
+                        </div>
+                        <div class="col-8">
+                          <div class="este">
+                            <input type="text" class="form-control ctrl_perfil" id="usuario" placeholder="JorgePerez">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-row align-items-center mb-3">
+                        <div class="col-4">
+                          <label for="contrasena" class="lis">Contraseña</label>
+                        </div>
+                        <div class="col-8">
+                          <div class="este">
+                            <input type="password" name="password" class="form-control password1" placeholder="clave">
+                            <span class="fa fa-fw fa-eye password-icon show-password"></span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-row align-items-center mb-3">
+                        <div class="col-4">
+                          <label for="telefono" class="lis">Teléfono</label>
+                        </div>
+                        <div class="col-8">
+                          <div class="este">
+                            <input type="text" class="form-control ctrl_perfil" id="telefono" placeholder="998 424 2539">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-row align-items-center mb-3">
+                        <div class="col-4">
+                          <label for="correo" class="lis">Correo</label>
+                        </div>
+                        <div class="col-8">
+                          <div class="este">
+                            <input type="email" class="form-control ctrl_perfil" id="correo" placeholder="JorgePD@gmail.com">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-row align-items-center mb-3">
+                        <div class="col-4">
+                          <label for="empresa" class="lis">Empresa</label>
+                        </div>
+                        <div class="col-8">
+                          <div class="este">
+                            <input type="text" class="form-control ctrl_perfil" id="empresa" placeholder="Noctis Design">
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+
+                <!-- Foto de perfil -->
+                <div class="col-md-4 offset-md-1">
+                  <div class="text-center">
+                    <img src="img/perfil.png" class="foto-perfil" alt="Foto de perfil">
+                  </div>
+                  <h4 class="jorge">Jorge Alejandro<br>Perez Dominguez</h4>
+                  <div class="botones">
+                    <div class="text-center">
+                      <button type="submit" class="btn btn-primary editarb">Editar</button>
+                    </div><br>
+                    <div class="text-center">
+                      <button type="submit" class="btn btn-primary editar">Cerrar sesión</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Script para la funcion del ojo -->
+    <script>
+    window.addEventListener("load", function() {
+        // Icono para mostrar/ocultar contraseña
+        showPassword = document.querySelector('.show-password');
+        showPassword.addEventListener('click', () => {
+            // Input de tipo password
+            password1 = document.querySelector('.password1');
+            if (password1.type === "text") {
+                password1.type = "password";
+                showPassword.classList.remove('fa-eye-slash');
+            } else {
+                password1.type = "text";
+                showPassword.classList.toggle("fa-eye-slash");
+            }
+        });
+    });
+    </script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
