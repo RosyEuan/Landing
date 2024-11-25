@@ -56,8 +56,9 @@ $route['editar_perfil'] = 'Website/editar_perfil';
 
 $route['404_override']          = '';
 $route['translate_uri_dashes']  = FALSE;
-
-
+$route['datos']                 = 'Website/datos';
+$route['correo']                = 'PhpMailer/SendMail';
+$route['registrarse']               = 'registro_usuario/agregar_usuario';
 
 
 

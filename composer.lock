@@ -1,9 +1,14 @@
 {
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "226ab1caba77cacac055007e3fb0dfa1",
     "packages": [
         {
             "name": "catfan/medoo",
             "version": "v2.1.12",
-            "version_normalized": "2.1.12.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/catfan/Medoo.git",
@@ -30,9 +35,7 @@
                 "ext-pdo_sqlite": "For SQLite database",
                 "ext-pdo_sqlsrv": "For MSSQL database on both Window/Liunx platform"
             },
-            "time": "2024-02-03T11:28:59+00:00",
             "type": "framework",
-            "installation-source": "source",
             "autoload": {
                 "psr-4": {
                     "Medoo\\": "src/"
@@ -77,12 +80,11 @@
                     "type": "open_collective"
                 }
             ],
-            "install-path": "../catfan/medoo"
+            "time": "2024-02-03T11:28:59+00:00"
         },
         {
             "name": "phpmailer/phpmailer",
             "version": "v6.9.2",
-            "version_normalized": "6.9.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPMailer/PHPMailer.git",
@@ -121,9 +123,7 @@
                 "symfony/polyfill-mbstring": "To support UTF-8 if the Mbstring PHP extension is not enabled (^1.2)",
                 "thenetworg/oauth2-azure": "Needed for Microsoft XOAUTH2 authentication"
             },
-            "time": "2024-10-09T10:07:50+00:00",
             "type": "library",
-            "installation-source": "source",
             "autoload": {
                 "psr-4": {
                     "PHPMailer\\PHPMailer\\": "src/"
@@ -161,12 +161,11 @@
                     "type": "github"
                 }
             ],
-            "install-path": "../phpmailer/phpmailer"
+            "time": "2024-10-09T10:07:50+00:00"
         },
         {
             "name": "setasign/fpdf",
             "version": "1.8.2",
-            "version_normalized": "1.8.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Setasign/FPDF.git",
@@ -178,9 +177,7 @@
                 "reference": "d77904018090c17dc9f3ab6e944679a7a47e710a",
                 "shasum": ""
             },
-            "time": "2019-12-08T10:32:10+00:00",
             "type": "library",
-            "installation-source": "source",
             "autoload": {
                 "classmap": [
                     "fpdf.php"
@@ -206,9 +203,16 @@
             "support": {
                 "source": "https://github.com/Setasign/FPDF/tree/1.8.2"
             },
-            "install-path": "../setasign/fpdf"
+            "time": "2019-12-08T10:32:10+00:00"
         }
     ],
-    "dev": true,
-    "dev-package-names": []
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {},
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {},
+    "platform-dev": {},
+    "plugin-api-version": "2.6.0"
 }
