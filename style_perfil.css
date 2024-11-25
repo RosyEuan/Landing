@@ -1,0 +1,173 @@
+body {
+    margin: 0;
+  }
+.navbar {
+    background-color: #1E5D8D;
+    padding: 0.5rem 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+}
+.cont_logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+.navbar-nav {
+    align-items: center;
+    gap: 40px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.navbar .logo {
+    display: block;
+    margin: 0 auto;
+    max-width: 200px;
+}
+.nav-item {
+    padding: 0 1rem;
+    font-size: 24px;
+    font-family: "Konkhmer Sleokchher";
+  
+}
+  .navbar-toggler {
+    border-color: #fff;
+  }
+  /* Ajustes para pantallas pequeñas */
+  @media (max-width: 768px) {
+    .navbar {
+      padding: 1rem;
+    }
+    .logo {
+      max-width: 150px;
+      margin: 0 auto;
+    }
+    .navbar-nav {
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      margin-top: 1rem;
+    }
+    .nav-item {
+      margin: 0.5rem 0;
+    font-family: "Konkhmer Sleokchher";
+    font-size: 22px;
+    }
+    .nav-link {
+      font-size: 18px;
+    }
+    .login {
+      margin-top: 1rem;
+    }
+  }
+  .container-md {
+    margin: 0;
+  }
+  .fondo {
+    margin-top: 8%;
+  }
+
+  /*perfil */
+  .cuadro_perfil {
+    width: 220%;
+    height:550px;
+    max-width: 700px;
+    border-radius: 8px;
+    border: 2px solid #000;
+    background: #F1F3FF;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: auto;
+}
+.titulo_perfil {
+    color: #000;
+    text-align: center;
+    font-family: "Suez One";
+    font-size: 32px;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 96px;
+}
+.foto-perfil {
+    width: 264px;
+    height: 250px;
+    flex-shrink: 0;
+    padding-left:20px;
+}
+.jorge{
+    color: #000;
+    text-align: center;
+    font-family: "Konkhmer Sleokchher";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.password-icon {
+    position: relative;
+    margin: -25px 10px 0 0;
+    cursor: pointer;
+    float: right;
+}
+.todito{
+    padding-top:60px;
+}
+.form-control{
+    border-radius: 8px;
+    border: 1px solid #000;
+    background: #EDEDED;
+    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    color: #000;
+    font-family: Khmer;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 10px; /* 41.667% */
+}
+.lis{
+    color: #000;
+    text-align: center;
+    font-family: "Konkhmer Sleokchher";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding-left:30px;
+}
+.este{
+    padding-right:100px;
+}
+.editar{
+    border-radius: 16px;
+    background: #7FA5E5;
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s; 
+}
+.editarb{
+    border-radius: 16px;
+    background: #7FA5E5;
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 47px;
+    border: none;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s; 
+}
+.botones{
+    padding-top:105px;
+}    

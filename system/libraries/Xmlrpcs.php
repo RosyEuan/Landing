@@ -556,7 +556,7 @@ class CI_Xmlrpcs extends CI_Xmlrpc {
 
 		$struct['faultCode'] = new XML_RPC_Values($code, 'int');
 		$struct['faultString'] = new XML_RPC_Values($str, 'string');
-
+ 
 		return new XML_RPC_Values($struct, 'struct');
 	}
 

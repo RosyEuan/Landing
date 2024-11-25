@@ -23,4 +23,14 @@ class Website extends CI_Controller {
 	    /*sirve para cargar una vista*/
 		$this->load->view('puntoventa');
 	}
+	public function perfil()
+	{
+	    /*sirve para cargar una vista*/
+		$this->load->view('perfil');
+	}
+	public function editar_perfil()
+	{
+	    /*sirve para cargar una vista*/
+		$this->load->view('editar_perfil');
+	}
 }

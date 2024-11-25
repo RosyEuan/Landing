@@ -119,7 +119,7 @@
                   </div>
                   <form class="cont">
                     <p class="infocue">Información de su cuenta</p>
-                    <div class="row mb-3 control">
+                    <div class="row mb-3 control_cuenta">
                       <div class="col">
                         <label for="nombre" class="form-label lb_cuenta">Nombre(s)</label>
                         <input type="text" class="form-control cr_cuenta" id="nombre" placeholder="Nombre">
@@ -129,7 +129,7 @@
                         <input type="text" class="form-control cr_cuenta" id="apellido" placeholder="Apellido">
                       </div>
                     </div>
-                    <div class="row mb-3 control">
+                    <div class="row mb-3 control_cuenta">
                       <div class="col">
                         <label for="correo" class="form-label lb_cuenta">Correo electrónico</label>
                         <input type="email" class="form-control cr_cuenta" id="correo" placeholder="Gmail">
@@ -140,7 +140,7 @@
                       </div>
                     </div>
                     <p class="infocue">Información de acceso</p>
-                    <div class="row mb-3 control">
+                    <div class="row mb-3 control_cuenta">
                       <div class="col">
                         <label for="usuario" class="form-label lb_cuenta">Usuario</label>
                         <input type="text" class="form-control cr_cuenta" id="usuario" placeholder="Usuario">
@@ -181,7 +181,7 @@
               avanzada del mercado. ¡El futuro de la gestión restaurantera está aquí!
             </p>
             <div class="boton-ver text-center ">
-              <a href="#planes"><button type="button" class="btn_empezar btn-light" href="#planes"><h3>¡Empieza ahora!</h3></button></a>
+              <a href="#planes"><button type="button" class="btn_empezar btn-light"><h3>¡Empieza ahora!</h3></button></a>
             </div>
           </section>
         </div>
@@ -576,7 +576,7 @@
                       </div>
                       <div class="col">
                         <label for="tipoTarjeta" class="form-label lb_tip">Tipo de tarjeta</label>
-                        <select class="form-select" id="tipoTarjeta">
+                        <select class="form-select select_pago" id="tipoTarjeta">
                           <option selected>Débito</option>
                           <option>Crédito</option>
                         </select>
@@ -612,7 +612,7 @@
             <img class="gratuita img-fluid"  src="imagenes/gratis.png" alt="Prueba gratuita">
           </div>
           <h2 class="prueba justify-content-center">Obtén una prueba gratuita</h2>
-          <p class="contamos justify-content-center" width="100">
+          <p class="contamos justify-content-center" width="50">
             ¡Contamos con una prueba completamente gratuita que 
             incluye el plan básico por 2 semanas, para que puedas 
             disfrutar de la comodidad de nuestro software!
