@@ -712,7 +712,6 @@
         lo que otros han experimentado.
       </p>
       <div class="row mt-4">
-        <!-- Reseña 1 -->
         <div class="res col-sm-12 col-md-4 mb-4">
           <div class="review-card review-card-margin">
             <div class="review-stars">
@@ -737,7 +736,6 @@
             </div>
           </div>
         </div>
-        <!-- Reseña 2 -->
         <div class="res col-sm-12 col-md-4 mb-4">
           <div class="review-card review-card-sofia">
             <div class="review-stars">
@@ -762,7 +760,6 @@
             </div>
           </div>
         </div>
-        <!-- Reseña 3 -->
         <div class="res col-sm-12 col-md-4 mb-4">
           <div class="review-card review-card-margin">
             <div class="review-stars">
