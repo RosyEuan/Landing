@@ -111,23 +111,24 @@ body {
   max-width: 592px;
 }
 .btn_empezar {
-  padding: 24px;
+  padding: 20px;
   color: #000;
   text-align: center;
   font-family: "Konkhmer Sleokchher";
-  font-size: 1.5rem;
-  font-weight: 400;
-  line-height: normal;
+  font-size: 24px;
   width: 100%;
-  max-width: 300px;
-  height: auto;
+  max-width: 272px;
   border-radius: 24px;
   background: #7FA5E5;
   margin: 16px auto;
   display: block;
+  text-decoration: underline #7FA5E5;
+}
+.btn_empezar h3{
+  margin: 0;
 }
 /* Para pantallas más pequeñas (móviles) */
-@media (max-width: 800px) {
+@media (max-width: 768px) {
   .Bienvenida {
     font-size: 37px;
     width: 100%;
@@ -153,11 +154,12 @@ body {
     font-size: 1.2rem;
     width: 80%;
     max-width: 250px;
+    text-decoration: underline #7FA5E5;
     margin: 24px auto;
   }
 }
 /* Para pantallas más grandes (tabletas y escritorios) */
-@media (min-width: 801px) {
+@media (min-width: 796px) {
   .Bienvenida {
     font-size: 3rem;
     height: auto;
@@ -331,7 +333,7 @@ body {
   margin-top: 24px;
 }
 /* Para pantallas más pequeñas (móviles) */
-@media (max-width: 800px) {
+@media (max-width: 768px) {
   .titulos {
     font-size: 22px;
   }
@@ -344,12 +346,13 @@ body {
     width: 100%;
   }
   .Explora {
-    margin-top: 96px;
+    margin-top: 120px;
     font-size: 32px;
+    padding: 0 42px;
   }
   .descrip {
     font-size: 22px;
-    width: 65%;
+    width: 95%;
     margin: 0 auto;
     min-height: 100px;
     text-align: center;
@@ -366,7 +369,6 @@ body {
   margin-top: 216px;
   height: 12%;
   width: 100%;
-  flex-shrink: 0;
   color: #000;
   text-align: left;
   font-family: "Suez One";
@@ -398,7 +400,6 @@ body {
   flex-shrink: 0;
 }
 .benefits .benefit-item {
-  border-radius: 40px;
   background: #E5F2FF;
   color: #000;
   padding: 10px;
@@ -411,8 +412,8 @@ body {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  height: 90px;
-  width: 576px;
+  height: 32%;
+  width: 90%;
   flex-shrink: 0;
 }
 .barra{
@@ -421,7 +422,7 @@ body {
   margin-left: 50px;
 }
 /* Para pantallas más pequeñas (móviles) */
-@media (max-width: 800px) {
+@media (max-width: 768px) {
   .barra {
     width: 100%;
     margin-left: 0;
@@ -432,7 +433,7 @@ body {
     width: 100%;
   }
   .benefits{
-    width: auto;
+    width: 100%;
     height: auto;
   }
   #ben {
@@ -442,20 +443,23 @@ body {
   .funcio {
     font-size: 32px;
     margin: 0;
-    margin-top: 80px;
+    margin-top: 120px;
     margin-bottom: 24px;
     height: auto;
-    padding: 0;
+    padding: 0 22px;
     text-align: center;
     width: 100%;
   }
   .gesti{
     height: auto;
     margin: 0;
+    padding: 0 22px;
   }
   .dise {
     margin: 0;
+    margin-top: 22px;
     height: auto;
+    padding: 0 22px;
   }
 }
 
@@ -546,6 +550,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  width: 90%;
 }
 .pricing-card:hover {
   transform: translateY(-10px);
@@ -573,8 +578,8 @@ body {
   }
 }
 .row.justify-content-center > div {
-  margin-left: -15px;
-  margin-right: -10px;
+  margin-left: -35px;
+  margin-right: -38px;
 }
 .azu{
   background: #C3D9F9;
@@ -590,7 +595,7 @@ body {
 .usuario{
   color: #000;
   font-family: Khmer;
-  font-size: 20px;
+  font-size: 24px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -603,16 +608,16 @@ body {
   color: #000000; 
   border-radius: 8px;
   border: none; 
-  padding: 10px 20px;
+  padding: 10px 40px;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 24px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-  .btn-custom:hover {
+.btn-custom:hover {
     transform: translateY(-3px);
     box-shadow: 0px 4px 10px rgb(79, 123, 255);
     background-color: #3482fe98; 
-  }
+}
  /* Para pantallas más pequeñas (móviles) */
 @media (max-width: 768px) {
   .pricing-card {
@@ -648,18 +653,16 @@ body {
   font-family: "Suez One";
   font-size: 40px;
   font-style: normal;
-  font-weight: 400;
   line-height: normal;
   margin: 0;
-  margin-left: 64px;
-  padding-left: 35px;
+  letter-spacing: 2px;
 }
 .obt{
 margin-top: 160px;
 }
 .gratuita{
   width: 704px;
-  height: 600px;
+  height: 624px;
   float: left;
   background-repeat: no-repeat;
   background-position: left;
@@ -667,63 +670,81 @@ margin-top: 160px;
   border-radius: 2px;
   overflow: hidden; 
   margin-right: 64px;
+  margin-left: 2%;
 }
 .contamos{
   color: #000;
   text-align: justify;
   font-family: Khmer;
-  font-size: 20px;
-  font-style: normal;
-  line-height: normal;
+  font-size: 24px;
   padding-left: 50px;
   padding-top: 20px;
   font-weight: 400;
+  margin-right: 160px;
 }
 .ilimitados{
   color: #000;
   font-family: Khmer;
-  font-size: 20px;
+  font-size: 24px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
   padding-right: 20px;
+  margin-bottom: 32px;
+  margin-top: 24px;
 }
 .espaciado{
-  padding: 5px 0;
+  padding: 0 0;
 }
 .btn_obtener {
   padding: 12px 20px;
   color: #000;
   text-align: center;
   font-family: "Konkhmer Sleokchher";
-  font-size: 20px;
-  font-weight: 400;
-  line-height: normal;
+  font-size: 24px;
   width: 100%;
-  max-width: 150px;
+  max-width: 172px;
   border-radius: 24px;
   background: #7FA5E5;
+  margin-right: 160px;
 }
  /* Para pantallas más pequeñas (móviles) */
 @media (max-width: 768px) {
+  .btn_obtener{
+    text-align: center;
+    font-size: 22px;
+    width: 100%;
+    margin-top: 4%;
+    margin-right: 8%;
+  }
   .prueba {
     margin: 0;
     padding: 0;
+    font-size: 32px;
     text-align: center;
-    width: 376px;
+    width: auto;
+    letter-spacing: 0;
+    margin-bottom: 16px;
   }
   .contamos {
     margin: 0;
-    padding: 0px;
+    font-size: 22px;
+    padding: 0 22px;
   }
   .list-unstyled{
     margin: 0;
+    padding: 0 22px;
+    font-size: 22px;
   }
   .gratuita {
     width: 100%;
+    align-items: center;
+    text-align: center;
     height: auto;
     max-width: 90%;
     margin: auto;
+    margin-left: 5%;
+    margin-bottom: 5%;
   }
 }
 
@@ -744,9 +765,7 @@ margin-top: 160px;
   text-align: center;
   font-family: Khmer;
   font-size: 24px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
+  margin: 24px 64px;
 }
 .carlos{
   color: #000;
@@ -759,41 +778,34 @@ margin-top: 160px;
   text-align: center;
   font-family: "Konkhmer Sleokchher";
   font-size: 24px;
-  font-style: normal;
-  line-height: normal;
-  width: 390px;
-  padding-right: 38px;
 }
 .car1{
   color: #000;
   text-align: center;
   font-family: "Konkhmer Sleokchher";
   font-size: 24px;
-  font-style: normal;
-  line-height: normal;
-  width: 450px;
-  padding-right: 80px;
 }
 .funcionalidad{
   color: #000;
   text-align: justify;
   font-family: Khmer;
-  font-size: 21px;
+  font-size: 24px;
   font-style: normal;
-
+  padding: 0 8px;
 }
 .testimonial-card {
   background-color: rgba(230, 241, 255, 1); /* Fondo azul claro */
+  width: 95%;
+  margin-left: 12px;
 }
-  /* Tamaño de la imagen y margen */
 .testimonial-img img {
-  width: 100px;
-  height: 100px;
+  width: 32%;
+  height: auto;
   object-fit: cover;
   box-shadow: 0 4px 8px rgba(230, 241, 255, 1);
 }
 .move-down {
-  margin-top: 50px; /* Ajusta el valor según lo que necesites */
+  margin-top: 50px;
 }
   /* Para pantallas más pequeñas (móviles) */
 @media (max-width: 768px) {
@@ -803,7 +815,13 @@ margin-top: 160px;
   }
   .car1 {
     padding: 0;
-    width: 350px;
+  }
+  .confianza{
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0 22px;
+    text-align: justify;
   }
 }
 
@@ -817,20 +835,21 @@ margin-top: 160px;
   font-weight: 400;
   line-height: normal;
   margin-top: 160px;
+  margin-bottom: 0;
 }
 .comen{
   color: #000;
  text-align: center;
   font-family: Khmer;
   font-size: 24px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
+  padding: 16px 112px 24px;
 }
 .review-card {
   background-color: rgba(229, 238, 250, 1);
-  padding: 20px;
-  border-radius: 10px;
+  padding: 24px;
+  border-radius: 16px;
+  height: auto;
+  width: 95%;
 }
 .POS::after {
   content: '';
@@ -845,47 +864,40 @@ margin-top: 160px;
   margin-top: 5px auto; /* Espacio entre la línea y el nombre */
 }
 .review-stars {
-  font-size: 25px; /* Ajusta el tamaño de las estrellas */
+  font-size: 160%; /* Ajusta el tamaño de las estrellas */
   color: #FDFF84;
   -webkit-text-stroke: 1px #A2B403;
   display: flex;
   justify-content: left;
   margin-bottom: 15px;
-  gap: 15px; /* Espacio entre estrellas */
+  gap: 5%; /* Espacio entre estrellas */
+  padding: 8px 32px;
 }
 .POS {
   color: #000;
   text-align: justify;
   align-items: center;
   font-family: Khmer;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  width: 400px;
-  height: 200px;
-  padding: 0 32px;
+  font-size: 24px;
+  width: 100%;
+  height: 25%;
+  padding: 0 12px;
 }
 .review-author {
   color: #000;
   font-family: Khmer;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
+  font-size: 24px;
+  padding-top: 16px;
 }
 .review-position {
   color: #000;
   font-family: Khmer;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
+  font-size: 24px;
 }
 .review-img {
   border-radius: 96px;
-  width: 50px;
-  height: 50px;
+  width: 20%;
+  height: 20%;
   border-radius: 50%;
   margin-right: 10px;
 }
@@ -893,23 +905,32 @@ margin-top: 160px;
   display: flex;
   align-items: center;
   justify-content: left;
-  margin-top: 10px;
 }
 .review-card-margin {
-  margin-top: 40px; /* Ajusta esntre el cuadro de jorge y ana */
+  margin-top: 40px; /* Ajusta entre el cuadro de jorge y ana */
 }
+/* Para pantallas más pequeñas (móviles) */
+@media (max-width: 768px) {
+  .res{
+    margin-left: 3%;
+  }
+  .comen {
+    padding-left: 22px;
+    padding-right: 22px;
+    padding-bottom: 0;
+    text-align: justify;
+  }
+}
+
 
 /* FORMULARIO DE CONTACTO */
 .cir_contacto {
   text-align: center;
   background: linear-gradient(180deg, rgba(235, 234, 255, 0.00) 49.9%, rgba(64, 89, 255, 0.20) 100%), #D0E3FF;
-  padding: 20px;
-  padding-top: 0;
   border-radius: 32px 32px 0 0;
-  height: 112px;  
+  height: 128px;  
   border-bottom-left-radius: 100%;
   border-bottom-right-radius: 100%;
-  padding-bottom: 10%;
   margin-bottom: -15%;
 }
 .formulario {
@@ -928,18 +949,20 @@ margin-top: 160px;
   text-align: center;
 }
 .form-title {
-  font-size: 24px;
+  font-size: 32px;
   font-weight: bold;
   margin-bottom: 5px;
-  padding-top: 24px;
+  padding-top: 3%;
 }
 .form-subtitle {
-  font-size: 18px;
+  font-size: 24px;
+  font-family: "Konkhmer Sleokchher";
+
   color: #333;
   margin-bottom: 30px;
 }
 .form-group label {
-  font-size: 16px;
+  font-size: 24px;
   font-weight: bold;
   color: #333;
   display: block;
@@ -959,7 +982,7 @@ margin-top: 160px;
 .submit-btn {
   background-color: #7FA5E5;
   color: rgb(0, 0, 0);
-  font-size: 16px;
+  font-size: 24px;
   font-weight: bold;
   padding: 10px 20px;
   border: none;
@@ -973,10 +996,50 @@ margin-top: 160px;
   margin-top: 64px;
   margin-bottom: 160px;
 }
+/* Para pantallas más pequeñas (móviles) */
+@media (max-width: 768px) {
+  .contact-form{
+    width: 100%;
+  }
+  .form-title {
+    font-size: 28px;
+  }
+  .form-subtitle{
+    font-size: 22px;
+  }
+  .cir_contacto{
+    padding-bottom: 2%;
+    height: 5%;
+  }
+  .formulario{
+    margin-top: 40px;
+  }
+  .form-group label{
+    font-size: 20px;
+  }
+  .submit-btn{
+    font-size: 20px;
+  }
+}
 
 /* FOOTER */
 footer {
   margin-top: 80px;
+  background-color: #5CA3D9;
+}
+.linea{
+    background-color: black; 
+    margin: 20px 0;
+    text-align: center;
+    height: 4px;
+    margin-top: 50px;
+    width: 87%;
+    margin-left: 6%;
+}
+.condicion {
+  color: #000;
+  margin: 0;
+  font-weight: bold;
 }
 /* Estilos para el contenedor de las imágenes */
 .social-media {
@@ -1000,13 +1063,20 @@ footer {
   justify-items: center;  /* Centra las imágenes en su celda */
 }
 /* Ajustes para pantallas más pequeñas (responsive) */
-@media (max-width: 768px) {
+@media (max-width: 950px) {
   .social-icons {
     grid-template-columns: 1fr;  /* En móviles, las imágenes se apilan en una sola columna */
   }
+  .linea{
+    margin-left: 5%;
+    width: 87%;
+  }
+  .cuadrado {
+    width: 50%;
+  }
 }
 .cuadrado {
-  background: #5CA3D9;
+  background: #b9c3ff2c ;
   color: #000;
   border-radius: 24px;
   border: 2px solid #000;
@@ -1014,11 +1084,20 @@ footer {
   text-align: center;
   font-family: "Suez One", serif;
   font-style: normal;
-  width: 100%;
+  width: 90%;
   height: 192px;
   font-size: 48px;
   padding: 32px;
   margin: 0 auto;
+}
+.text-uppercase{
+  color: #000;
+  font-size: 24px;
+}
+.text-reset_txt{
+  color: #000;
+  font-size: 24px;
+  text-decoration: none;
 }
 .cuadrado h2 {
   margin: 0;
@@ -1030,7 +1109,7 @@ footer {
     padding: 30px; 
     width: 90%;
   }
-  .cuadrado h2 {
+  .cdro {
     margin: 0;
     margin-bottom: 22px;
   }

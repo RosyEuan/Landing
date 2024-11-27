@@ -15,7 +15,7 @@
       <div class="row">
         <nav class="navbar navbar-expand-lg navbar-light">
           <div class="container-md cont_logo">
-            <a  aria-current="page" href="#"><img class="logo text-white" src="imagenes/cytisum.png" alt="Logo Cytisum"></a>
+            <a  aria-current="page" href="/Punto_Venta"><img class="logo text-white" src="imagenes/cytisum.png" alt="Logo Cytisum"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -25,7 +25,7 @@
                   <a class="nav-link text-white" aria-current="page" href="#">Inicio</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-white" href="#linkbeneficio">Beneficios</a>
+                  <a class="nav-link text-white" href="/Punto_Venta/#linkbeneficio">Beneficios</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link text-white" href="#planes">Planes</a>

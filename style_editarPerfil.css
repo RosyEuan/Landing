@@ -3,7 +3,7 @@ body {
   }
   .navbar {
     background-color: #1E5D8D;
-    padding: 0.5rem 1rem;
+    padding: 0.2rem 1rem;
     position: fixed;
     top: 0;
     left: 0;
@@ -12,7 +12,6 @@ body {
     display: flex;
     justify-content: space-between;
     flex-direction: column-reverse;
-    align-items: flex-end;
   }
   .cont_logo {
     display: flex;
@@ -32,6 +31,7 @@ body {
     display: block;
     margin: 0 auto;
     max-width: 200px;
+    margin-right: 120px;
   }
   .nav-item {
     padding: 0 1rem;

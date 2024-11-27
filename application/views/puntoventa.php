@@ -73,7 +73,7 @@
                     <p class="sesion">Iniciar sesión</p>
                     <form>
                       <div class="mb-3 con">
-                        <input type="text" class="form-control inicio_sesion" id="usuario" placeholder="Usuario">
+                        <input type="text" class="form-control inicio_sesion" id="usuarios" placeholder="Usuario">
                       </div>
                       <div class="mb-3 con">
                         <input type="password" class="form-control inicio_sesion" id="contrasena" placeholder="Contraseña">
@@ -132,22 +132,22 @@
                     <div class="row mb-3 control_cuenta">
                       <div class="col">
                         <label for="correo" class="form-label lb_cuenta">Correo electrónico</label>
-                        <input type="email" class="form-control cr_cuenta" id="correo" placeholder="Gmail">
+                        <input type="email" class="form-control cr_cuenta" id="correoo" placeholder="Gmail">
                       </div>
                       <div class="col">
                         <label for="telefono" class="form-label lb_cuenta">Teléfono</label>
-                        <input type="text" class="form-control cr_cuenta" id="telefono" placeholder="Teléfono">
+                        <input type="text" class="form-control cr_cuenta" id="tel" placeholder="Teléfono">
                       </div>
                     </div>
                     <p class="infocue">Información de acceso</p>
                     <div class="row mb-3 control_cuenta">
                       <div class="col">
                         <label for="usuario" class="form-label lb_cuenta">Usuario</label>
-                        <input type="text" class="form-control cr_cuenta" id="usuario" placeholder="Usuario">
+                        <input type="text" class="form-control cr_cuenta" id="usuarioo" placeholder="Usuario">
                       </div>
                       <div class="col">
                         <label for="contrasena" class="form-label lb_cuenta">Contraseña</label>
-                        <input type="password" class="form-control cr_cuenta" id="contrasena" placeholder="Contraseña"> 
+                        <input type="password" class="form-control cr_cuenta" id="contra" placeholder="Contraseña"> 
                       </div>
                     </div>
                     <div class="text-center">
@@ -314,7 +314,7 @@
             negocio, desde la toma de pedidos hasta la gestión de pagos y la 
             administración de inventarios.
           </p>
-          <p class="dise offset-1">está diseñado para optimizar todas las operaciones del 
+          <p class="dise offset-1">Está diseñado para optimizar todas las operaciones del 
             restaurante, mejorando la eficiencia, la precisión y la experiencia
             tanto para el personal como para los clientes.
           </p>
@@ -385,7 +385,7 @@
     </div>
 
     <!-- Planes -->
-    <div class="container py-1" id="planes">
+    <div class="container-fluid" id="planes">
       <h2 class="text-center mb-4 planes" >Planes</h2>
       <div class="row justify-content-center">
         <!-- Plan Básico -->
@@ -611,7 +611,7 @@
           <div class="img_gratuita text-center">
             <img class="gratuita img-fluid"  src="imagenes/gratis.png" alt="Prueba gratuita">
           </div>
-          <h2 class="prueba justify-content-center">Obtén una prueba gratuita</h2>
+          <h2 class="prueba">Obtén una prueba gratuita</h2>
           <p class="contamos justify-content-center" width="50">
             ¡Contamos con una prueba completamente gratuita que 
             incluye el plan básico por 2 semanas, para que puedas 
@@ -633,16 +633,16 @@
       </div>
     </div>
 
-    <!-- Nuestros socios -->
-    <div class="container my-5">
+    <!-- Nuestros socios-->
+    <div class="container-fluid">
       <h2 class="socios">Nuestros socios</h2>
-      <p class="text-center mb-4 confianza">
+      <p class="mb-4 confianza">
         Este espacio resalta la confianza y destaca a los negocios que han adoptado nuestra solución de punto de venta para optimizar sus 
         operaciones y aumentar la satisfacción del cliente.
       </p>
       <div class="row">
-        <!-- Tarjeta 1 -->
-        <div class="col-md-4 mb-4">
+        <!-- Tarjeta 1--> 
+        <div class="res col-md-4 mb-4">
           <div class="testimonial-card p-4">
             <div class="testimonial-img mx-auto mb-3">
               <div class="text-center">
@@ -650,19 +650,19 @@
               </div>
             </div>
             <h5 class="carlos">Carlos Martínez</h5>
-            <p class="car">Supervisor de "Sabor a Casa"</p>
+            <p class="car col-sm-12">Supervisor de "Sabor a Casa"</p>
             <p class="funcionalidad col-sm-12">
               Desde que implementamos el sistema 
               POS, la gestión de nuestro restaurante
-            ha mejorado significativamente. Ahora 
-            podemos manejar el inventario y las 
-            comandas con mayor rapidez y 
-            precisión. La interfaz es intuitiva.
+              ha mejorado significativamente. Ahora 
+              podemos manejar el inventario y las 
+              comandas con mayor rapidez y 
+              precisión. La interfaz es intuitiva.
             </p>
           </div>
         </div>
-        <!-- Tarjeta 2 -->
-        <div class="col-md-4 mb-4">
+        <!-- Tarjeta 2-->
+        <div class="res col-md-4 mb-4">
           <div class="testimonial-card p-4 move-down">
             <div class="testimonial-img mx-auto mb-3">
               <div class="text-center">
@@ -682,7 +682,7 @@
           </div>
         </div>
         <!-- Tarjeta 3 -->
-        <div class="col-md-4 mb-4">
+        <div class="res col-md-4 mb-4">
           <div class="testimonial-card p-4">
             <div class="testimonial-img mx-auto mb-3">
               <div class="text-center">
@@ -690,7 +690,7 @@
               </div>
             </div>
             <h5 class="carlos">Fernando López</h5>
-            <p class="car">Propietario de "Gourmet"</p>
+            <p class="car col-sm-12">Propietario de "Gourmet"</p>
             <p class="funcionalidad col-sm-12">
               Lo que más me gusta del POS es la
               capacidad de personalizar el menú y
@@ -713,7 +713,7 @@
       </p>
       <div class="row mt-4">
         <!-- Reseña 1 -->
-        <div class="col-md-4 mb-4">
+        <div class="res col-sm-12 col-md-4 mb-4">
           <div class="review-card review-card-margin">
             <div class="review-stars">
               <i class="fas fa-star"></i>
@@ -726,8 +726,7 @@
               órdenes de manera clara y sin errores, 
               lo que facilita la preparación de los
               platos y evita confusiones. Nos permite
-              enfocarnos en lo que realmente 
-              importa.
+              enfocarnos en lo que más importa.
             </p>
             <div class="author-info">
               <img src="img/jorge.svg" alt="Jorge Ortega" class="review-img">
@@ -739,7 +738,7 @@
           </div>
         </div>
         <!-- Reseña 2 -->
-        <div class="col-md-4 mb-4">
+        <div class="res col-sm-12 col-md-4 mb-4">
           <div class="review-card review-card-sofia">
             <div class="review-stars">
               <i class="fas fa-star"></i>
@@ -764,7 +763,7 @@
           </div>
         </div>
         <!-- Reseña 3 -->
-        <div class="col-md-4 mb-4">
+        <div class="res col-sm-12 col-md-4 mb-4">
           <div class="review-card review-card-margin">
             <div class="review-stars">
               <i class="fas fa-star"></i>
@@ -783,7 +782,7 @@
               <img src="img/ana.svg" alt="Ana Morales" class="review-img">
               <div>
                 <p class="review-author">Ana Morales</p>
-                <p class="review-position">Encargada de Caja en "El Buen Sabor"</p>
+                <p class="review-position">Cajera en "El Buen Sabor"</p>
               </div>
             </div>
           </div>
@@ -815,8 +814,6 @@
                 <label for="email">Correo electrónico</label>
                 <input type="email" id="email" class="form-control contacto_to" placeholder="Correo electrónico">
               </div>
-
-
               <button type="submit" class="btn btn-primary submit-btn">Continuar</button>
             </form>  
           </div>
@@ -826,58 +823,47 @@
     </div>
     
     <!-- Footer -->
-    <footer class="text-center" style="background-color: #5CA3D9;">
-      <!-- Section: Social media -->
+    <footer class="foot text-center">
       <section class="d-flex justify-content-center p-4">
-        <p class="text-center">*El precio de los planes puede variar según el país en donde se encuentre la empresa compradora</p>
+        <p class="condicion text-center">*El precio de los planes puede variar según el país en donde se encuentre la empresa compradora</p>
       </section>
-      <!-- Cuadrado con texto -->
-      <section class="cnt-cuadro d-flex justify-content-center p-2 border-bottom">
+      <section class="cnt-cuadro d-flex justify-content-center p-2">
         <div class="cuadrado"> 
-          <h2>¡Empieza a Contactarnos!</h2>
-          <h2>(998)-345-7079</h2>
+          <h2 class="cdro">¡Empieza a Contactarnos!</h2>
+          <h2>(998)-543-7970</h2>
         </div>
       </section>
-
-      <!-- Section: Social media -->
-
-      <!-- Section: Links  -->
+      <div class="linea"></div>
       <section class="">
         <div class="container text-center text-md-start mt-5">
           <div class="row mt-3">
-            <!-- Grid column -->
             <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
               <h6 class="text-uppercase fw-bold mb-4">Funciones</h6>
-              <p><a href="#!" class="text-reset">Menú</a></p>
-              <p><a href="#!" class="text-reset">Mesas</a></p>
-              <p><a href="#!" class="text-reset">Almacén</a></p>
-              <p><a href="#!" class="text-reset">Pedidos</a></p>
-              <p><a href="#!" class="text-reset">Personal</a></p>
-              <p><a href="#!" class="text-reset">Servicios</a></p>
-              <p><a href="#!" class="text-reset">Estadisticas</a></p>
-              <p><a href="#!" class="text-reset">Pedidos</a></p>
+              <p><a href="#!" class="text-reset_txt">Menú</a></p>
+              <p><a href="#!" class="text-reset_txt">Mesas</a></p>
+              <p><a href="#!" class="text-reset_txt">Almacén</a></p>
+              <p><a href="#!" class="text-reset_txt">Pedidos</a></p>
+              <p><a href="#!" class="text-reset_txt">Personal</a></p>
+              <p><a href="#!" class="text-reset_txt">Servicios</a></p>
+              <p><a href="#!" class="text-reset_txt">Estadisticas</a></p>
             </div>
-            <!-- Grid column -->
-            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-4">
               <h6 class="text-uppercase fw-bold mb-4">Mapa del sitio</h6>
-              <p><a href="#!" class="text-reset">Inicio</a></p>
-              <p><a href="#!" class="text-reset">¿Por qué nosotros?</a></p>
-              <p><a href="#!" class="text-reset">Beneficios</a></p>
-              <p><a href="#!" class="text-reset">Planes</a></p>
-              <p><a href="#!" class="text-reset">Opiniones</a></p>
+              <p><a href="#!" class="text-reset_txt">Inicio</a></p>
+              <p><a href="#!" class="text-reset_txt">¿Por qué nosotros?</a></p>
+              <p><a href="#!" class="text-reset_txt">Beneficios</a></p>
+              <p><a href="#!" class="text-reset_txt">Planes</a></p>
+              <p><a href="#!" class="text-reset_txt">Opiniones</a></p>
             </div>
-            <!-- Grid column -->
-            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mb-4">
               <h6 class="text-uppercase fw-bold mb-4">Recursos</h6>
-              <p><a href="#!" class="text-reset">Programa de recomendaciones</a></p>
-              <p><a href="#!" class="text-reset">Terminos y condiciones</a></p>
-              <p><a href="#!" class="text-reset">Terminos de uso</a></p>
-              <p><a href="#!" class="text-reset">Politica de privacidad</a></p>
+              <p><a href="#!" class="text-reset_txt">Programa de recomendaciones</a></p>
+              <p><a href="#!" class="text-reset_txt">Terminos y condiciones</a></p>
+              <p><a href="#!" class="text-reset_txt">Terminos de uso</a></p>
+              <p><a href="#!" class="text-reset_txt">Politica de privacidad</a></p>
             </div>
-            <!-- Grid column -->
             <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
               <h6 class="text-uppercase fw-bold mb-4">Nuestras redes</h6>
-              
               <section class="social-media">
                 <div class="social-icons">
                   <a href="#!" class="text-reset"><img src="imagenes/fc.png" class="rounded mx-auto" alt="Facebook"></a>
@@ -887,30 +873,23 @@
                 </div>
               </section>
             </div>
-            <!-- Grid column -->
           </div>
         </div>
       </section>
-      <!-- Section: Links  -->
-
-      <!-- Copyright -->
-      <div class="text-center" style="background-color: #5CA3D9;">
+      <div class="linea"></div>
+      <div class="text-center">
         <section class="">
           <div class="container text-center text-md-start mt-5">
             <div class="row mt-3">
-              <!-- Grid column -->
               <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
                 <p>México</p>
               </div>
-              <!-- Grid column -->
               <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-4">
                 <a href="#!" class="text-reset"><p> Facebook    |    Instagram    |    Linkedin</p> </a>
               </div>
-              <!-- Grid column -->
               <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
                 <p>© 2024 Cytisum</p>
               </div>
-              <!-- Grid column -->
             </div>
           </div>
         </section>
