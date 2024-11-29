@@ -97,6 +97,8 @@ switch (ENVIRONMENT)
  * This variable must contain the name of your "system" directory.
  * Set the path if it is not in the same directory as this file.
  */
+
+ 	require_once __DIR__ . '/vendor/autoload.php';
 	$system_path = 'system';
 
 /*

@@ -1,7 +1,7 @@
 <?php
 class Login extends CI_Model {
 
-
+  
     public function getLogin($usuario,$password){
 
         $sql = "SELECT nombre, apellido,usuario 

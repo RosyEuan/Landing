@@ -56,17 +56,17 @@
     <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
-          <div class="modal-header">
+          <div class="modal-header">  
             <h5 class="modal-title" id="loginModalLabel">Iniciar sesión</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <div class="login-container">
-              <div class="sip">
+            <div class="login-container"> 
+              <div class="si">
                 <div class="logi">
                   <div class="circu">
                     <div class="text-center">
-                      <img src="/Punto_Venta/imagenes/log.png" class="img_cytisumLogin" alt="Logo Cytisum">
+                      <img src="imagenes/log.png" class="img_cytisumLogin" alt="Logo Cytisum">
                     </div>
                   </div>
                   <div class="mover">
@@ -87,7 +87,7 @@
                     </form>
                     <div class="footer-links mt-3">
                       <p>¿No tienes cuenta? <a href="#" data-bs-toggle="modal" data-bs-target="#crearCuentaModal">Crear una cuenta</a></p>
-                      <p><a href="#">Aviso de privacidad</a> | <a href="#" data-bs-toggle="modal" data-bs-target="#perfilModal">Términos y condiciones</a></p>
+                      <p><a href="#">Aviso de privacidad</a> | <a href="#" data-bs-toggle="modal" data-bs-target="#">Términos y condiciones</a></p>
                     </div>
                   </div>
                 </div>
@@ -115,39 +115,39 @@
                 <div class="relleno">
                   <div class="informacion"></div>
                   <div class="text-center">
-                    <img src="/Punto_Venta/imagenes/log.png" class="img" alt="Logo Cytisum">
+                    <img src="imagenes/log.png" class="img" alt="Logo Cytisum">
                   </div>
-                  <form class="cont">
+                  <form class="cont" method="POST">
                     <p class="infocue">Información de su cuenta</p>
                     <div class="row mb-3 control_cuenta">
                       <div class="col">
                         <label for="nombre" class="form-label lb_cuenta">Nombre(s)</label>
-                        <input type="text" class="form-control cr_cuenta" id="nombre" placeholder="Nombre">
+                        <input type="text" class="form-control cr_cuenta" id="registro_nombre" placeholder="Nombre">
                       </div>
                       <div class="col">
                         <label for="apellido" class="form-label lb_cuenta">Apellidos</label>
-                        <input type="text" class="form-control cr_cuenta" id="apellido" placeholder="Apellido">
+                        <input type="text" class="form-control cr_cuenta" id="registro_apellido" placeholder="Apellido">
                       </div>
                     </div>
                     <div class="row mb-3 control_cuenta">
                       <div class="col">
                         <label for="correo" class="form-label lb_cuenta">Correo electrónico</label>
-                        <input type="email" class="form-control cr_cuenta" id="correoo" placeholder="Gmail">
+                        <input type="email" class="form-control cr_cuenta" id="correo" placeholder="Gmail">
                       </div>
                       <div class="col">
                         <label for="telefono" class="form-label lb_cuenta">Teléfono</label>
-                        <input type="text" class="form-control cr_cuenta" id="tel" placeholder="Teléfono">
+                        <input type="text" class="form-control cr_cuenta" id="telefono" placeholder="Teléfono">
                       </div>
                     </div>
                     <p class="infocue">Información de acceso</p>
                     <div class="row mb-3 control_cuenta">
                       <div class="col">
                         <label for="usuario" class="form-label lb_cuenta">Usuario</label>
-                        <input type="text" class="form-control cr_cuenta" id="usuarioo" placeholder="Usuario">
+                        <input type="text" class="form-control cr_cuenta" id="usuario" placeholder="Usuario">
                       </div>
                       <div class="col">
                         <label for="contrasena" class="form-label lb_cuenta">Contraseña</label>
-                        <input type="password" class="form-control cr_cuenta" id="contra" placeholder="Contraseña"> 
+                        <input type="password" class="form-control cr_cuenta" id="contrasena" placeholder="Contraseña"> 
                       </div>
                     </div>
                     <div class="text-center">
@@ -314,7 +314,7 @@
             negocio, desde la toma de pedidos hasta la gestión de pagos y la 
             administración de inventarios.
           </p>
-          <p class="dise offset-1">Está diseñado para optimizar todas las operaciones del 
+          <p class="dise offset-1">está diseñado para optimizar todas las operaciones del 
             restaurante, mejorando la eficiencia, la precisión y la experiencia
             tanto para el personal como para los clientes.
           </p>
@@ -385,11 +385,11 @@
     </div>
 
     <!-- Planes -->
-    <div class="container-fluid" id="planes">
+    <div class="container-fluid py-1" id="planes">
       <h2 class="text-center mb-4 planes" >Planes</h2>
       <div class="row justify-content-center">
         <!-- Plan Básico -->
-        <div class="col-md-4 mb-4  pricing-card-basic align-plan-basic">
+        <div class="res col-md-4 mb-4  pricing-card-basic align-plan-basic">
           <div class="card pricing-card shadow-sm border-0 h-100">
             <div class="card-body text-center">
               <h5 class="plan">Plan Básico</h5>
@@ -410,7 +410,7 @@
           </div>
         </div>
         <!-- Plan Profesional -->
-        <div class="col-md-4 mb-4">
+        <div class="res col-md-4 mb-4">
           <div class="card pricing-card shadow-sm border-0 h-100">
             <div class="card-body text-center azu">
               <h5 class=" plan">Plan Profesional</h5>
@@ -431,7 +431,7 @@
           </div>
         </div>
           <!-- Plan Estándar -->
-          <div class="col-md-4 mb-4 pricing-card-standard align-plan-standard">
+          <div class="res col-md-4 mb-4 pricing-card-standard align-plan-standard">
             <div class="card pricing-card shadow-sm border-0 h-100">
               <div class="card-body text-center">
                 <h5 class=" plan">Plan Estándar</h5>
@@ -557,8 +557,8 @@
                   <form class="todo">
                     <div class="row mb-3 cont_pago">
                       <div class="col">
-                        <label for="numeroTarjeta" class="form-label lb_tip">Número de la tarjeta</label>
-                        <input type="text" class="form-control tip" id="numeroTarjeta" maxlength="16" placeholder="XXXX-XXXX-XXXX-XXXX">
+                        <label for="numeroTarjeta" class="form-label">Número de la tarjeta</label>
+                        <input type="text" class="form-control" id="numeroTarjeta" placeholder="XXXX-XXXX-XXXX-XXXX">
                       </div>
                       <div class="col">
                         <label for="titularTarjeta" class="form-label lb_tip">Titular de la tarjeta</label>
@@ -611,7 +611,7 @@
           <div class="img_gratuita text-center">
             <img class="gratuita img-fluid"  src="imagenes/gratis.png" alt="Prueba gratuita">
           </div>
-          <h2 class="prueba">Obtén una prueba gratuita</h2>
+          <h2 class="prueba justify-content-center">Obtén una prueba gratuita</h2>
           <p class="contamos justify-content-center" width="50">
             ¡Contamos con una prueba completamente gratuita que 
             incluye el plan básico por 2 semanas, para que puedas 
@@ -633,15 +633,15 @@
       </div>
     </div>
 
-    <!-- Nuestros socios-->
-    <div class="container-fluid">
+    <!-- Nuestros socios -->
+    <div class="container-fluid my-5">
       <h2 class="socios">Nuestros socios</h2>
-      <p class="mb-4 confianza">
+      <p class="text-center mb-4 confianza">
         Este espacio resalta la confianza y destaca a los negocios que han adoptado nuestra solución de punto de venta para optimizar sus 
         operaciones y aumentar la satisfacción del cliente.
       </p>
       <div class="row">
-        <!-- Tarjeta 1--> 
+        <!-- Tarjeta 1 -->
         <div class="res col-md-4 mb-4">
           <div class="testimonial-card p-4">
             <div class="testimonial-img mx-auto mb-3">
@@ -650,18 +650,18 @@
               </div>
             </div>
             <h5 class="carlos">Carlos Martínez</h5>
-            <p class="car col-sm-12">Supervisor de "Sabor a Casa"</p>
+            <p class="car">Supervisor de "Sabor a Casa"</p>
             <p class="funcionalidad col-sm-12">
               Desde que implementamos el sistema 
               POS, la gestión de nuestro restaurante
-              ha mejorado significativamente. Ahora 
-              podemos manejar el inventario y las 
-              comandas con mayor rapidez y 
-              precisión. La interfaz es intuitiva.
+            ha mejorado significativamente. Ahora 
+            podemos manejar el inventario y las 
+            comandas con mayor rapidez y 
+            precisión. La interfaz es intuitiva.
             </p>
           </div>
         </div>
-        <!-- Tarjeta 2-->
+        <!-- Tarjeta 2 -->
         <div class="res col-md-4 mb-4">
           <div class="testimonial-card p-4 move-down">
             <div class="testimonial-img mx-auto mb-3">
@@ -690,7 +690,7 @@
               </div>
             </div>
             <h5 class="carlos">Fernando López</h5>
-            <p class="car col-sm-12">Propietario de "Gourmet"</p>
+            <p class="car">Propietario de "Gourmet"</p>
             <p class="funcionalidad col-sm-12">
               Lo que más me gusta del POS es la
               capacidad de personalizar el menú y
@@ -788,7 +788,7 @@
     </div>
 
     <!-- Contacto -->
-    <div class="container-fluid" id="contactoo">
+    <div class="container-fluid">
       <div class="espa">
         <div class="contact-form">
           <div class="cir_contacto">
@@ -892,120 +892,6 @@
         </section>
       </div>
     </footer>
-
-    <!-- Modal para el Perfil -->
-    <div class="modal fade" id="perfilModal" tabindex="-1" aria-labelledby="perfilModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="perfilModalLabel">Perfil de Usuario</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <div class="container mt-5">
-              <h2 class="titulo_perfil">Perfil</h2>
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="cuadro_perfil">
-                    <form class="todito">
-                      <div class="form-row align-items-center mb-3">
-                        <div class="col-4">
-                          <label for="usuario" class="lis">Usuario</label>
-                        </div>
-                        <div class="col-8">
-                          <div class="este">
-                            <input type="text" class="form-control ctrl_perfil" id="usuario" placeholder="JorgePerez">
-                          </div>
-                        </div>
-                      </div>
-                      <div class="form-row align-items-center mb-3">
-                        <div class="col-4">
-                          <label for="contrasena" class="lis">Contraseña</label>
-                        </div>
-                        <div class="col-8">
-                          <div class="este">
-                            <input type="password" name="password" class="form-control password1" placeholder="clave">
-                            <span class="fa fa-fw fa-eye password-icon show-password"></span>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="form-row align-items-center mb-3">
-                        <div class="col-4">
-                          <label for="telefono" class="lis">Teléfono</label>
-                        </div>
-                        <div class="col-8">
-                          <div class="este">
-                            <input type="text" class="form-control ctrl_perfil" id="telefono" placeholder="998 424 2539">
-                          </div>
-                        </div>
-                      </div>
-                      <div class="form-row align-items-center mb-3">
-                        <div class="col-4">
-                          <label for="correo" class="lis">Correo</label>
-                        </div>
-                        <div class="col-8">
-                          <div class="este">
-                            <input type="email" class="form-control ctrl_perfil" id="correo" placeholder="JorgePD@gmail.com">
-                          </div>
-                        </div>
-                      </div>
-                      <div class="form-row align-items-center mb-3">
-                        <div class="col-4">
-                          <label for="empresa" class="lis">Empresa</label>
-                        </div>
-                        <div class="col-8">
-                          <div class="este">
-                            <input type="text" class="form-control ctrl_perfil" id="empresa" placeholder="Noctis Design">
-                          </div>
-                        </div>
-                      </div>
-                    </form>
-                  </div>
-                </div>
-
-                <!-- Foto de perfil -->
-                <div class="col-md-4 offset-md-1">
-                  <div class="text-center">
-                    <img src="img/perfil.png" class="foto-perfil" alt="Foto de perfil">
-                  </div>
-                  <h4 class="jorge">Jorge Alejandro<br>Perez Dominguez</h4>
-                  <div class="botones">
-                    <div class="text-center">
-                      <button type="submit" class="btn btn-primary editarb">Editar</button>
-                    </div><br>
-                    <div class="text-center">
-                      <button type="submit" class="btn btn-primary editar">Cerrar sesión</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Script para la funcion del ojo -->
-    <script>
-    window.addEventListener("load", function() {
-        // Icono para mostrar/ocultar contraseña
-        showPassword = document.querySelector('.show-password');
-        showPassword.addEventListener('click', () => {
-            // Input de tipo password
-            password1 = document.querySelector('.password1');
-            if (password1.type === "text") {
-                password1.type = "password";
-                showPassword.classList.remove('fa-eye-slash');
-            } else {
-                password1.type = "text";
-                showPassword.classList.toggle("fa-eye-slash");
-            }
-        });
-    });
-    </script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>

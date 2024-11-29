@@ -18,9 +18,9 @@ class Website extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/userguide3/general/urls.html
 	 */
+	
 	public function index()
 	{
-	    /*sirve para cargar una vista*/
 		$this->load->view('puntoventa');
 	}
 	public function perfil()
@@ -32,5 +32,32 @@ class Website extends CI_Controller {
 	{
 	    /*sirve para cargar una vista*/
 		$this->load->view('editar_perfil');
+	}
+	// Ejemplo pa que vea belen TODO
+	public function datos(){
+
+		$db = $this->medoolib->getInstance();
+
+		$existing_user = $db->select('usuarios', '*', [
+			'usuario' => 'admin'
+		]);
+	
+		// Si el usuario no existe, realizar la inserción
+		if (empty($existing_user)) {
+			$db->insert('usuarios', [
+				'usuario' => 'admin',
+				'contraseña' => 'ejemplo123',
+				'nombre'  => 'Angel',
+				'apellido'  => 'Chi',
+				'Telefono' => '9988776655',
+				'Correo' => 'correo@example.com'
+			]);
+		}
+	
+		// Obtener todos los usuarios con medoo
+		$usuarios = $db->select('usuarios', '*');
+		
+		$data['usuarios'] = $usuarios;
+		$this->load->view('datos', $data);
 	}
 }
