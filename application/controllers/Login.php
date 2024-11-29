@@ -61,7 +61,7 @@ class Login extends CI_Controller{
     }
 
         public function logout() {
-            $this->session->sess_destroy(); // Elimina la sesión
+            $this->session->sess_destroy(); // Elimina la sesion chavales
             echo json_encode(['status' =>'success','message' =>'Sesión finalizada']);
             
         }
