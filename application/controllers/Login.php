@@ -25,7 +25,7 @@ class Login extends CI_Controller{
 
         $usuario = $this->input->post('usuario');
         $password = $this->input->post('contraseña');
-        $hash = password_hash($password, PASSWORD_DEFAULT);
+       // $hash = password_hash($password, PASSWORD_DEFAULT);
 
         log_message('info', 'Usuario recibido: ' . $usuario);
         log_message('info', 'Contraseña recibida: ' . $password);
@@ -39,7 +39,8 @@ class Login extends CI_Controller{
         $result = $this->LoginModel->getLogin($usuario);
         
         if ($result && isset($result[0]['contraseña']) && !empty($result[0]['contraseña'])) {
-            if (password_verify($password, $hash)) {
+            
+            if (password_verify($password, $result[0]['contraseña'])) {
                 $this->session->set_userdata([
                     'usuario' => $result[0]['usuario'],
                     'logged_in' => true
