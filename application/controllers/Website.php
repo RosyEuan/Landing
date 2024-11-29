@@ -2,6 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Website extends CI_Controller {
+	
 
 	/**
 	 * Index Page for this controller.
@@ -21,15 +22,18 @@ class Website extends CI_Controller {
 	public function __construct() {
 		parent::__construct();
 		$this->load->library('MedooLib');
+		$this->load->library("session");
 	}
 	public function index()
 	{
-		$this->load->view('puntoventa');
+		$logged_in = $this->session->userdata('logged_in');
+		$this->load->view('puntoventa',['logged_in' =>$logged_in]);
 	}
 	public function perfil()
 	{
 	    /*sirve para cargar una vista*/
-		$this->load->view('perfil');
+		$logged_in = $this->session->userdata('logged_in');
+		$this->load->view('perfil',['logged_in'=>$logged_in]);
 	}
 	public function editar_perfil()
 	{

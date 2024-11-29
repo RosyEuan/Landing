@@ -12,7 +12,12 @@ class MedooLib {
             'host' => 'localhost',
             'database' => 'Landing_pventa',
             'username' => 'root',
-            'password' => ''
+            'password' => '',
+            'charset'  => 'utf8',
+            'option'        => [
+                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+                PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
+            ]
         ]);}
         
         public function getInstance() {

@@ -4,12 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cytisum</title>
+     <!-- Incluye jQuery desde un CDN -->
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Khmer&family=Konkhmer+Sleokchher&family=Suez+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+   
+
   </head>
   <body>
     <!-- Barra de navegación -->
@@ -39,11 +43,17 @@
                   <a class="nav-link text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <img class="login" id="iconoLogin" src="imagenes/lgin.png" alt="Icono de login">
                   </a>
+                  <?php if ($logged_in): ?>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                      <li><button class="dropdown-item " id ="logout_button">Cerrar Sesión</button></li>
+                      <li><a class="dropdown-item "  href= "perfil">Ver perfil</a></li>
+                    </ul>
+                    <?php else:?>
                   <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item " data-bs-toggle="modal" data-bs-target="#loginModal">Iniciar sesión</a>
-                  </li>
-                       <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#crearCuentaModal">Crear cuenta</a></li>
+                    <li><a class="dropdown-item " data-bs-toggle="modal" data-bs-target="#loginModal">Iniciar sesión</a></li>
+                    <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#crearCuentaModal">Crear cuenta</a></li>
                   </ul>
+                  <?php endif;?>
                 </li>
               </ul>
             </div>
@@ -71,12 +81,17 @@
                   </div>
                   <div class="mover">
                     <p class="sesion">Iniciar sesión</p>
-                    <form>
+
+                    <?php if(isset($_GET['error'])): ?>
+                      <p>Datos invalidos</p>
+                      <?php endif; ?>
+
+                    <form id = "inicioForm" method = "POST" >
                       <div class="mb-3 con">
-                        <input type="text" class="form-control inicio_sesion" id="usuario" placeholder="Usuario">
+                        <input type="text" class="form-control inicio_sesion" name = "usuario" id="usuario" placeholder="Usuario">
                       </div>
                       <div class="mb-3 con">
-                        <input type="password" class="form-control inicio_sesion" id="contrasena" placeholder="Contraseña">
+                        <input type="password" class="form-control inicio_sesion" name = "contraseña" id="contrasena" placeholder="Contraseña">
                       </div>
                       <div class="mb-3 text-center">
                         <a href="#" class="contra">¿Olvidaste tu contraseña?</a>
@@ -85,6 +100,7 @@
                         <button type="submit" class="btn btn-primary ingresar">Ingresar</button>
                       </div>
                     </form>
+                    
                     <div class="footer-links mt-3">
                       <p>¿No tienes cuenta? <a href="#" data-bs-toggle="modal" data-bs-target="#crearCuentaModal">Crear una cuenta</a></p>
                       <p><a href="#">Aviso de privacidad</a> | <a href="#" data-bs-toggle="modal" data-bs-target="#perfilModal">Términos y condiciones</a></p>
@@ -100,6 +116,61 @@
         </div>
       </div>
     </div>
+
+    <script>
+$(document).ready(function() {
+    
+    $('#inicioForm').on('submit', function(event) {
+        event.preventDefault(); 
+        $.ajax({
+            url: "<?php echo base_url('iniciar_sesion'); ?>", 
+            method: "POST",
+            data: $(this).serialize(), 
+            dataType: "json", 
+            success: function(response) {
+                if (response.status === 'success') {
+                    alert(response.message); 
+                    location.reload(); 
+                } else {
+                    alert(response.message); 
+                }
+            },
+            error: function(xhr, status, error) {
+                console.error('Error de AJAX:', error);
+                console.error('Detalles del error:', xhr.responseText);
+                alert('Ocurrió un error al procesar la solicitud.',error);
+            }
+        });
+    });
+
+    // evento click para cerrar sesión
+    $('#logout_button').on('click', function() {
+        logout(); // Llamamos a la función logout cuando se haga click
+    });
+});
+
+// Función para cerrar sesión
+function logout() {
+    $.ajax({
+        url: "<?php echo base_url('cerrar_sesion'); ?>", // Ruta para cerrar sesión
+        method: "POST",
+        dataType: "json",
+        success: function(response) {
+            console.log('Respuesta del servidor:', response);
+            if (response.status === 'success') {
+                window.location.reload(); // Recargar la página
+            } else {
+                alert('Hubo un problema al cerrar la sesión'+response.message); // Mostrar alerta si hay error
+            }
+        },
+        error: function(xhr, status, error) {
+            console.error('Error de AJAX:', error);
+            alert('Hubo un error en ajax al procesar el cerrar sesión'+xhr.responseText); // Mostrar alerta de error
+        }
+    });
+}
+
+ </script>
 
     <!-- Modal para Crear Cuenta -->
     <div class="modal fade" id="crearCuentaModal" tabindex="-1" aria-labelledby="crearCuentaModalLabel" aria-hidden="true">
@@ -117,43 +188,46 @@
                   <div class="text-center">
                     <img src="/Landing/imagenes/log.png" class="img" alt="Logo Cytisum">
                   </div>
-                  <form class="cont" method="POST">
+                 
+                  <form class="cont" id = "registroForm">
                     <p class="infocue">Información de su cuenta</p>
                     <div class="row mb-3 control_cuenta">
                       <div class="col">
                         <label for="nombre" class="form-label lb_cuenta">Nombre(s)</label>
-                        <input type="text" class="form-control cr_cuenta" id="registro_nombre" placeholder="Nombre">
+                        <input type="text" class="form-control cr_cuenta" id="registro_nombre" name ="registro_nombre" placeholder="Nombre">
                       </div>
                       <div class="col">
                         <label for="apellido" class="form-label lb_cuenta">Apellidos</label>
-                        <input type="text" class="form-control cr_cuenta" id="registro_apellido" placeholder="Apellido">
+                        <input type="text" class="form-control cr_cuenta" id="registro_apellido" name = "registro_apellido" placeholder="Apellido">
                       </div>
                     </div>
                     <div class="row mb-3 control_cuenta">
                       <div class="col">
                         <label for="correo" class="form-label lb_cuenta">Correo electrónico</label>
-                        <input type="email" class="form-control cr_cuenta" id="registro_correo" placeholder="Gmail">
+                        <input type="email" class="form-control cr_cuenta" id="registro_correo" name = "registro_correo" placeholder="Gmail">
                       </div>
                       <div class="col">
                         <label for="telefono" class="form-label lb_cuenta">Teléfono</label>
-                        <input type="text" class="form-control cr_cuenta" id="registro_telefono" placeholder="Teléfono">
+                        <input type="text" class="form-control cr_cuenta" id="registro_telefono" name = "registro_telefono" placeholder="Teléfono">
                       </div>
                     </div>
                     <p class="infocue">Información de acceso</p>
                     <div class="row mb-3 control_cuenta">
                       <div class="col">
                         <label for="usuario" class="form-label lb_cuenta">Usuario</label>
-                        <input type="text" class="form-control cr_cuenta" id="registro_usuario" placeholder="Usuario">
+                        <input type="text" class="form-control cr_cuenta" id="registro_usuario" name = "registro_usuario" placeholder="Usuario">
                       </div>
                       <div class="col">
                         <label for="contrasena" class="form-label lb_cuenta">Contraseña</label>
-                        <input type="password" class="form-control cr_cuenta" id="registro_contrasena" placeholder="Contraseña"> 
+                        <input type="password" class="form-control cr_cuenta" id="registro_contrasena" name ="registro_contrasena" placeholder="Contraseña"> 
                       </div>
                     </div>
                     <div class="text-center">
                       <button type="submit" class="btn btn-primary crear">CREAR CUENTA</button>
                     </div>
                   </form>
+
+
                 </div>
               </div>
             </div>
@@ -164,6 +238,52 @@
         </div>
       </div>
     </div>
+
+
+    <script>
+      $(document).ready(function(){
+
+      $('#registroForm').on('submit', function(e){
+      e.preventDefault(); // Evita recargar la pagina
+
+      // Obtiene los datos del formulario
+      var formData = $(this).serialize(); // Datos formulario
+
+       $.ajax({
+          url: "<?php echo base_url('registrarse'); ?>", // URL donde se enviarán los datos
+          type: "POST", 
+          data: formData,
+          dataType: "json", //respuesta en formato JSON
+          success: function(response) {
+        
+          if(response.status == 'success') {
+         
+          //$('.informacion').html('<div class="alert alert-success">' + response.message + '</div>');
+         
+          $('#registroForm')[0].reset(); // vaciar los input
+          $('#crearCuentaModal').modal('hide'); // Cerrar el modal
+          alert(response.message);
+          } else {
+          // Si hay errores, muestra los errores
+            console.log(response.message);
+            $('.informacion').html('<div class="alert alert-danger">' + response.message + '</div>');
+          // alert(response.message);
+          }
+          setTimeout(function () {
+          $('.informacion').html('');
+            }, 2000);
+          },
+          error: function(xhr,status,error) {
+          // Error en la solicitud AJAX
+            console.error('Hubo un error:',error);
+            console.error('Detalles del error',xhr.responseText);
+           $('.informacion').html('<div class="alert alert-danger">Ocurrió un error inesperado.</div>'+xhr.responseText);
+           //$('.informacion').
+          }
+        });
+      });
+    });
+    </script>
 
     <!-- Inicio -->
     <div class="container-fluid">
@@ -209,7 +329,7 @@
           </div>
           <div class="col-md-4 feature-item">
             <div class="feature-icon">
-              <img class="ft_icon" src="img/pedidos.png" alt="Img. de Optimizar pedidos">
+              <img class="ft_icon" src="/Landing/img/pedidos.png" alt="Img. de Optimizar pedidos">
             </div>
             <h4>Optimiza tus pedidos</h4>
             <div class="pedido">
@@ -223,7 +343,7 @@
           </div>
           <div class="col-md-4 feature-item">
             <div class="feature-icon">
-              <img class="ft_icon" src="img/uso.png" alt="Img. de Facilidad de uso">
+              <img class="ft_icon" src="/Landing/img/uso.png" alt="Img. de Facilidad de uso">
             </div>
             <h4>Facilidad de uso</h4>
             <div class="pedido">
@@ -319,7 +439,7 @@
                 a largo plazo.
               </p>
               <div class="text-center">
-                <img src="img/si.png" alt="img1">
+                <img src="/Landing/img/si.png" alt="img1">
               </div>
             </div>
           </div>
@@ -440,7 +560,7 @@
                 <div class="rell">
                   <div class="cir">
                     <div class="text-center">
-                      <img src="/Punto_Venta/imagenes/log.png" class="imge" alt="Logo Cytisum">
+                      <img src="/Landing/imagenes/log.png" class="imge" alt="Logo Cytisum">
                     </div>
                   </div>
                   <div class="toc">
@@ -523,7 +643,7 @@
                 <div class="relle">
                   <div class="circ">
                     <div class="text-center">
-                      <img src="/Punto_Venta/imagenes/log.png" class="img_cytisum_pago" alt="Logo Cytisum">
+                      <img src="/Landing/imagenes/log.png" class="img_cytisum_pago" alt="Logo Cytisum">
                     </div>
                   </div>
                   <form class="todo">
@@ -1005,7 +1125,7 @@
     });
     </script>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>  
