@@ -16,8 +16,8 @@
     <div class="container-fluid">
       <div class="row">
         <nav class="navbar navbar-expand-lg navbar-light">
-          <div class="container-md cont_logo">
-            <a  aria-current="page" href="#"><img class="logo text-white" src="imagenes/cytisum.png" alt="Logo Cytisum"></a>
+          <div class="container-md">
+            <img class="logo text-white" src="imagenes/cytisum.png" alt="Logo Cytisum">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -27,13 +27,13 @@
                   <a class="nav-link text-white" aria-current="page" href="#">Inicio</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-white" href="#linkbeneficio">Beneficios</a>
+                  <a class="nav-link text-white" href="#">Beneficios</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link text-white" href="#planes">Planes</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-white" href="#contactoo">Contacto</a>
+                  <a class="nav-link text-white" href="#">Contacto</a>
                 </li>
                 <li class="nav-item dropdown">
                   <a class="nav-link text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -42,7 +42,7 @@
                   <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                     <li><a class="dropdown-item " data-bs-toggle="modal" data-bs-target="#loginModal">Iniciar sesión</a>
                   </li>
-                    <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#crearCuentaModal">Crear cuenta</a></li>
+                       <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#crearCuentaModal">Crear cuenta</a></li>
                   </ul>
                 </li>
               </ul>
@@ -57,15 +57,19 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">  
+          <div class="modal-header">  
             <h5 class="modal-title" id="loginModalLabel">Iniciar sesión</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
             <div class="login-container"> 
               <div class="si">
+            <div class="login-container"> 
+              <div class="si">
                 <div class="logi">
                   <div class="circu">
                     <div class="text-center">
+                      <img src="/Landing/imagenes/log.png" class="img" alt="Logo Cytisum">
                       <img src="imagenes/log.png" class="img_cytisumLogin" alt="Logo Cytisum">
                     </div>
                   </div>
@@ -115,39 +119,43 @@
                 <div class="relleno">
                   <div class="informacion"></div>
                   <div class="text-center">
+                    <img src="/Landing/imagenes/log.png" class="img" alt="Logo Cytisum">
                     <img src="imagenes/log.png" class="img" alt="Logo Cytisum">
                   </div>
+                  <form class="cont" method="POST">
                   <form class="cont" method="POST">
                     <p class="infocue">Información de su cuenta</p>
                     <div class="row mb-3 control_cuenta">
                       <div class="col">
                         <label for="nombre" class="form-label lb_cuenta">Nombre(s)</label>
                         <input type="text" class="form-control cr_cuenta" id="registro_nombre" placeholder="Nombre">
+                        <input type="text" class="form-control cr_cuenta" id="registro_nombre" placeholder="Nombre">
                       </div>
                       <div class="col">
                         <label for="apellido" class="form-label lb_cuenta">Apellidos</label>
+                        <input type="text" class="form-control cr_cuenta" id="registro_apellido" placeholder="Apellido">
                         <input type="text" class="form-control cr_cuenta" id="registro_apellido" placeholder="Apellido">
                       </div>
                     </div>
                     <div class="row mb-3 control_cuenta">
                       <div class="col">
                         <label for="correo" class="form-label lb_cuenta">Correo electrónico</label>
-                        <input type="email" class="form-control cr_cuenta" id="correo" placeholder="Gmail">
+                        <input type="email" class="form-control cr_cuenta" id="registro_correo" placeholder="Gmail">
                       </div>
                       <div class="col">
                         <label for="telefono" class="form-label lb_cuenta">Teléfono</label>
-                        <input type="text" class="form-control cr_cuenta" id="telefono" placeholder="Teléfono">
+                        <input type="text" class="form-control cr_cuenta" id="registro_telefono" placeholder="Teléfono">
                       </div>
                     </div>
                     <p class="infocue">Información de acceso</p>
                     <div class="row mb-3 control_cuenta">
                       <div class="col">
                         <label for="usuario" class="form-label lb_cuenta">Usuario</label>
-                        <input type="text" class="form-control cr_cuenta" id="usuario" placeholder="Usuario">
+                        <input type="text" class="form-control cr_cuenta" id="registro_usuario" placeholder="Usuario">
                       </div>
                       <div class="col">
                         <label for="contrasena" class="form-label lb_cuenta">Contraseña</label>
-                        <input type="password" class="form-control cr_cuenta" id="contrasena" placeholder="Contraseña"> 
+                        <input type="password" class="form-control cr_cuenta" id="registro_contrasena" placeholder="Contraseña"> 
                       </div>
                     </div>
                     <div class="text-center">
@@ -189,7 +197,7 @@
     </div>
 
     <!-- Porque elegirnos -->
-    <div class="container-fluid">
+    <div class="container">
       <h2 class="feature-title ">¿Por qué elegir Cytisum?</h2>
       <div class="feature-section">
         <div class="row">
@@ -248,43 +256,15 @@
           <div class="carousel-inner">
             <!-- Slide 1 -->
             <div class="carousel-item active">
-              <h4 class="titulos">Vista del Inicio de Sesión</h4>
-              <img src="imagenes/vistaLogin.png" class="d-block w-100" alt="Vista del Inicio de Sesion">
+              <img src="img/Rectangle 200.png" class="d-block w-100" alt="Vista del punto de venta 1">
             </div>
             <!-- Slide 2 -->
             <div class="carousel-item">
-              <h4 class="titulos">Vista de los Reportes</h4>
-              <img src="imagenes/vistaReportes.png" class="d-block w-100" alt="Vista de los Reportes">
+              <img src="img/Rectangle 200.png" class="d-block w-100" alt="Vista del punto de venta 2">
             </div>
             <!-- Slide 3 -->
             <div class="carousel-item">
-              <h4 class="titulos">Vista de las Mesas</h4>
-              <img src="imagenes/vistaMesas.png" class="d-block w-100" alt="Vista de las Mesas">
-            </div>
-            <!-- Slide 4 -->
-            <div class="carousel-item">
-              <h4 class="titulos">Vista de las Reservaciones</h4>
-              <img src="imagenes/vistaReservaciones.png" class="d-block w-100" alt="Vista de las Reservaciones">
-            </div>
-            <!-- Slide 5 -->
-            <div class="carousel-item">
-              <h4 class="titulos">Vista del Menú</h4>
-              <img src="imagenes/vistaMenu.png" class="d-block w-100" alt="Vista del Menu">
-            </div>
-            <!-- Slide 6 -->
-            <div class="carousel-item">
-              <h4 class="titulos">Vista del Inventario</h4>
-              <img src="imagenes/vistaProductos.png" class="d-block w-100" alt="Vista del Inventario">
-            </div>
-            <!-- Slide 7 -->
-            <div class="carousel-item">
-              <h4 class="titulos">Vista de los Pedidos</h4>
-              <img src="imagenes/vistaPedidos.png" class="d-block w-100" alt="Vista de los Pedidos">
-            </div>
-            <!-- Slide 8 -->
-            <div class="carousel-item">
-              <h4 class="titulos">Vista del Personal</h4>
-              <img src="imagenes/vistaPersonal.png" class="d-block w-100" alt="Vista del Personal">
+              <img src="img/Rectangle 200.png" class="d-block w-100" alt="Vista del punto de venta 3">
             </div>
           </div>
           <!-- Controles de navegación -->
@@ -298,7 +278,7 @@
           </button>
         </div>
         <div class="descrip">
-          <p class="texto"> Con la facilidad y comodidad de nuestro software, no perderás ni una 
+          <p class="col-md-8 offset-2"> Con la facilidad y comodidad de nuestro software, no perderás ni una 
             venta y podrás aumentar tus ganancias con mayor facilidad.
           </p>
         </div>
@@ -333,7 +313,7 @@
     </div>
 
     <!-- Beneficios -->
-    <div class="container-fluid" id="linkbeneficio">
+    <div class="container-fluid">
       <div class="bene">
         <h2 class="beneficios">Beneficios</h2>
         <div class="row">
@@ -385,6 +365,8 @@
     </div>
 
     <!-- Planes -->
+    <div class="container py-5">
+      <h2 class="text-center fw-bold mb-4 planes" id="planes">Planes</h2>
     <div class="container-fluid py-1" id="planes">
       <h2 class="text-center mb-4 planes" >Planes</h2>
       <div class="row justify-content-center">
@@ -559,6 +541,8 @@
                       <div class="col">
                         <label for="numeroTarjeta" class="form-label">Número de la tarjeta</label>
                         <input type="text" class="form-control" id="numeroTarjeta" placeholder="XXXX-XXXX-XXXX-XXXX">
+                        <label for="numeroTarjeta" class="form-label">Número de la tarjeta</label>
+                        <input type="text" class="form-control" id="numeroTarjeta" placeholder="XXXX-XXXX-XXXX-XXXX">
                       </div>
                       <div class="col">
                         <label for="titularTarjeta" class="form-label lb_tip">Titular de la tarjeta</label>
@@ -607,32 +591,34 @@
     <!-- Obten una prueba gratuita -->
     <div class="container-fluid">
       <div class="row">
-        <section class="obt col-12">
-          <div class="img_gratuita text-center">
-            <img class="gratuita img-fluid"  src="imagenes/gratis.png" alt="Prueba gratuita">
-          </div>
-          <h2 class="prueba justify-content-center">Obtén una prueba gratuita</h2>
-          <p class="contamos justify-content-center" width="50">
-            ¡Contamos con una prueba completamente gratuita que 
-            incluye el plan básico por 2 semanas, para que puedas 
-            disfrutar de la comodidad de nuestro software!
-          </p>
-          <ul class="list-unstyled ilimitados">
-            <li class="espaciado">✓ 1 Usuario</li>
-            <li class="espaciado">✓ Productos y Ventas ilimitados</li>
-            <li class="espaciado">✓ Facturas limitadas</li>
-            <li class="espaciado">✗ Gestión de Inventario</li>
-            <li class="espaciado">✗ Gestión de Mesas y Reservaciones</li>
-            <li class="espaciado">✗ Integración con Sistemas de Pago</li>
-            <li class="espaciado">✗ Reportes Financieros</li>
-          </ul>
-          <div class="text-center">
-            <button type="button" class="btn_obtener btn-light" data-bs-toggle="modal" data-bs-target="#adquirirModal">¡Obtener!</button>
-          </div>
-        </section>
+        <div class="prue">
+          <section class="col-12">
+            <div class="gratuita col-6">
+              <img src="imagenes/gratis.png">
+            </div>
+            <h2 class="prueba col-6">Obtén una prueba gratuita</h2> 
+            <p class="contamos col-md-5 offset-6 ">
+              ¡Contamos con una prueba completamente gratuita que 
+              incluye el plan basico por 2 semanas, para que puedas
+              disfrutar de la comodidad de nuestro software!
+            </p>
+            <ul class="list-unstyled ilimitados col-md-4 offset-8">
+              <li  class="espaciado">✓ 1 Usuario</li>
+              <li class="espaciado" >✓ Productos y Ventas ilimitados</li>
+              <li class="espaciado">✓ Facturas limitadas</li>
+              <li class="espaciado">✗ Gestión de Inventario</li>
+              <li class="espaciado">✗ Gestión de Mesas y Reservaciones</li>
+              <li class="espaciado">✗ Integración con Sistemas de Pago</li>
+              <li class="espaciado">✗ Reportes Financieros</li>
+            </ul>
+            <div class="card-body justify-content-between text-center">
+              <button type="button" class="btn_obtener btn-light">¡Obtener!</button>
+            </div>
+          </section>
+        </div>
       </div>
     </div>
-
+    
     <!-- Nuestros socios -->
     <div class="container-fluid my-5">
       <h2 class="socios">Nuestros socios</h2>
@@ -788,6 +774,7 @@
     </div>
 
     <!-- Contacto -->
+    <div class="container-fluid">
     <div class="container-fluid">
       <div class="espa">
         <div class="contact-form">
