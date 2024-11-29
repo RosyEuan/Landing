@@ -51,18 +51,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $route['default_controller']    = 'Website';
 
-$route['perfil'] = 'Website/perfil';
-$route['editar_perfil'] = 'Website/editar_perfil';
+$route['perfil']                = 'Website/perfil';
+$route['editar_perfil']         = 'Website/editar_perfil';
 
 $route['404_override']          = '';
 $route['translate_uri_dashes']  = FALSE;
 $route['datos']                 = 'Website/datos';
 $route['correo']                = 'PhpMailer/SendMail';
-$route['registrarse']               = 'registro_usuario/agregar_usuario';
-
-
-
-
-
-
-
+$route['registrarse']           = 'registro_usuario/agregar_usuario';
+$route['iniciar_sesion']        = 'Login/iniciar';
+$route['cerrar_sesion']         = 'Login/logout';
+$route['prueba']                = 'Login/testModel';

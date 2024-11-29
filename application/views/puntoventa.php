@@ -4,12 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cytisum</title>
+     <!-- Incluye jQuery desde un CDN -->
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Khmer&family=Konkhmer+Sleokchher&family=Suez+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+   
+
   </head>
   <body>
     <!-- Barra de navegación -->
@@ -39,11 +43,17 @@
                   <a class="nav-link text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <img class="login" id="iconoLogin" src="imagenes/lgin.png" alt="Icono de login">
                   </a>
+                  <?php if ($logged_in): ?>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                      <li><button class="dropdown-item " id ="logout_button">Cerrar Sesión</button></li>
+                      <li><a class="dropdown-item "  href= "perfil">Ver perfil</a></li>
+                    </ul>
+                    <?php else:?>
                   <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item " data-bs-toggle="modal" data-bs-target="#loginModal">Iniciar sesión</a>
-                  </li>
-                       <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#crearCuentaModal">Crear cuenta</a></li>
+                    <li><a class="dropdown-item " data-bs-toggle="modal" data-bs-target="#loginModal">Iniciar sesión</a></li>
+                    <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#crearCuentaModal">Crear cuenta</a></li>
                   </ul>
+                  <?php endif;?>
                 </li>
               </ul>
             </div>
@@ -57,30 +67,31 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">  
-          <div class="modal-header">  
             <h5 class="modal-title" id="loginModalLabel">Iniciar sesión</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
             <div class="login-container"> 
               <div class="si">
-            <div class="login-container"> 
-              <div class="si">
                 <div class="logi">
                   <div class="circu">
                     <div class="text-center">
                       <img src="/Landing/imagenes/log.png" class="img" alt="Logo Cytisum">
-                      <img src="imagenes/log.png" class="img_cytisumLogin" alt="Logo Cytisum">
                     </div>
                   </div>
                   <div class="mover">
                     <p class="sesion">Iniciar sesión</p>
-                    <form>
+
+                    <?php if(isset($_GET['error'])): ?>
+                      <p>Datos invalidos</p>
+                      <?php endif; ?>
+
+                    <form id = "inicioForm" method = "POST" >
                       <div class="mb-3 con">
-                        <input type="text" class="form-control inicio_sesion" id="usuarios" placeholder="Usuario">
+                        <input type="text" class="form-control inicio_sesion" name = "usuario" id="usuario" placeholder="Usuario">
                       </div>
                       <div class="mb-3 con">
-                        <input type="password" class="form-control inicio_sesion" id="contrasena" placeholder="Contraseña">
+                        <input type="password" class="form-control inicio_sesion" name = "contraseña" id="contrasena" placeholder="Contraseña">
                       </div>
                       <div class="mb-3 text-center">
                         <a href="#" class="contra">¿Olvidaste tu contraseña?</a>
@@ -89,9 +100,10 @@
                         <button type="submit" class="btn btn-primary ingresar">Ingresar</button>
                       </div>
                     </form>
+                    
                     <div class="footer-links mt-3">
                       <p>¿No tienes cuenta? <a href="#" data-bs-toggle="modal" data-bs-target="#crearCuentaModal">Crear una cuenta</a></p>
-                      <p><a href="#">Aviso de privacidad</a> | <a href="#" data-bs-toggle="modal" data-bs-target="#">Términos y condiciones</a></p>
+                      <p><a href="#">Aviso de privacidad</a> | <a href="#" data-bs-toggle="modal" data-bs-target="#perfilModal">Términos y condiciones</a></p>
                     </div>
                   </div>
                 </div>
@@ -104,6 +116,61 @@
         </div>
       </div>
     </div>
+
+    <script>
+$(document).ready(function() {
+    
+    $('#inicioForm').on('submit', function(event) {
+        event.preventDefault(); 
+        $.ajax({
+            url: "<?php echo base_url('iniciar_sesion'); ?>", 
+            method: "POST",
+            data: $(this).serialize(), 
+            dataType: "json", 
+            success: function(response) {
+                if (response.status === 'success') {
+                    alert(response.message); 
+                    location.reload(); 
+                } else {
+                    alert(response.message); 
+                }
+            },
+            error: function(xhr, status, error) {
+                console.error('Error de AJAX:', error);
+                console.error('Detalles del error:', xhr.responseText);
+                alert('Ocurrió un error al procesar la solicitud.',error);
+            }
+        });
+    });
+
+    // evento click para cerrar sesión
+    $('#logout_button').on('click', function() {
+        logout(); // Llamamos a la función logout cuando se haga click
+    });
+});
+
+// Función para cerrar sesión
+function logout() {
+    $.ajax({
+        url: "<?php echo base_url('cerrar_sesion'); ?>", // Ruta para cerrar sesión
+        method: "POST",
+        dataType: "json",
+        success: function(response) {
+            console.log('Respuesta del servidor:', response);
+            if (response.status === 'success') {
+                window.location.reload(); // Recargar la página
+            } else {
+                alert('Hubo un problema al cerrar la sesión'+response.message); // Mostrar alerta si hay error
+            }
+        },
+        error: function(xhr, status, error) {
+            console.error('Error de AJAX:', error);
+            alert('Hubo un error en ajax al procesar el cerrar sesión'+xhr.responseText); // Mostrar alerta de error
+        }
+    });
+}
+
+ </script>
 
     <!-- Modal para Crear Cuenta -->
     <div class="modal fade" id="crearCuentaModal" tabindex="-1" aria-labelledby="crearCuentaModalLabel" aria-hidden="true">
@@ -120,48 +187,47 @@
                   <div class="informacion"></div>
                   <div class="text-center">
                     <img src="/Landing/imagenes/log.png" class="img" alt="Logo Cytisum">
-                    <img src="imagenes/log.png" class="img" alt="Logo Cytisum">
                   </div>
-                  <form class="cont" method="POST">
-                  <form class="cont" method="POST">
+                 
+                  <form class="cont" id = "registroForm">
                     <p class="infocue">Información de su cuenta</p>
                     <div class="row mb-3 control_cuenta">
                       <div class="col">
                         <label for="nombre" class="form-label lb_cuenta">Nombre(s)</label>
-                        <input type="text" class="form-control cr_cuenta" id="registro_nombre" placeholder="Nombre">
-                        <input type="text" class="form-control cr_cuenta" id="registro_nombre" placeholder="Nombre">
+                        <input type="text" class="form-control cr_cuenta" id="registro_nombre" name ="registro_nombre" placeholder="Nombre">
                       </div>
                       <div class="col">
                         <label for="apellido" class="form-label lb_cuenta">Apellidos</label>
-                        <input type="text" class="form-control cr_cuenta" id="registro_apellido" placeholder="Apellido">
-                        <input type="text" class="form-control cr_cuenta" id="registro_apellido" placeholder="Apellido">
+                        <input type="text" class="form-control cr_cuenta" id="registro_apellido" name = "registro_apellido" placeholder="Apellido">
                       </div>
                     </div>
                     <div class="row mb-3 control_cuenta">
                       <div class="col">
                         <label for="correo" class="form-label lb_cuenta">Correo electrónico</label>
-                        <input type="email" class="form-control cr_cuenta" id="registro_correo" placeholder="Gmail">
+                        <input type="email" class="form-control cr_cuenta" id="registro_correo" name = "registro_correo" placeholder="Gmail">
                       </div>
                       <div class="col">
                         <label for="telefono" class="form-label lb_cuenta">Teléfono</label>
-                        <input type="text" class="form-control cr_cuenta" id="registro_telefono" placeholder="Teléfono">
+                        <input type="text" class="form-control cr_cuenta" id="registro_telefono" name = "registro_telefono" placeholder="Teléfono">
                       </div>
                     </div>
                     <p class="infocue">Información de acceso</p>
                     <div class="row mb-3 control_cuenta">
                       <div class="col">
                         <label for="usuario" class="form-label lb_cuenta">Usuario</label>
-                        <input type="text" class="form-control cr_cuenta" id="registro_usuario" placeholder="Usuario">
+                        <input type="text" class="form-control cr_cuenta" id="registro_usuario" name = "registro_usuario" placeholder="Usuario">
                       </div>
                       <div class="col">
                         <label for="contrasena" class="form-label lb_cuenta">Contraseña</label>
-                        <input type="password" class="form-control cr_cuenta" id="registro_contrasena" placeholder="Contraseña"> 
+                        <input type="password" class="form-control cr_cuenta" id="registro_contrasena" name ="registro_contrasena" placeholder="Contraseña"> 
                       </div>
                     </div>
                     <div class="text-center">
                       <button type="submit" class="btn btn-primary crear">CREAR CUENTA</button>
                     </div>
                   </form>
+
+
                 </div>
               </div>
             </div>
@@ -172,6 +238,52 @@
         </div>
       </div>
     </div>
+
+
+    <script>
+      $(document).ready(function(){
+
+      $('#registroForm').on('submit', function(e){
+      e.preventDefault(); // Evita recargar la pagina
+
+      // Obtiene los datos del formulario
+      var formData = $(this).serialize(); // Datos formulario
+
+       $.ajax({
+          url: "<?php echo base_url('registrarse'); ?>", // URL donde se enviarán los datos
+          type: "POST", 
+          data: formData,
+          dataType: "json", //respuesta en formato JSON
+          success: function(response) {
+        
+          if(response.status == 'success') {
+         
+          //$('.informacion').html('<div class="alert alert-success">' + response.message + '</div>');
+         
+          $('#registroForm')[0].reset(); // vaciar los input
+          $('#crearCuentaModal').modal('hide'); // Cerrar el modal
+          alert(response.message);
+          } else {
+          // Si hay errores, muestra los errores
+            console.log(response.message);
+            $('.informacion').html('<div class="alert alert-danger">' + response.message + '</div>');
+          // alert(response.message);
+          }
+          setTimeout(function () {
+          $('.informacion').html('');
+            }, 2000);
+          },
+          error: function(xhr,status,error) {
+          // Error en la solicitud AJAX
+            console.error('Hubo un error:',error);
+            console.error('Detalles del error',xhr.responseText);
+           $('.informacion').html('<div class="alert alert-danger">Ocurrió un error inesperado.</div>'+xhr.responseText);
+           //$('.informacion').
+          }
+        });
+      });
+    });
+    </script>
 
     <!-- Inicio -->
     <div class="container-fluid">
@@ -217,7 +329,7 @@
           </div>
           <div class="col-md-4 feature-item">
             <div class="feature-icon">
-              <img class="ft_icon" src="img/pedidos.png" alt="Img. de Optimizar pedidos">
+              <img class="ft_icon" src="/Landing/img/pedidos.png" alt="Img. de Optimizar pedidos">
             </div>
             <h4>Optimiza tus pedidos</h4>
             <div class="pedido">
@@ -231,7 +343,7 @@
           </div>
           <div class="col-md-4 feature-item">
             <div class="feature-icon">
-              <img class="ft_icon" src="img/uso.png" alt="Img. de Facilidad de uso">
+              <img class="ft_icon" src="/Landing/img/uso.png" alt="Img. de Facilidad de uso">
             </div>
             <h4>Facilidad de uso</h4>
             <div class="pedido">
@@ -327,7 +439,7 @@
                 a largo plazo.
               </p>
               <div class="text-center">
-                <img src="img/si.png" alt="img1">
+                <img src="/Landing/img/si.png" alt="img1">
               </div>
             </div>
           </div>
@@ -367,11 +479,9 @@
     <!-- Planes -->
     <div class="container py-5">
       <h2 class="text-center fw-bold mb-4 planes" id="planes">Planes</h2>
-    <div class="container-fluid py-1" id="planes">
-      <h2 class="text-center mb-4 planes" >Planes</h2>
       <div class="row justify-content-center">
         <!-- Plan Básico -->
-        <div class="res col-md-4 mb-4  pricing-card-basic align-plan-basic">
+        <div class="col-md-4 mb-4  pricing-card-basic align-plan-basic">
           <div class="card pricing-card shadow-sm border-0 h-100">
             <div class="card-body text-center">
               <h5 class="plan">Plan Básico</h5>
@@ -392,7 +502,7 @@
           </div>
         </div>
         <!-- Plan Profesional -->
-        <div class="res col-md-4 mb-4">
+        <div class="col-md-4 mb-4">
           <div class="card pricing-card shadow-sm border-0 h-100">
             <div class="card-body text-center azu">
               <h5 class=" plan">Plan Profesional</h5>
@@ -413,7 +523,7 @@
           </div>
         </div>
           <!-- Plan Estándar -->
-          <div class="res col-md-4 mb-4 pricing-card-standard align-plan-standard">
+          <div class="col-md-4 mb-4 pricing-card-standard align-plan-standard">
             <div class="card pricing-card shadow-sm border-0 h-100">
               <div class="card-body text-center">
                 <h5 class=" plan">Plan Estándar</h5>
@@ -450,7 +560,7 @@
                 <div class="rell">
                   <div class="cir">
                     <div class="text-center">
-                      <img src="/Punto_Venta/imagenes/log.png" class="imge" alt="Logo Cytisum">
+                      <img src="/Landing/imagenes/log.png" class="imge" alt="Logo Cytisum">
                     </div>
                   </div>
                   <div class="toc">
@@ -524,7 +634,7 @@
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="pagoModalLabel">Formulario de Pago</h5>
+            <h5 class="modal-title" id="pagoModalLabel">Formulario de Pagos</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
@@ -533,14 +643,12 @@
                 <div class="relle">
                   <div class="circ">
                     <div class="text-center">
-                      <img src="/Punto_Venta/imagenes/log.png" class="img_cytisum_pago" alt="Logo Cytisum">
+                      <img src="/Landing/imagenes/log.png" class="img_cytisum_pago" alt="Logo Cytisum">
                     </div>
                   </div>
                   <form class="todo">
                     <div class="row mb-3 cont_pago">
                       <div class="col">
-                        <label for="numeroTarjeta" class="form-label">Número de la tarjeta</label>
-                        <input type="text" class="form-control" id="numeroTarjeta" placeholder="XXXX-XXXX-XXXX-XXXX">
                         <label for="numeroTarjeta" class="form-label">Número de la tarjeta</label>
                         <input type="text" class="form-control" id="numeroTarjeta" placeholder="XXXX-XXXX-XXXX-XXXX">
                       </div>
@@ -620,7 +728,7 @@
     </div>
     
     <!-- Nuestros socios -->
-    <div class="container-fluid my-5">
+    <div class="container my-5">
       <h2 class="socios">Nuestros socios</h2>
       <p class="text-center mb-4 confianza">
         Este espacio resalta la confianza y destaca a los negocios que han adoptado nuestra solución de punto de venta para optimizar sus 
@@ -628,7 +736,7 @@
       </p>
       <div class="row">
         <!-- Tarjeta 1 -->
-        <div class="res col-md-4 mb-4">
+        <div class="col-md-4 mb-4">
           <div class="testimonial-card p-4">
             <div class="testimonial-img mx-auto mb-3">
               <div class="text-center">
@@ -648,7 +756,7 @@
           </div>
         </div>
         <!-- Tarjeta 2 -->
-        <div class="res col-md-4 mb-4">
+        <div class="col-md-4 mb-4">
           <div class="testimonial-card p-4 move-down">
             <div class="testimonial-img mx-auto mb-3">
               <div class="text-center">
@@ -668,7 +776,7 @@
           </div>
         </div>
         <!-- Tarjeta 3 -->
-        <div class="res col-md-4 mb-4">
+        <div class="col-md-4 mb-4">
           <div class="testimonial-card p-4">
             <div class="testimonial-img mx-auto mb-3">
               <div class="text-center">
@@ -698,7 +806,8 @@
         lo que otros han experimentado.
       </p>
       <div class="row mt-4">
-        <div class="res col-sm-12 col-md-4 mb-4">
+        <!-- Reseña 1 -->
+        <div class="col-md-4 mb-4">
           <div class="review-card review-card-margin">
             <div class="review-stars">
               <i class="fas fa-star"></i>
@@ -711,7 +820,8 @@
               órdenes de manera clara y sin errores, 
               lo que facilita la preparación de los
               platos y evita confusiones. Nos permite
-              enfocarnos en lo que más importa.
+              enfocarnos en lo que realmente 
+              importa.
             </p>
             <div class="author-info">
               <img src="img/jorge.svg" alt="Jorge Ortega" class="review-img">
@@ -722,7 +832,8 @@
             </div>
           </div>
         </div>
-        <div class="res col-sm-12 col-md-4 mb-4">
+        <!-- Reseña 2 -->
+        <div class="col-md-4 mb-4">
           <div class="review-card review-card-sofia">
             <div class="review-stars">
               <i class="fas fa-star"></i>
@@ -746,7 +857,8 @@
             </div>
           </div>
         </div>
-        <div class="res col-sm-12 col-md-4 mb-4">
+        <!-- Reseña 3 -->
+        <div class="col-md-4 mb-4">
           <div class="review-card review-card-margin">
             <div class="review-stars">
               <i class="fas fa-star"></i>
@@ -765,7 +877,7 @@
               <img src="img/ana.svg" alt="Ana Morales" class="review-img">
               <div>
                 <p class="review-author">Ana Morales</p>
-                <p class="review-position">Cajera en "El Buen Sabor"</p>
+                <p class="review-position">Encargada de Caja en "El Buen Sabor"</p>
               </div>
             </div>
           </div>
@@ -774,7 +886,6 @@
     </div>
 
     <!-- Contacto -->
-    <div class="container-fluid">
     <div class="container-fluid">
       <div class="espa">
         <div class="contact-form">
@@ -798,6 +909,8 @@
                 <label for="email">Correo electrónico</label>
                 <input type="email" id="email" class="form-control contacto_to" placeholder="Correo electrónico">
               </div>
+
+
               <button type="submit" class="btn btn-primary submit-btn">Continuar</button>
             </form>  
           </div>
@@ -807,47 +920,58 @@
     </div>
     
     <!-- Footer -->
-    <footer class="foot text-center">
+    <footer class="text-center" style="background-color: #5CA3D9;">
+      <!-- Section: Social media -->
       <section class="d-flex justify-content-center p-4">
-        <p class="condicion text-center">*El precio de los planes puede variar según el país en donde se encuentre la empresa compradora</p>
+        <p class="text-center">*El precio de los planes puede variar según el país en donde se encuentre la empresa compradora</p>
       </section>
-      <section class="cnt-cuadro d-flex justify-content-center p-2">
+      <!-- Cuadrado con texto -->
+      <section class="cnt-cuadro d-flex justify-content-center p-2 border-bottom">
         <div class="cuadrado"> 
-          <h2 class="cdro">¡Empieza a Contactarnos!</h2>
-          <h2>(998)-543-7970</h2>
+          <h2>¡Empieza a Contactarnos!</h2>
+          <h2>(998)-345-7079</h2>
         </div>
       </section>
-      <div class="linea"></div>
+
+      <!-- Section: Social media -->
+
+      <!-- Section: Links  -->
       <section class="">
         <div class="container text-center text-md-start mt-5">
           <div class="row mt-3">
+            <!-- Grid column -->
             <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
               <h6 class="text-uppercase fw-bold mb-4">Funciones</h6>
-              <p><a href="#!" class="text-reset_txt">Menú</a></p>
-              <p><a href="#!" class="text-reset_txt">Mesas</a></p>
-              <p><a href="#!" class="text-reset_txt">Almacén</a></p>
-              <p><a href="#!" class="text-reset_txt">Pedidos</a></p>
-              <p><a href="#!" class="text-reset_txt">Personal</a></p>
-              <p><a href="#!" class="text-reset_txt">Servicios</a></p>
-              <p><a href="#!" class="text-reset_txt">Estadisticas</a></p>
+              <p><a href="#!" class="text-reset">Menú</a></p>
+              <p><a href="#!" class="text-reset">Mesas</a></p>
+              <p><a href="#!" class="text-reset">Almacén</a></p>
+              <p><a href="#!" class="text-reset">Pedidos</a></p>
+              <p><a href="#!" class="text-reset">Personal</a></p>
+              <p><a href="#!" class="text-reset">Servicios</a></p>
+              <p><a href="#!" class="text-reset">Estadisticas</a></p>
+              <p><a href="#!" class="text-reset">Pedidos</a></p>
             </div>
-            <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-4">
+            <!-- Grid column -->
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
               <h6 class="text-uppercase fw-bold mb-4">Mapa del sitio</h6>
-              <p><a href="#!" class="text-reset_txt">Inicio</a></p>
-              <p><a href="#!" class="text-reset_txt">¿Por qué nosotros?</a></p>
-              <p><a href="#!" class="text-reset_txt">Beneficios</a></p>
-              <p><a href="#!" class="text-reset_txt">Planes</a></p>
-              <p><a href="#!" class="text-reset_txt">Opiniones</a></p>
+              <p><a href="#!" class="text-reset">Inicio</a></p>
+              <p><a href="#!" class="text-reset">¿Por qué nosotros?</a></p>
+              <p><a href="#!" class="text-reset">Beneficios</a></p>
+              <p><a href="#!" class="text-reset">Planes</a></p>
+              <p><a href="#!" class="text-reset">Opiniones</a></p>
             </div>
-            <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mb-4">
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
               <h6 class="text-uppercase fw-bold mb-4">Recursos</h6>
-              <p><a href="#!" class="text-reset_txt">Programa de recomendaciones</a></p>
-              <p><a href="#!" class="text-reset_txt">Terminos y condiciones</a></p>
-              <p><a href="#!" class="text-reset_txt">Terminos de uso</a></p>
-              <p><a href="#!" class="text-reset_txt">Politica de privacidad</a></p>
+              <p><a href="#!" class="text-reset">Programa de recomendaciones</a></p>
+              <p><a href="#!" class="text-reset">Terminos y condiciones</a></p>
+              <p><a href="#!" class="text-reset">Terminos de uso</a></p>
+              <p><a href="#!" class="text-reset">Politica de privacidad</a></p>
             </div>
+            <!-- Grid column -->
             <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
               <h6 class="text-uppercase fw-bold mb-4">Nuestras redes</h6>
+              
               <section class="social-media">
                 <div class="social-icons">
                   <a href="#!" class="text-reset"><img src="imagenes/fc.png" class="rounded mx-auto" alt="Facebook"></a>
@@ -857,30 +981,151 @@
                 </div>
               </section>
             </div>
+            <!-- Grid column -->
           </div>
         </div>
       </section>
-      <div class="linea"></div>
-      <div class="text-center">
+      <!-- Section: Links  -->
+
+      <!-- Copyright -->
+      <div class="text-center" style="background-color: #5CA3D9;">
         <section class="">
           <div class="container text-center text-md-start mt-5">
             <div class="row mt-3">
+              <!-- Grid column -->
               <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
                 <p>México</p>
               </div>
+              <!-- Grid column -->
               <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-4">
                 <a href="#!" class="text-reset"><p> Facebook    |    Instagram    |    Linkedin</p> </a>
               </div>
+              <!-- Grid column -->
               <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
                 <p>© 2024 Cytisum</p>
               </div>
+              <!-- Grid column -->
             </div>
           </div>
         </section>
       </div>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <!-- Modal para el Perfil -->
+    <div class="modal fade" id="perfilModal" tabindex="-1" aria-labelledby="perfilModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="perfilModalLabel">Perfil de Usuario</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="container mt-5">
+              <h2 class="titulo_perfil">Perfil</h2>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="cuadro_perfil">
+                    <form class="todito">
+                      <div class="form-row align-items-center mb-3">
+                        <div class="col-4">
+                          <label for="usuario" class="lis">Usuario</label>
+                        </div>
+                        <div class="col-8">
+                          <div class="este">
+                            <input type="text" class="form-control ctrl_perfil" id="usuario" placeholder="JorgePerez">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-row align-items-center mb-3">
+                        <div class="col-4">
+                          <label for="contrasena" class="lis">Contraseña</label>
+                        </div>
+                        <div class="col-8">
+                          <div class="este">
+                            <input type="password" name="password" class="form-control password1" placeholder="clave">
+                            <span class="fa fa-fw fa-eye password-icon show-password"></span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-row align-items-center mb-3">
+                        <div class="col-4">
+                          <label for="telefono" class="lis">Teléfono</label>
+                        </div>
+                        <div class="col-8">
+                          <div class="este">
+                            <input type="text" class="form-control ctrl_perfil" id="telefono" placeholder="998 424 2539">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-row align-items-center mb-3">
+                        <div class="col-4">
+                          <label for="correo" class="lis">Correo</label>
+                        </div>
+                        <div class="col-8">
+                          <div class="este">
+                            <input type="email" class="form-control ctrl_perfil" id="correo" placeholder="JorgePD@gmail.com">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-row align-items-center mb-3">
+                        <div class="col-4">
+                          <label for="empresa" class="lis">Empresa</label>
+                        </div>
+                        <div class="col-8">
+                          <div class="este">
+                            <input type="text" class="form-control ctrl_perfil" id="empresa" placeholder="Noctis Design">
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+
+                <!-- Foto de perfil -->
+                <div class="col-md-4 offset-md-1">
+                  <div class="text-center">
+                    <img src="img/perfil.png" class="foto-perfil" alt="Foto de perfil">
+                  </div>
+                  <h4 class="jorge">Jorge Alejandro<br>Perez Dominguez</h4>
+                  <div class="botones">
+                    <div class="text-center">
+                      <button type="submit" class="btn btn-primary editarb">Editar</button>
+                    </div><br>
+                    <div class="text-center">
+                      <button type="submit" class="btn btn-primary editar">Cerrar sesión</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Script para la funcion del ojo -->
+    <script>
+    window.addEventListener("load", function() {
+        // Icono para mostrar/ocultar contraseña
+        showPassword = document.querySelector('.show-password');
+        showPassword.addEventListener('click', () => {
+            // Input de tipo password
+            password1 = document.querySelector('.password1');
+            if (password1.type === "text") {
+                password1.type = "password";
+                showPassword.classList.remove('fa-eye-slash');
+            } else {
+                password1.type = "text";
+                showPassword.classList.toggle("fa-eye-slash");
+            }
+        });
+    });
+    </script>
+
+    
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>  

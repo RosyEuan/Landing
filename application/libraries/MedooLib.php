@@ -10,9 +10,14 @@ class MedooLib {
         $this->database = new Medoo([
             'type' => 'mysql',
             'host' => 'localhost',
-            'database' => 'Landing_pventa',
+            'database' => 'landing',
             'username' => 'root',
-            'password' => ''
+            'password' => '',
+            'charset'  => 'utf8',
+            'option'        => [
+                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+                PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
+            ]
         ]);}
         
         public function getInstance() {

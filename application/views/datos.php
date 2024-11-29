@@ -18,7 +18,7 @@
                 <strong>Correo:</strong> <?php echo $usuario['Correo']; ?><br>
                 <strong>Teléfono:</strong> <?php echo $usuario['Telefono']; ?>
             </li>
-            <br>
+            <br>    
         <?php endforeach; ?>
     </ul>
 <?php else: ?>
