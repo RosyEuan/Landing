@@ -62,3 +62,5 @@ $route['registrarse']           = 'registro_usuario/agregar_usuario';
 $route['iniciar_sesion']        = 'Login/iniciar';
 $route['cerrar_sesion']         = 'Login/logout';
 $route['prueba']                = 'Login/testModel';
+$route['contacto']              = 'Forms/contacto';
+$route['obtener_perfil']        = 'Login/obtenerPerfil';

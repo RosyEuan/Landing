@@ -73,7 +73,7 @@
                             </div>
                             <div class="col-8">
                                 <div class="este">
-                                    <input type="password" name="password" class="form-control password1" placeholder="Contraseña">
+                                    <input type="password" name="password" class="form-control password1" id="contraseña" placeholder="Contraseña">
                                     <span class="fa fa-fw fa-eye password-icon show-password"></span>
                                 </div>
                             </div>
@@ -145,6 +145,35 @@
             }
         });
     });
+</script>
+
+
+<!-- Script específico para cargar datos del perfil -->
+<script>
+        $(document).ready(function() {
+            $.ajax({
+                url: "<?php echo base_url('obtener_perfil'); ?>",
+                method: "GET",
+                dataType: "json",
+                success: function(response) {
+                    if (response.status === 'success') {
+                        const datos = response.data[0]; // Medoo devuelve un arreglo, tomamos el primer elemento
+                        $('#usuario').val(datos.usuario);
+                        $('#contraseña').val(datos.contraseña); // Si decides mostrarla (en texto cifrado, si es necesario)
+                        $('#telefono').val(datos.telefono);
+                        $('#correo').val(datos.correo);
+                        $('#empresa').val(datos.nombre_empresa || ''); // Maneja si no hay empresa
+                    } else {
+                        alert(response.message);
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.error('Error de AJAX:', error);
+                    console.error('Detalles del error:', xhr.responseText);
+                    alert('Ocurrió un error al obtener los datos del perfil.');
+                }
+            });
+        });
 </script>
 
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>  
