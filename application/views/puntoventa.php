@@ -10,12 +10,9 @@
   <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Khmer&family=Konkhmer+Sleokchher&family=Suez+One&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Khmer&family=Konkhmer+Sleokchher&family=Suez+One&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="style.css">
-
-
 </head>
 
 <body>
@@ -89,19 +86,16 @@
                 </div>
                 <div class="mover">
                   <p class="sesion">Iniciar sesión</p>
-
                   <?php if (isset($_GET['error'])): ?>
                     <p>Datos invalidos</p>
                   <?php endif; ?>
-
                   <form id="inicioForm" method="POST">
                     <div class="mb-3 con">
                       <input type="text" class="form-control inicio_sesion" name="usuario" id="usuario"
                         placeholder="Usuario">
                     </div>
                     <div class="mb-3 con">
-                      <input type="password" class="form-control inicio_sesion" name="contraseña" id="contrasena"
-                        placeholder="Contraseña">
+                      <input type="password" class="form-control inicio_sesion" name="contraseña" id="contrasena" placeholder="Contraseña">
                     </div>
                     <div class="mb-3 text-center">
                       <a href="#" class="contra">¿Olvidaste tu contraseña?</a>
@@ -110,7 +104,6 @@
                       <button type="submit" class="btn btn-primary ingresar">Ingresar</button>
                     </div>
                   </form>
-
                   <div class="footer-links mt-3">
                     <p>¿No tienes cuenta? <a href="#" data-bs-toggle="modal" data-bs-target="#crearCuentaModal">Crear
                         una cuenta</a></p>
@@ -130,16 +123,16 @@
   </div>
 
   <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
 
-      $('#inicioForm').on('submit', function(event) {
+      $('#inicioForm').on('submit', function (event) {
         event.preventDefault();
         $.ajax({
           url: "<?php echo base_url('iniciar_sesion'); ?>",
           method: "POST",
           data: $(this).serialize(),
           dataType: "json",
-          success: function(response) {
+          success: function (response) {
             if (response.status === 'success') {
               alert(response.message);
               location.reload();
@@ -147,7 +140,7 @@
               alert(response.message);
             }
           },
-          error: function(xhr, status, error) {
+          error: function (xhr, status, error) {
             console.error('Error de AJAX:', error);
             console.error('Detalles del error:', xhr.responseText);
             alert('Ocurrió un error al procesar la solicitud.', error);
@@ -156,7 +149,7 @@
       });
 
       // evento click para cerrar sesión
-      $('#logout_button').on('click', function() {
+      $('#logout_button').on('click', function () {
         logout(); // Llamamos a la función logout cuando se haga click
       });
     });
@@ -167,7 +160,7 @@
         url: "<?php echo base_url('cerrar_sesion'); ?>", // Ruta para cerrar sesión
         method: "POST",
         dataType: "json",
-        success: function(response) {
+        success: function (response) {
           console.log('Respuesta del servidor:', response);
           if (response.status === 'success') {
             window.location.reload(); // Recargar la página
@@ -175,7 +168,7 @@
             alert('Hubo un problema al cerrar la sesión' + response.message); // Mostrar alerta si hay error
           }
         },
-        error: function(xhr, status, error) {
+        error: function (xhr, status, error) {
           console.error('Error de AJAX:', error);
           alert('Hubo un error en ajax al procesar el cerrar sesión' + xhr.responseText); // Mostrar alerta de error
         }
@@ -200,7 +193,6 @@
                 <div class="text-center">
                   <img src="imagenes/log.png" class="img" alt="Logo Cytisum">
                 </div>
-
                 <form class="cont" id="registroForm">
                   <p class="infocue">Información de su cuenta</p>
                   <div class="row mb-3 control_cuenta">
@@ -236,12 +228,14 @@
                     </div>
                     <div class="col">
                       <label for="contrasena" class="form-label lb_cuenta">Contraseña</label>
-                      <input type="password" name="registro_contrasena" class="form-control cr_cuenta password1" placeholder="Contraseña">
+                      <input type="password" name="registro_contrasena" class="form-control cr_cuenta password1"
+                        placeholder="Contraseña">
                       <span class="fa fa-fw fa-eye password-icon show-password"></span>
                     </div>
                     <div class="col">
                       <label for="repcontrasena" class="form-label lb_cuenta">Repetir contraseña</label>
-                      <input type="password" name="rep_contrasena" class="form-control cr_cuenta password2" placeholder="Repetir contraseña">
+                      <input type="password" name="rep_contrasena" class="form-control cr_cuenta password2"
+                        placeholder="Repetir contraseña">
                       <span class="fa fa-fw fa-eye password-icon show-password2"></span>
                     </div>
                   </div>
@@ -249,8 +243,6 @@
                     <button type="submit" class="btn btn-primary crear">CREAR CUENTA</button>
                   </div>
                 </form>
-
-
               </div>
             </div>
           </div>
@@ -264,9 +256,9 @@
 
 
   <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
 
-      $('#registroForm').on('submit', function(e) {
+      $('#registroForm').on('submit', function (e) {
         e.preventDefault(); // Evita recargar la pagina
 
         // Obtiene los datos del formulario
@@ -277,7 +269,7 @@
           type: "POST",
           data: formData,
           dataType: "json", //respuesta en formato JSON
-          success: function(response) {
+          success: function (response) {
 
             if (response.status == 'success') {
 
@@ -292,11 +284,11 @@
               $('.informacion').html('<div class="alert alert-danger">' + response.message + '</div>');
               // alert(response.message);
             }
-            setTimeout(function() {
+            setTimeout(function () {
               $('.informacion').html('');
             }, 2000);
           },
-          error: function(xhr, status, error) {
+          error: function (xhr, status, error) {
             // Error en la solicitud AJAX
             console.error('Hubo un error:', error);
             console.error('Detalles del error', xhr.responseText);
@@ -1146,7 +1138,7 @@
 
   <!-- Script para la funcion del ojo -->
   <script>
-    window.addEventListener("load", function() {
+    window.addEventListener("load", function () {
       // Icono para mostrar/ocultar contraseña
       showPassword = document.querySelector('.show-password');
       showPassword.addEventListener('click', () => {
@@ -1162,7 +1154,7 @@
       });
     });
 
-    window.addEventListener("load", function() {
+    window.addEventListener("load", function () {
       // Icono para mostrar/ocultar contraseña
       showPassword2 = document.querySelector('.show-password2');
       showPassword2.addEventListener('click', () => {

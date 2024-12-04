@@ -1238,7 +1238,6 @@ font-size: 16px;
 }
 .rell{
   max-width: 800px;
-  height: 500px;
   margin: auto;
   padding: 2rem;
   background: linear-gradient(180deg, #FFF 36%, #F3F6FF 99.99%);
@@ -1334,7 +1333,6 @@ font-size: 16px;
 }
 .relle {
   max-width: 800px;
-  height: 500px;
   margin: auto;
   padding: 2rem;
   background: linear-gradient(180deg, #FFF 36%, #F3F6FF 99.99%);
