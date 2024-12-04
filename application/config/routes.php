@@ -64,3 +64,4 @@ $route['cerrar_sesion']         = 'Login/logout';
 $route['prueba']                = 'Login/testModel';
 $route['contacto']              = 'Forms/contacto';
 $route['obtener_perfil']        = 'Login/obtenerPerfil';
+$route['sesion']                = 'SesionModals/sesion';
