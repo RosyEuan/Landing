@@ -1,6 +1,21 @@
 body {
     margin: 0;
   }
+  .dropdown-menu{
+    border: #000;
+    min-width: 180px;
+    border-style:groove ;
+  }
+  .dropdown-menu .dropdown-item {
+    font-size: 14px;
+    cursor: pointer;
+  }
+  .login {
+    cursor: pointer;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+  }
   .navbar {
     background-color: #1E5D8D;
     padding: 0.2rem 1rem;

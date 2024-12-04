@@ -1,29 +1,6 @@
 body {
   margin: 0;
 }
-
-.informacion {
-  margin-bottom: 20px;
-  font-size: 14px;
-}
-.alert {
-  padding: 10px;
-  margin: 0;
-  text-align: center;
-}
-.alert-success {
-  background-color: #d4edda;
-  color: #155724;
-  border: 1px solid #c3e6cb;
-  border-radius: 5px;
-}
-.alert-danger {
-  background-color: #f8d7da;
-  color: #721c24;
-  border: 1px solid #f5c6cb;
-  border-radius: 5px;
-}
-
 .navbar {
   background-color: #1E5D8D;
   padding: 0.5rem 1rem;
@@ -419,7 +396,7 @@ body {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  height: 20%;
+  height: 24%;
   flex-shrink: 0;
 }
 .benefits .benefit-item {
@@ -1158,14 +1135,16 @@ footer {
 .logi {
   max-width: 400px;
   margin: auto;
-  padding: 2rem;
   background-color: #f8f9fa;
   border-radius: 16px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 16px;
+  padding: 8px;
   padding-top: 0;
   padding-left: 0;
   padding-right: 0;
+}
+.sesion_log{
+  padding: 0;
 }
 .circu{
   text-align: center;
@@ -1427,6 +1406,18 @@ font-size: 16px;
   font-family: Khmer;
   font-size: 16px;
 }
+#tipoTarjeta {
+  background-color: #EDEDED;
+  color: #676666;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+#tipoTarjeta:focus {
+  background-color: white;
+  border: 4px solid #b2d3f7;
+  outline: none;
+  transition: all 0.5 ease;
+}
 
 /*Crear cuenta */
 .relleno {
@@ -1521,7 +1512,12 @@ font-size: 16px;
   border-radius: 12px;
   overflow: hidden;
 }
-
+.password-icon {
+  position: relative;
+  margin: -33px 10px 0 0;
+  cursor: pointer;
+  float: right;
+}
 @media (min-width: 768px) {
   .control {
     padding: 0 40px;
