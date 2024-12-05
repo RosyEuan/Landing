@@ -45,7 +45,7 @@ class Login extends CI_Controller
 
             if (password_verify($password, $result[0]['contraseña'])) {
                 $this->session->set_userdata([
-                    'usuario' => $result[0]['usuario'],
+                    'nombre_usuario' => $result[0]['usuario'],
                     'id_usuario' => $result[0]['id_usuario'], // Guarda el id del usuario
                     'logged_in' => true
                 ]);

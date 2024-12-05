@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil</title>
+
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Khmer&family=Konkhmer+Sleokchher&family=Suez+One&display=swap"
         rel="stylesheet">
@@ -61,69 +62,69 @@
 
     <!-- Modal de Iniciar Sesión -->
     <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="loginModalLabel">Iniciar sesión</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <div class="login-container">
-            <div class="sesion_log">
-              <div class="logi">
-                <div class="circu">
-                  <div class="text-center">
-                    <img src="imagenes/log.png" class="img_cytisumLogin" alt="Logo Cytisum">
-                  </div>
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Iniciar sesión</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="mover">
-                  <p class="sesion">Iniciar sesión</p>
-                  <?php if (isset($_GET['error'])): ?>
-                    <p>Datos invalidos</p>
-                  <?php endif; ?>
-                  <form id="inicioForm" method="POST">
-                    <div class="mb-3 con">
-                      <input type="text" class="form-control inicio_sesion" name="usuario" id="usuario"
-                        placeholder="Usuario">
+                <div class="modal-body">
+                    <div class="login-container">
+                        <div class="sesion_log">
+                            <div class="logi">
+                                <div class="circu">
+                                    <div class="text-center">
+                                        <img src="imagenes/log.png" class="img_cytisumLogin" alt="Logo Cytisum">
+                                    </div>
+                                </div>
+                                <div class="mover">
+                                    <p class="sesion">Iniciar sesión</p>
+                                    <?php if (isset($_GET['error'])): ?>
+                                        <p>Datos invalidos</p>
+                                    <?php endif; ?>
+                                    <form id="inicioForm" method="POST">
+                                        <div class="mb-3 con">
+                                            <input type="text" class="form-control inicio_sesion" name="usuario" id="usuario"
+                                                placeholder="Usuario">
+                                        </div>
+                                        <div class="mb-3 con">
+                                            <input type="password" class="form-control inicio_sesion" name="contraseña" id="contrasena" placeholder="Contraseña">
+                                        </div>
+                                        <div class="mb-3 text-center">
+                                            <a href="#" class="contra">¿Olvidaste tu contraseña?</a>
+                                        </div>
+                                        <div class="text-center">
+                                            <button type="submit" class="btn btn-primary ingresar">Ingresar</button>
+                                        </div>
+                                    </form>
+                                    <div class="footer-links mt-3">
+                                        <p>¿No tienes cuenta? <a href="#" data-bs-toggle="modal" data-bs-target="#crearCuentaModal">Crear
+                                                una cuenta</a></p>
+                                        <p><a href="#">Aviso de privacidad</a> | <a href="#" data-bs-toggle="modal"
+                                                data-bs-target="#perfilModal">Términos y condiciones</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="mb-3 con">
-                      <input type="password" class="form-control inicio_sesion" name="contraseña" id="contrasena" placeholder="Contraseña">
-                    </div>
-                    <div class="mb-3 text-center">
-                      <a href="#" class="contra">¿Olvidaste tu contraseña?</a>
-                    </div>
-                    <div class="text-center">
-                      <button type="submit" class="btn btn-primary ingresar">Ingresar</button>
-                    </div>
-                  </form>
-                  <div class="footer-links mt-3">
-                    <p>¿No tienes cuenta? <a href="#" data-bs-toggle="modal" data-bs-target="#crearCuentaModal">Crear
-                        una cuenta</a></p>
-                    <p><a href="#">Aviso de privacidad</a> | <a href="#" data-bs-toggle="modal"
-                        data-bs-target="#perfilModal">Términos y condiciones</a></p>
-                  </div>
                 </div>
-              </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
             </div>
-          </div>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-        </div>
-      </div>
     </div>
-  </div>
 
     <script>
-        $(document).ready(function () {
-            $('#inicioForm').on('submit', function (event) {
+        $(document).ready(function() {
+            $('#inicioForm').on('submit', function(event) {
                 event.preventDefault();
                 $.ajax({
                     url: "<?php echo base_url('iniciar_sesion'); ?>",
                     method: "POST",
                     data: $(this).serialize(),
                     dataType: "json",
-                    success: function (response) {
+                    success: function(response) {
                         if (response.status === 'success') {
                             alert(response.message);
                             location.reload();
@@ -131,7 +132,7 @@
                             alert(response.message);
                         }
                     },
-                    error: function (xhr, status, error) {
+                    error: function(xhr, status, error) {
                         console.error('Error de AJAX:', error);
                         console.error('Detalles del error:', xhr.responseText);
                         alert('Ocurrió un error al procesar la solicitud.', error);
@@ -139,7 +140,7 @@
                 });
             });
             // evento click para cerrar sesión
-            $('#logout_button').on('click', function () {
+            $('#logout_button').on('click', function() {
                 logout(); // Llamamos a la función logout cuando se haga click
             });
         });
@@ -150,7 +151,7 @@
                 url: "<?php echo base_url('cerrar_sesion'); ?>", // Ruta para cerrar sesión
                 method: "POST",
                 dataType: "json",
-                success: function (response) {
+                success: function(response) {
                     console.log('Respuesta del servidor:', response);
                     if (response.status === 'success') {
                         window.location.reload(); // Recargar la página
@@ -158,7 +159,7 @@
                         alert('Hubo un problema al cerrar la sesión' + response.message); // Mostrar alerta si hay error
                     }
                 },
-                error: function (xhr, status, error) {
+                error: function(xhr, status, error) {
                     console.error('Error de AJAX:', error);
                     alert('Hubo un error en ajax al procesar el cerrar sesión' + xhr.responseText); // Mostrar alerta de error
                 }
@@ -247,9 +248,9 @@
     </div>
 
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
 
-            $('#registroForm').on('submit', function (e) {
+            $('#registroForm').on('submit', function(e) {
                 e.preventDefault(); // Evita recargar la pagina
 
                 // Obtiene los datos del formulario
@@ -260,7 +261,7 @@
                     type: "POST",
                     data: formData,
                     dataType: "json", //respuesta en formato JSON
-                    success: function (response) {
+                    success: function(response) {
 
                         if (response.status == 'success') {
 
@@ -274,11 +275,11 @@
                             $('.informacion').html('<div class="alert alert-danger">' + response.message + '</div>');
                             // alert(response.message);
                         }
-                        setTimeout(function () {
+                        setTimeout(function() {
                             $('.informacion').html('');
                         }, 2000);
                     },
-                    error: function (xhr, status, error) {
+                    error: function(xhr, status, error) {
                         // Error en la solicitud AJAX
                         console.error('Hubo un error:', error);
                         console.error('Detalles del error', xhr.responseText);
@@ -292,7 +293,7 @@
 
     <!-- Editar perfil -->
     <div class="container mt-5">
-        <h2 class="titulo">Perfil</h2>
+        <h2 class="titulo">Editar Perfil</h2>
         <div class="row">
             <div class="col-md-6">
                 <div class="cuadre">
@@ -303,7 +304,7 @@
                             </div>
                             <div class="col-8">
                                 <div class="oeste">
-                                    <input type="text" class="form-control" id="usuario" placeholder="Usuario">
+                                    <input type="text" class="form-control" id="usuario1" placeholder="Usuario">
                                 </div>
                             </div>
                         </div>
@@ -314,7 +315,7 @@
                             <div class="col-8">
                                 <div class="oeste">
                                     <input type="password" name="password" class="form-control password1"
-                                        placeholder="Contraseña">
+                                        id="contraseña3" placeholder="Contraseña">
                                     <span class="fa fa-fw fa-eye password-icon show-password"></span>
                                 </div>
                             </div>
@@ -325,7 +326,7 @@
                             </div>
                             <div class="col-8">
                                 <div class="oeste">
-                                    <input type="text" class="form-control" id="telefono" placeholder="xxx xxx xxxx">
+                                    <input type="text" class="form-control" id="telefono3" placeholder="xxx xxx xxxx">
                                 </div>
                             </div>
                         </div>
@@ -335,7 +336,7 @@
                             </div>
                             <div class="col-8">
                                 <div class="oeste">
-                                    <input type="email" class="form-control" id="correo"
+                                    <input type="email" class="form-control" id="correo3"
                                         placeholder="cytisum@gmail.com">
                                 </div>
                             </div>
@@ -346,8 +347,8 @@
                             </div>
                             <div class="col-8">
                                 <div class="oeste">
-                                    <input type="text" class="form-control" id="empresa"
-                                        placeholder="Nombre de la empresa">
+                                    <input type="text" class="form-control" id="empresa3"
+                                        placeholder="Nombre de la empresa" disabled>
                                 </div>
                             </div>
                         </div>
@@ -361,14 +362,43 @@
                 <div class=" text-center">
                     <img src="img/perfil.png" class="foto-perfil" alt="Foto de perfil">
                 </div>
-                <h4 class="jorga">Nombres<br>Apellidos</h4>
+                <h4 id="nombreUsuario" class="jorga">Nombres<br>Apellidos</h4>
             </div>
         </div>
     </div>
+    <!-- Script específico para cargar datos del perfil -->
+    <script>
+        $(document).ready(function() {
+
+            $.ajax({
+                url: "<?php echo base_url('obtener_perfil'); ?>",
+                method: "GET",
+                dataType: "json",
+                success: function(response) {
+                    if (response.status === 'success') {
+                        const datos = response.data[0]; // Medoo devuelve un arreglo, tomamos el primer elemento
+                        $('#usuario1').val(datos.usuario);
+                        $('#contraseña3').val(datos.contraseña); // Si decides mostrarla (en texto cifrado, si es necesario)
+                        $('#telefono3').val(datos.telefono);
+                        $('#correo3').val(datos.correo);
+                        $('#empresa3').val(datos.nombre_empresa || ''); // Maneja si no hay empresa
+                        alert('Todo bien');
+                    } else {
+                        alert(response.message);
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.error('Error de AJAX:', error);
+                    console.error('Detalles del error:', xhr.responseText);
+                    alert('Ocurrió un error al obtener los datos del perfil.');
+                }
+            });
+        });
+    </script>
 
     <!-- Script para la funcion del ojo en la Contraseña -->
     <script>
-        window.addEventListener("load", function () {
+        window.addEventListener("load", function() {
             showPassword = document.querySelector('.show-password');
             showPassword.addEventListener('click', () => {
                 password1 = document.querySelector('.password1');
@@ -381,7 +411,7 @@
                 }
             });
         });
-        window.addEventListener("load", function () {
+        window.addEventListener("load", function() {
             showPassword2 = document.querySelector('.show-password2');
             showPassword2.addEventListener('click', () => {
                 password2 = document.querySelector('.password2');
@@ -394,7 +424,7 @@
                 }
             });
         });
-        window.addEventListener("load", function () {
+        window.addEventListener("load", function() {
             showPassword3 = document.querySelector('.show-password3');
             showPassword3.addEventListener('click', () => {
                 password3 = document.querySelector('.password3');
@@ -408,10 +438,12 @@
             });
         });
     </script>
-
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+
+
 </body>
 
 </html>

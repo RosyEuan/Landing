@@ -13,11 +13,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Khmer&family=Konkhmer+Sleokchher&family=Suez+One&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="style.css">
-<<<<<<< HEAD
-
-
-=======
->>>>>>> branch_rosy
 </head>
 
 <body>
@@ -26,15 +21,10 @@
     <div class="row">
       <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-md">
-<<<<<<< HEAD
-          <img class="logo text-white" src="imagenes/cytisum.png" alt="Logo Cytisum">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-=======
           <a aria-current="page" href="#"><img class="logo text-white" src="imagenes/cytisum.png"
               alt="Logo Cytisum"></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
->>>>>>> branch_rosy
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
@@ -43,30 +33,12 @@
                 <a class="nav-link text-white" aria-current="page" href="#">Inicio</a>
               </li>
               <li class="nav-item">
-<<<<<<< HEAD
-                <a class="nav-link text-white" href="#">Beneficios</a>
-=======
                 <a class="nav-link text-white" href="#linkbeneficio">Beneficios</a>
->>>>>>> branch_rosy
               </li>
               <li class="nav-item">
                 <a class="nav-link text-white" href="#planes">Planes</a>
               </li>
               <li class="nav-item">
-<<<<<<< HEAD
-                <a class="nav-link text-white" href="#">Contacto</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  <img class="login" id="iconoLogin" src="imagenes/lgin.png" alt="Icono de login">
-                </a>
-                <?php if ($logged_in): ?>
-                  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                    <li><button class="dropdown-item " id="logout_button">Cerrar Sesión</button></li>
-                    <li><a class="dropdown-item " href="perfil">Ver perfil</a></li>
-                  </ul>
-                <?php else: ?>
-=======
                 <a class="nav-link text-white" href="#contactoo">Contacto</a>
               </li>
               <li class="nav-item dropdown">
@@ -75,13 +47,10 @@
                   <img class="login" id="iconoLogin" src="imagenes/lgin.png" alt="Icono de login">
                 </a>
                 <?php if ($logged_in): ?>
->>>>>>> branch_rosy
                   <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                     <li><button class="dropdown-item " id="logout_button">Cerrar Sesión</button></li>
                     <li><a class="dropdown-item " href="perfil">Ver perfil</a></li>
                   </ul>
-<<<<<<< HEAD
-=======
                 <?php else: ?>
                   <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                     <li><a class="dropdown-item " data-bs-toggle="modal" data-bs-target="#loginModal">Iniciar sesión</a>
@@ -89,7 +58,6 @@
                     <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#crearCuentaModal">Crear
                         cuenta</a></li>
                   </ul>
->>>>>>> branch_rosy
                 <?php endif; ?>
               </li>
             </ul>
@@ -109,33 +77,15 @@
         </div>
         <div class="modal-body">
           <div class="login-container">
-<<<<<<< HEAD
-            <div class="si">
-              <div class="logi">
-                <div class="circu">
-                  <div class="text-center">
-                    <img src="/Landing/imagenes/log.png" class="img" alt="Logo Cytisum">
-=======
             <div class="sesion_log">
               <div class="logi">
                 <div class="circu">
                   <div class="text-center">
                     <img src="imagenes/log.png" class="img_cytisumLogin" alt="Logo Cytisum">
->>>>>>> branch_rosy
                   </div>
                 </div>
                 <div class="mover">
                   <p class="sesion">Iniciar sesión</p>
-<<<<<<< HEAD
-
-                  <?php if (isset($_GET['error'])): ?>
-                    <p>Datos invalidos</p>
-                  <?php endif; ?>
-
-                  <form id="inicioForm" method="POST">
-                    <div class="mb-3 con">
-                      <input type="text" class="form-control inicio_sesion" name="usuario" id="usuario" placeholder="Usuario">
-=======
                   <?php if (isset($_GET['error'])): ?>
                     <p>Datos invalidos</p>
                   <?php endif; ?>
@@ -143,7 +93,6 @@
                     <div class="mb-3 con">
                       <input type="text" class="form-control inicio_sesion" name="usuario" id="usuario"
                         placeholder="Usuario">
->>>>>>> branch_rosy
                     </div>
                     <div class="mb-3 con">
                       <input type="password" class="form-control inicio_sesion" name="contraseña" id="contrasena" placeholder="Contraseña">
@@ -155,18 +104,11 @@
                       <button type="submit" class="btn btn-primary ingresar">Ingresar</button>
                     </div>
                   </form>
-<<<<<<< HEAD
-
-                  <div class="footer-links mt-3">
-                    <p>¿No tienes cuenta? <a href="#" data-bs-toggle="modal" data-bs-target="#crearCuentaModal">Crear una cuenta</a></p>
-                    <p><a href="#">Aviso de privacidad</a> | <a href="#" data-bs-toggle="modal" data-bs-target="#perfilModal">Términos y condiciones</a></p>
-=======
                   <div class="footer-links mt-3">
                     <p>¿No tienes cuenta? <a href="#" data-bs-toggle="modal" data-bs-target="#crearCuentaModal">Crear
                         una cuenta</a></p>
                     <p><a href="#">Aviso de privacidad</a> | <a href="#" data-bs-toggle="modal"
                         data-bs-target="#perfilModal">Términos y condiciones</a></p>
->>>>>>> branch_rosy
                   </div>
                 </div>
               </div>
@@ -181,26 +123,16 @@
   </div>
 
   <script>
-<<<<<<< HEAD
     $(document).ready(function() {
 
       $('#inicioForm').on('submit', function(event) {
-=======
-    $(document).ready(function () {
-
-      $('#inicioForm').on('submit', function (event) {
->>>>>>> branch_rosy
         event.preventDefault();
         $.ajax({
           url: "<?php echo base_url('iniciar_sesion'); ?>",
           method: "POST",
           data: $(this).serialize(),
           dataType: "json",
-<<<<<<< HEAD
           success: function(response) {
-=======
-          success: function (response) {
->>>>>>> branch_rosy
             if (response.status === 'success') {
               alert(response.message);
               location.reload();
@@ -208,11 +140,7 @@
               alert(response.message);
             }
           },
-<<<<<<< HEAD
           error: function(xhr, status, error) {
-=======
-          error: function (xhr, status, error) {
->>>>>>> branch_rosy
             console.error('Error de AJAX:', error);
             console.error('Detalles del error:', xhr.responseText);
             alert('Ocurrió un error al procesar la solicitud.', error);
@@ -221,11 +149,7 @@
       });
 
       // evento click para cerrar sesión
-<<<<<<< HEAD
       $('#logout_button').on('click', function() {
-=======
-      $('#logout_button').on('click', function () {
->>>>>>> branch_rosy
         logout(); // Llamamos a la función logout cuando se haga click
       });
     });
@@ -236,11 +160,7 @@
         url: "<?php echo base_url('cerrar_sesion'); ?>", // Ruta para cerrar sesión
         method: "POST",
         dataType: "json",
-<<<<<<< HEAD
         success: function(response) {
-=======
-        success: function (response) {
->>>>>>> branch_rosy
           console.log('Respuesta del servidor:', response);
           if (response.status === 'success') {
             window.location.reload(); // Recargar la página
@@ -248,11 +168,7 @@
             alert('Hubo un problema al cerrar la sesión' + response.message); // Mostrar alerta si hay error
           }
         },
-<<<<<<< HEAD
         error: function(xhr, status, error) {
-=======
-        error: function (xhr, status, error) {
->>>>>>> branch_rosy
           console.error('Error de AJAX:', error);
           alert('Hubo un error en ajax al procesar el cerrar sesión' + xhr.responseText); // Mostrar alerta de error
         }
@@ -261,12 +177,8 @@
   </script>
 
   <!-- Modal para Crear Cuenta -->
-<<<<<<< HEAD
-  <div class="modal fade" id="crearCuentaModal" tabindex="-1" aria-labelledby="crearCuentaModalLabel" aria-hidden="true">
-=======
   <div class="modal fade" id="crearCuentaModal" tabindex="-1" aria-labelledby="crearCuentaModalLabel"
     aria-hidden="true">
->>>>>>> branch_rosy
     <div class="modal-dialog modal_cuenta">
       <div class="modal-content cuenta_cont">
         <div class="modal-header">
@@ -279,26 +191,13 @@
               <div class="relleno">
                 <div class="informacion"></div>
                 <div class="text-center">
-<<<<<<< HEAD
-                  <img src="/Landing/imagenes/log.png" class="img" alt="Logo Cytisum">
-                </div>
-
-=======
                   <img src="imagenes/log.png" class="img" alt="Logo Cytisum">
                 </div>
->>>>>>> branch_rosy
                 <form class="cont" id="registroForm">
                   <p class="infocue">Información de su cuenta</p>
                   <div class="row mb-3 control_cuenta">
                     <div class="col">
                       <label for="nombre" class="form-label lb_cuenta">Nombre(s)</label>
-<<<<<<< HEAD
-                      <input type="text" class="form-control cr_cuenta" id="registro_nombre" name="registro_nombre" placeholder="Nombre">
-                    </div>
-                    <div class="col">
-                      <label for="apellido" class="form-label lb_cuenta">Apellidos</label>
-                      <input type="text" class="form-control cr_cuenta" id="registro_apellido" name="registro_apellido" placeholder="Apellido">
-=======
                       <input type="text" class="form-control cr_cuenta" id="registro_nombre" name="registro_nombre"
                         placeholder="Nombre">
                     </div>
@@ -306,19 +205,11 @@
                       <label for="apellido" class="form-label lb_cuenta">Apellidos</label>
                       <input type="text" class="form-control cr_cuenta" id="registro_apellido" name="registro_apellido"
                         placeholder="Apellido">
->>>>>>> branch_rosy
                     </div>
                   </div>
                   <div class="row mb-3 control_cuenta">
                     <div class="col">
                       <label for="correo" class="form-label lb_cuenta">Correo electrónico</label>
-<<<<<<< HEAD
-                      <input type="email" class="form-control cr_cuenta" id="registro_correo" name="registro_correo" placeholder="Gmail">
-                    </div>
-                    <div class="col">
-                      <label for="telefono" class="form-label lb_cuenta">Teléfono</label>
-                      <input type="text" class="form-control cr_cuenta" id="registro_telefono" name="registro_telefono" placeholder="Teléfono">
-=======
                       <input type="email" class="form-control cr_cuenta" id="registro_correo" name="registro_correo"
                         placeholder="Gmail">
                     </div>
@@ -326,20 +217,12 @@
                       <label for="telefono" class="form-label lb_cuenta">Teléfono</label>
                       <input type="text" class="form-control cr_cuenta" id="registro_telefono" name="registro_telefono"
                         placeholder="Teléfono">
->>>>>>> branch_rosy
                     </div>
                   </div>
                   <p class="infocue">Información de acceso</p>
                   <div class="row mb-3 control_cuenta">
                     <div class="col">
                       <label for="usuario" class="form-label lb_cuenta">Usuario</label>
-<<<<<<< HEAD
-                      <input type="text" class="form-control cr_cuenta" id="registro_usuario" name="registro_usuario" placeholder="Usuario">
-                    </div>
-                    <div class="col">
-                      <label for="contrasena" class="form-label lb_cuenta">Contraseña</label>
-                      <input type="password" class="form-control cr_cuenta" id="registro_contrasena" name="registro_contrasena" placeholder="Contraseña">
-=======
                       <input type="text" class="form-control cr_cuenta" id="registro_usuario" name="registro_usuario"
                         placeholder="Usuario">
                     </div>
@@ -354,18 +237,12 @@
                       <input type="password" name="rep_contrasena" class="form-control cr_cuenta password2"
                         placeholder="Repetir contraseña">
                       <span class="fa fa-fw fa-eye password-icon show-password2"></span>
->>>>>>> branch_rosy
                     </div>
                   </div>
                   <div class="text-center">
                     <button type="submit" class="btn btn-primary crear">CREAR CUENTA</button>
                   </div>
                 </form>
-<<<<<<< HEAD
-
-
-=======
->>>>>>> branch_rosy
               </div>
             </div>
           </div>
@@ -379,15 +256,9 @@
 
 
   <script>
-<<<<<<< HEAD
     $(document).ready(function() {
 
       $('#registroForm').on('submit', function(e) {
-=======
-    $(document).ready(function () {
-
-      $('#registroForm').on('submit', function (e) {
->>>>>>> branch_rosy
         e.preventDefault(); // Evita recargar la pagina
 
         // Obtiene los datos del formulario
@@ -398,11 +269,7 @@
           type: "POST",
           data: formData,
           dataType: "json", //respuesta en formato JSON
-<<<<<<< HEAD
           success: function(response) {
-=======
-          success: function (response) {
->>>>>>> branch_rosy
 
             if (response.status == 'success') {
 
@@ -417,19 +284,11 @@
               $('.informacion').html('<div class="alert alert-danger">' + response.message + '</div>');
               // alert(response.message);
             }
-<<<<<<< HEAD
             setTimeout(function() {
               $('.informacion').html('');
             }, 2000);
           },
           error: function(xhr, status, error) {
-=======
-            setTimeout(function () {
-              $('.informacion').html('');
-            }, 2000);
-          },
-          error: function (xhr, status, error) {
->>>>>>> branch_rosy
             // Error en la solicitud AJAX
             console.error('Hubo un error:', error);
             console.error('Detalles del error', xhr.responseText);
@@ -467,11 +326,7 @@
   </div>
 
   <!-- Porque elegirnos -->
-<<<<<<< HEAD
-  <div class="container">
-=======
   <div class="container-fluid">
->>>>>>> branch_rosy
     <h2 class="feature-title ">¿Por qué elegir Cytisum?</h2>
     <div class="feature-section">
       <div class="row">
@@ -491,11 +346,7 @@
         </div>
         <div class="col-md-4 feature-item">
           <div class="feature-icon">
-<<<<<<< HEAD
-            <img class="ft_icon" src="/Landing/img/pedidos.png" alt="Img. de Optimizar pedidos">
-=======
             <img class="ft_icon" src="img/pedidos.png" alt="Img. de Optimizar pedidos">
->>>>>>> branch_rosy
           </div>
           <h4>Optimiza tus pedidos</h4>
           <div class="pedido">
@@ -509,11 +360,7 @@
         </div>
         <div class="col-md-4 feature-item">
           <div class="feature-icon">
-<<<<<<< HEAD
-            <img class="ft_icon" src="/Landing/img/uso.png" alt="Img. de Facilidad de uso">
-=======
             <img class="ft_icon" src="img/uso.png" alt="Img. de Facilidad de uso">
->>>>>>> branch_rosy
           </div>
           <h4>Facilidad de uso</h4>
           <div class="pedido">
@@ -538,17 +385,6 @@
         <div class="carousel-inner">
           <!-- Slide 1 -->
           <div class="carousel-item active">
-<<<<<<< HEAD
-            <img src="img/Rectangle 200.png" class="d-block w-100" alt="Vista del punto de venta 1">
-          </div>
-          <!-- Slide 2 -->
-          <div class="carousel-item">
-            <img src="img/Rectangle 200.png" class="d-block w-100" alt="Vista del punto de venta 2">
-          </div>
-          <!-- Slide 3 -->
-          <div class="carousel-item">
-            <img src="img/Rectangle 200.png" class="d-block w-100" alt="Vista del punto de venta 3">
-=======
             <h4 class="titulos">Vista del Inicio de Sesión</h4>
             <img src="imagenes/vistaLogin.png" class="d-block w-100" alt="Vista del Inicio de Sesion">
           </div>
@@ -586,7 +422,6 @@
           <div class="carousel-item">
             <h4 class="titulos">Vista del Personal</h4>
             <img src="imagenes/vistaPersonal.png" class="d-block w-100" alt="Vista del Personal">
->>>>>>> branch_rosy
           </div>
         </div>
         <!-- Controles de navegación -->
@@ -600,11 +435,7 @@
         </button>
       </div>
       <div class="descrip">
-<<<<<<< HEAD
-        <p class="col-md-8 offset-2"> Con la facilidad y comodidad de nuestro software, no perderás ni una
-=======
         <p class="texto"> Con la facilidad y comodidad de nuestro software, no perderás ni una
->>>>>>> branch_rosy
           venta y podrás aumentar tus ganancias con mayor facilidad.
         </p>
       </div>
@@ -639,11 +470,7 @@
   </div>
 
   <!-- Beneficios -->
-<<<<<<< HEAD
-  <div class="container-fluid">
-=======
   <div class="container-fluid" id="linkbeneficio">
->>>>>>> branch_rosy
     <div class="bene">
       <h2 class="beneficios">Beneficios</h2>
       <div class="row">
@@ -657,11 +484,7 @@
               a largo plazo.
             </p>
             <div class="text-center">
-<<<<<<< HEAD
-              <img src="/Landing/img/si.png" alt="img1">
-=======
               <img src="img/si.png" alt="img1">
->>>>>>> branch_rosy
             </div>
           </div>
         </div>
@@ -699,19 +522,11 @@
   </div>
 
   <!-- Planes -->
-<<<<<<< HEAD
-  <div class="container py-5">
-    <h2 class="text-center fw-bold mb-4 planes" id="planes">Planes</h2>
-    <div class="row justify-content-center">
-      <!-- Plan Básico -->
-      <div class="col-md-4 mb-4  pricing-card-basic align-plan-basic">
-=======
   <div class="container-fluid py-1" id="planes">
     <h2 class="text-center mb-4 planes">Planes</h2>
     <div class="row justify-content-center">
       <!-- Plan Básico -->
       <div class="res col-md-4 mb-4  pricing-card-basic align-plan-basic">
->>>>>>> branch_rosy
         <div class="card pricing-card shadow-sm border-0 h-100">
           <div class="card-body text-center">
             <h5 class="plan">Plan Básico</h5>
@@ -726,22 +541,13 @@
               <li>✗ Reportes Financieros</li>
             </ul>
             <div class="card-body justify-content-between text-center">
-<<<<<<< HEAD
-              <button class="btn btn-custom mt-auto" >Adquirir plan</button>
-=======
-              <button class="btn btn-custom mt-auto" data-bs-toggle="modal" data-bs-target="#adquirirModal">Adquirir
-                plan</button>
->>>>>>> branch_rosy
+              <button class="btn btn-custom mt-auto">Adquirir plan</button>
             </div>
           </div>
         </div>
       </div>
       <!-- Plan Profesional -->
-<<<<<<< HEAD
-      <div class="col-md-4 mb-4">
-=======
       <div class="res col-md-4 mb-4">
->>>>>>> branch_rosy
         <div class="card pricing-card shadow-sm border-0 h-100">
           <div class="card-body text-center azu">
             <h5 class=" plan">Plan Profesional</h5>
@@ -756,22 +562,13 @@
               <li>✓ Reportes Financieros</li>
             </ul>
             <div class="card-body justify-content-between text-center">
-<<<<<<< HEAD
-              <button class="btn btn-custom mt-auto" >Adquirir plan</button>
-=======
-              <button class="btn btn-custom mt-auto" data-bs-toggle="modal" data-bs-target="#adquirirModal">Adquirir
-                plan</button>
->>>>>>> branch_rosy
+              <button class="btn btn-custom mt-auto">Adquirir plan</button>
             </div>
           </div>
         </div>
       </div>
       <!-- Plan Estándar -->
-<<<<<<< HEAD
-      <div class="col-md-4 mb-4 pricing-card-standard align-plan-standard">
-=======
       <div class="res col-md-4 mb-4 pricing-card-standard align-plan-standard">
->>>>>>> branch_rosy
         <div class="card pricing-card shadow-sm border-0 h-100">
           <div class="card-body text-center">
             <h5 class=" plan">Plan Estándar</h5>
@@ -786,12 +583,7 @@
               <li>✗ Reportes Financieros</li>
             </ul>
             <div class="card-body justify-content-between text-center">
-<<<<<<< HEAD
-              <button class="btn btn-custom mt-auto" >Adquirir plan</button>
-=======
-              <button class="btn btn-custom mt-auto" data-bs-toggle="modal" data-bs-target="#adquirirModal">Adquirir
-                plan</button>
->>>>>>> branch_rosy
+              <button class="btn btn-custom mt-auto">Adquirir plan</button>
             </div>
           </div>
         </div>
@@ -813,11 +605,7 @@
               <div class="rell">
                 <div class="cir">
                   <div class="text-center">
-<<<<<<< HEAD
-                    <img src="/Landing/imagenes/log.png" class="imge" alt="Logo Cytisum">
-=======
                     <img src="/Punto_Venta/imagenes/log.png" class="imge" alt="Logo Cytisum">
->>>>>>> branch_rosy
                   </div>
                 </div>
                 <div class="toc">
@@ -894,11 +682,7 @@
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
-<<<<<<< HEAD
-          <h5 class="modal-title" id="pagoModalLabel">Formulario de Pagos</h5>
-=======
           <h5 class="modal-title" id="pagoModalLabel">Formulario de Pago</h5>
->>>>>>> branch_rosy
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -907,23 +691,14 @@
               <div class="relle">
                 <div class="circ">
                   <div class="text-center">
-<<<<<<< HEAD
-                    <img src="/Landing/imagenes/log.png" class="img_cytisum_pago" alt="Logo Cytisum">
-=======
                     <img src="/Punto_Venta/imagenes/log.png" class="img_cytisum_pago" alt="Logo Cytisum">
->>>>>>> branch_rosy
                   </div>
                 </div>
                 <form class="todo">
                   <div class="row mb-3 cont_pago">
                     <div class="col">
-<<<<<<< HEAD
-                      <label for="numeroTarjeta" class="form-label">Número de la tarjeta</label>
-                      <input type="text" class="form-control" id="numeroTarjeta" placeholder="XXXX-XXXX-XXXX-XXXX">
-=======
                       <label for="numeroTarjeta" class="form-label lb_tip">Número de la tarjeta</label>
                       <input type="text" class="form-control tip" id="numeroTarjeta" placeholder="XXXX-XXXX-XXXX-XXXX">
->>>>>>> branch_rosy
                     </div>
                     <div class="col">
                       <label for="titularTarjeta" class="form-label lb_tip">Titular de la tarjeta</label>
@@ -969,7 +744,6 @@
     </div>
   </div>
 
-<<<<<<< HEAD
   <script>
     $(document).ready(function() {
       // Captura el evento de clic en el botón de adquirir plan
@@ -1002,35 +776,6 @@
   <!-- Obten una prueba gratuita -->
   <div class="container-fluid">
     <div class="row">
-      <div class="prue">
-        <section class="col-12">
-          <div class="gratuita col-6">
-            <img src="imagenes/gratis.png">
-          </div>
-          <h2 class="prueba col-6">Obtén una prueba gratuita</h2>
-          <p class="contamos col-md-5 offset-6 ">
-            ¡Contamos con una prueba completamente gratuita que
-            incluye el plan basico por 2 semanas, para que puedas
-            disfrutar de la comodidad de nuestro software!
-          </p>
-          <ul class="list-unstyled ilimitados col-md-4 offset-8">
-            <li class="espaciado">✓ 1 Usuario</li>
-            <li class="espaciado">✓ Productos y Ventas ilimitados</li>
-            <li class="espaciado">✓ Facturas limitadas</li>
-            <li class="espaciado">✗ Gestión de Inventario</li>
-            <li class="espaciado">✗ Gestión de Mesas y Reservaciones</li>
-            <li class="espaciado">✗ Integración con Sistemas de Pago</li>
-            <li class="espaciado">✗ Reportes Financieros</li>
-          </ul>
-          <div class="card-body justify-content-between text-center">
-            <button type="button" class="btn_obtener btn-light">¡Obtener!</button>
-          </div>
-        </section>
-      </div>
-=======
-  <!-- Obten una prueba gratuita -->
-  <div class="container-fluid">
-    <div class="row">
       <section class="obt col-12">
         <div class="img_gratuita text-center">
           <img class="gratuita img-fluid" src="imagenes/gratis.png" alt="Prueba gratuita">
@@ -1055,22 +800,10 @@
             data-bs-target="#adquirirModal">¡Obtener!</button>
         </div>
       </section>
->>>>>>> branch_rosy
     </div>
   </div>
 
   <!-- Nuestros socios -->
-<<<<<<< HEAD
-  <div class="container my-5">
-    <h2 class="socios">Nuestros socios</h2>
-    <p class="text-center mb-4 confianza">
-      Este espacio resalta la confianza y destaca a los negocios que han adoptado nuestra solución de punto de venta para optimizar sus
-      operaciones y aumentar la satisfacción del cliente.
-    </p>
-    <div class="row">
-      <!-- Tarjeta 1 -->
-      <div class="col-md-4 mb-4">
-=======
   <div class="container-fluid my-5">
     <h2 class="socios">Nuestros socios</h2>
     <p class="text-center mb-4 confianza">
@@ -1081,7 +814,6 @@
     <div class="row content-center">
       <!-- Tarjeta 1 -->
       <div class="res col-md-4 mb-4">
->>>>>>> branch_rosy
         <div class="testimonial-card p-4">
           <div class="testimonial-img mx-auto mb-3">
             <div class="text-center">
@@ -1101,11 +833,7 @@
         </div>
       </div>
       <!-- Tarjeta 2 -->
-<<<<<<< HEAD
-      <div class="col-md-4 mb-4">
-=======
       <div class="res col-md-4 mb-4">
->>>>>>> branch_rosy
         <div class="testimonial-card p-4 move-down">
           <div class="testimonial-img mx-auto mb-3">
             <div class="text-center">
@@ -1125,11 +853,7 @@
         </div>
       </div>
       <!-- Tarjeta 3 -->
-<<<<<<< HEAD
-      <div class="col-md-4 mb-4">
-=======
       <div class="res col-md-4 mb-4">
->>>>>>> branch_rosy
         <div class="testimonial-card p-4">
           <div class="testimonial-img mx-auto mb-3">
             <div class="text-center">
@@ -1158,14 +882,8 @@
       el ambiente y la atención al cliente, ayudándote a conocer de primera mano
       lo que otros han experimentado.
     </p>
-<<<<<<< HEAD
-    <div class="row mt-4">
-      <!-- Reseña 1 -->
-      <div class="col-md-4 mb-4">
-=======
     <div class="row content-center">
       <div class="res col-sm-12 col-md-4 mb-4">
->>>>>>> branch_rosy
         <div class="review-card review-card-margin">
           <div class="review-stars">
             <i class="fas fa-star"></i>
@@ -1178,12 +896,7 @@
             órdenes de manera clara y sin errores,
             lo que facilita la preparación de los
             platos y evita confusiones. Nos permite
-<<<<<<< HEAD
-            enfocarnos en lo que realmente
-            importa.
-=======
             enfocarnos en lo que más importa.
->>>>>>> branch_rosy
           </p>
           <div class="author-info">
             <img src="img/jorge.svg" alt="Jorge Ortega" class="review-img">
@@ -1194,12 +907,7 @@
           </div>
         </div>
       </div>
-<<<<<<< HEAD
-      <!-- Reseña 2 -->
-      <div class="col-md-4 mb-4">
-=======
       <div class="res col-sm-12 col-md-4 mb-4">
->>>>>>> branch_rosy
         <div class="review-card review-card-sofia">
           <div class="review-stars">
             <i class="fas fa-star"></i>
@@ -1223,12 +931,7 @@
           </div>
         </div>
       </div>
-<<<<<<< HEAD
-      <!-- Reseña 3 -->
-      <div class="col-md-4 mb-4">
-=======
       <div class="res col-sm-12 col-md-4 mb-4">
->>>>>>> branch_rosy
         <div class="review-card review-card-margin">
           <div class="review-stars">
             <i class="fas fa-star"></i>
@@ -1247,11 +950,7 @@
             <img src="img/ana.svg" alt="Ana Morales" class="review-img">
             <div>
               <p class="review-author">Ana Morales</p>
-<<<<<<< HEAD
-              <p class="review-position">Encargada de Caja en "El Buen Sabor"</p>
-=======
               <p class="review-position">Cajera en "El Buen Sabor"</p>
->>>>>>> branch_rosy
             </div>
           </div>
         </div>
@@ -1260,11 +959,7 @@
   </div>
 
   <!-- Contacto -->
-<<<<<<< HEAD
-  <div class="container-fluid">
-=======
   <div class="container-fluid" id="contactoo">
->>>>>>> branch_rosy
     <div class="espa">
       <div class="contact-form">
         <div class="cir_contacto">
@@ -1274,33 +969,18 @@
           </div>
         </div>
         <div class="formulario">
-<<<<<<< HEAD
           <form id="contactForm">
             <div class="form-group">
               <label for="name">Nombre</label>
-              <input type="text" id="name" name="nombre1" class="form-control contacto_to" placeholder="Nombre" required>
+              <input type="text" id="name" name="nombre1" class="form-control contacto_to" placeholder="Nombre">
             </div>
             <div class="form-group">
               <label for="phone">Teléfono</label>
-              <input type="text" id="phone" name="telefono1" class="form-control contacto_to" placeholder="Teléfono" required>
+              <input type="text" id="phone" name="telefono1" class="form-control contacto_to" placeholder="Teléfono">
             </div>
             <div class="form-group">
               <label for="email">Correo electrónico</label>
-              <input type="email" id="email" name="correo1" class="form-control contacto_to" placeholder="Correo electrónico" required>
-=======
-          <form>
-            <div class="form-group">
-              <label for="name">Nombre</label>
-              <input type="text" id="name" class="form-control contacto_to" placeholder="Nombre">
-            </div>
-            <div class="form-group">
-              <label for="phone">Teléfono</label>
-              <input type="text" id="phone" class="form-control contacto_to" placeholder="Teléfono">
-            </div>
-            <div class="form-group">
-              <label for="email">Correo electrónico</label>
-              <input type="email" id="email" class="form-control contacto_to" placeholder="Correo electrónico">
->>>>>>> branch_rosy
+              <input type="email" id="email" name="correo1" class="form-control contacto_to" placeholder="Correo electrónico">
             </div>
 
 
@@ -1312,7 +992,6 @@
     </div>
   </div>
 
-<<<<<<< HEAD
   <script>
     document.getElementById('contactForm').addEventListener('submit', function(e) {
       e.preventDefault();
@@ -1348,62 +1027,6 @@
     });
   </script>
 
-
-
-  <!-- Footer -->
-  <footer class="text-center" style="background-color: #5CA3D9;">
-    <!-- Section: Social media -->
-    <section class="d-flex justify-content-center p-4">
-      <p class="text-center">*El precio de los planes puede variar según el país en donde se encuentre la empresa compradora</p>
-    </section>
-    <!-- Cuadrado con texto -->
-    <section class="cnt-cuadro d-flex justify-content-center p-2 border-bottom">
-      <div class="cuadrado">
-        <h2>¡Empieza a Contactarnos!</h2>
-        <h2>(998)-345-7079</h2>
-      </div>
-    </section>
-
-    <!-- Section: Social media -->
-
-    <!-- Section: Links  -->
-    <section class="">
-      <div class="container text-center text-md-start mt-5">
-        <div class="row mt-3">
-          <!-- Grid column -->
-          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-            <h6 class="text-uppercase fw-bold mb-4">Funciones</h6>
-            <p><a href="#!" class="text-reset">Menú</a></p>
-            <p><a href="#!" class="text-reset">Mesas</a></p>
-            <p><a href="#!" class="text-reset">Almacén</a></p>
-            <p><a href="#!" class="text-reset">Pedidos</a></p>
-            <p><a href="#!" class="text-reset">Personal</a></p>
-            <p><a href="#!" class="text-reset">Servicios</a></p>
-            <p><a href="#!" class="text-reset">Estadisticas</a></p>
-            <p><a href="#!" class="text-reset">Pedidos</a></p>
-          </div>
-          <!-- Grid column -->
-          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-            <h6 class="text-uppercase fw-bold mb-4">Mapa del sitio</h6>
-            <p><a href="#!" class="text-reset">Inicio</a></p>
-            <p><a href="#!" class="text-reset">¿Por qué nosotros?</a></p>
-            <p><a href="#!" class="text-reset">Beneficios</a></p>
-            <p><a href="#!" class="text-reset">Planes</a></p>
-            <p><a href="#!" class="text-reset">Opiniones</a></p>
-          </div>
-          <!-- Grid column -->
-          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-            <h6 class="text-uppercase fw-bold mb-4">Recursos</h6>
-            <p><a href="#!" class="text-reset">Programa de recomendaciones</a></p>
-            <p><a href="#!" class="text-reset">Terminos y condiciones</a></p>
-            <p><a href="#!" class="text-reset">Terminos de uso</a></p>
-            <p><a href="#!" class="text-reset">Politica de privacidad</a></p>
-          </div>
-          <!-- Grid column -->
-          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-            <h6 class="text-uppercase fw-bold mb-4">Nuestras redes</h6>
-
-=======
   <!-- Footer -->
   <footer class="foot text-center">
     <section class="d-flex justify-content-center p-4">
@@ -1447,7 +1070,6 @@
           </div>
           <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-2">
             <h6 class="text-uppercase fw-bold mb-4 text-center">Nuestras redes</h6>
->>>>>>> branch_rosy
             <section class="social-media">
               <div class="social-icons">
                 <a href="#!" class="text-reset"><img src="imagenes/fc.png" class="rounded mx-auto" alt="Facebook"></a>
@@ -1457,34 +1079,6 @@
               </div>
             </section>
           </div>
-<<<<<<< HEAD
-          <!-- Grid column -->
-        </div>
-      </div>
-    </section>
-    <!-- Section: Links  -->
-
-    <!-- Copyright -->
-    <div class="text-center" style="background-color: #5CA3D9;">
-      <section class="">
-        <div class="container text-center text-md-start mt-5">
-          <div class="row mt-3">
-            <!-- Grid column -->
-            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-              <p>México</p>
-            </div>
-            <!-- Grid column -->
-            <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-4">
-              <a href="#!" class="text-reset">
-                <p> Facebook | Instagram | Linkedin</p>
-              </a>
-            </div>
-            <!-- Grid column -->
-            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-              <p>© 2024 Cytisum</p>
-            </div>
-            <!-- Grid column -->
-=======
         </div>
       </div>
     </section>
@@ -1501,7 +1095,6 @@
             <div class="col-md-3 col-lg-2 col-xl-2 mb-4 fw-bold">
               <p>© 2024 Cytisum</p>
             </div>
->>>>>>> branch_rosy
           </div>
         </div>
       </section>
@@ -1560,12 +1153,8 @@
                       </div>
                       <div class="col-8">
                         <div class="este">
-<<<<<<< HEAD
-                          <input type="email" class="form-control ctrl_perfil" id="correo" placeholder="JorgePD@gmail.com">
-=======
                           <input type="email" class="form-control ctrl_perfil" id="correo"
                             placeholder="JorgePD@gmail.com">
->>>>>>> branch_rosy
                         </div>
                       </div>
                     </div>
@@ -1610,11 +1199,7 @@
 
   <!-- Script para la funcion del ojo -->
   <script>
-<<<<<<< HEAD
     window.addEventListener("load", function() {
-=======
-    window.addEventListener("load", function () {
->>>>>>> branch_rosy
       // Icono para mostrar/ocultar contraseña
       showPassword = document.querySelector('.show-password');
       showPassword.addEventListener('click', () => {
@@ -1629,18 +1214,8 @@
         }
       });
     });
-<<<<<<< HEAD
-  </script>
 
-
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-</body>
-
-=======
-
-    window.addEventListener("load", function () {
+    window.addEventListener("load", function() {
       // Icono para mostrar/ocultar contraseña
       showPassword2 = document.querySelector('.show-password2');
       showPassword2.addEventListener('click', () => {
@@ -1663,5 +1238,4 @@
   <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
 
->>>>>>> branch_rosy
 </html>

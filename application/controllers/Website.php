@@ -33,12 +33,15 @@ class Website extends CI_Controller {
 	{
 	    /*sirve para cargar una vista*/
 		$logged_in = $this->session->userdata('logged_in');
-		$this->load->view('perfil',['logged_in'=>$logged_in]);
+		$nombre_usuario = $this->session->userdata('nombre_usuario');
+		$this->load->view('perfil',['logged_in'=>$logged_in,'nombre_usuario' =>$nombre_usuario]);
 	}
 	public function editar_perfil()
 	{
 	    /*sirve para cargar una vista*/
-		$this->load->view('editar_perfil');
+		$logged_in = $this->session->userdata('logged_in');
+		$nombre_usuario = $this->session->userdata('nombre_usuario');
+		$this->load->view('editar_perfil',['logged_in' =>$logged_in,'nombre_usuario' =>$nombre_usuario	]);
 	}
 	// Ejemplo pa que vea belen TODO
 	public function datos(){
