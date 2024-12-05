@@ -1,6 +1,23 @@
 body {
     margin: 0;
   }
+  /* Opciones de cuenta*/
+.dropdown-menu{
+  border: #000;
+  min-width: 180px;
+  border-style:groove ;
+}
+/*login*/
+.login {
+  cursor: pointer;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+.dropdown-menu .dropdown-item {
+  font-size: 14px;
+  cursor: pointer;
+}
 .navbar {
     background-color: #1E5D8D;
     padding: 0.2rem 1rem;
@@ -171,3 +188,211 @@ body {
 .botones{
     padding-top:105px;
 }    
+/*Crear cuenta */
+.relleno {
+  max-width: 800px;
+  margin: auto;
+  padding: 2rem;
+  background: linear-gradient(180deg, #FFF 36%, #F3F6FF 99.99%);
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  padding: 24px;
+  padding-top: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+.informacion {
+  text-align: center;
+  background: linear-gradient(180deg, rgba(235, 234, 255, 0.00) 49.9%, rgba(64, 89, 255, 0.20) 100%), #D0E3FF;
+  padding: 20px;
+  padding-top: 0;
+  border-radius: 32px 32px 0 0;
+  height: 104px;  
+  border-bottom-left-radius: 200%;
+  border-bottom-right-radius: 200%;
+  padding-bottom: 10%;
+  margin-bottom: -15%;
+}
+.lb_cuenta {
+  padding: 0 40px;
+  padding-top: 0;
+  padding-left: 0;
+  padding-right: 0;
+  max-width: 600px;
+  font-family: "Konkhmer Sleokchher";
+  font-size: 20px;
+}
+.crear{
+  border-radius: 16px;
+  background: #7FA5E5;
+  color: rgb(0, 0, 0);
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s; 
+}
+.cr_cuenta{
+  font-size: 16px;
+  padding: 5px;
+  margin-bottom: 8px;
+  width: 100%;
+  width: 100%;
+  color: #919191;
+  font-family: Khmer;
+  background: #EDEDED;
+}
+.row.mb-3.control_cuenta{
+  margin-bottom: 0;
+  padding: 0 40px;
+}
+.distancia{
+  padding: 0 30px;
+}
+.cont{
+  padding-top: 40px;
+}
+.infocue{
+  color: #919191;
+  font-family: Khmer;
+  font-size: 16px;
+  margin-bottom: 5px;
+  padding-left:40px;
+}
+.img{
+  padding: 0;
+  padding-top: 0;
+  padding-left: 0;
+  padding-right: 0;
+  font-size: 24px;
+  margin-top: 32px;
+  margin-bottom: 5px;
+  width: 100%;
+  max-width: 204px;
+  height: auto;
+  padding-top:8px;
+}
+.modal_cuenta {
+  max-width: 900px;
+  margin: 30px auto;
+}
+.cuenta_cont {
+  border-radius: 12px;
+  overflow: hidden;
+}
+.password-icon {
+  position: relative;
+  margin: -33px 10px 0 0;
+  cursor: pointer;
+  float: right;
+}
+@media (min-width: 768px) {
+  .control {
+    padding: 0 40px;
+  }
+  .row.mb-3.control {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+/*Formulario de login*/
+.logi {
+  max-width: 400px;
+  margin: auto;
+  background-color: #f8f9fa;
+  border-radius: 16px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 8px;
+  padding-top: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+.sesion_log{
+  padding: 0;
+}
+.circu{
+  text-align: center;
+  background: linear-gradient(180deg, rgba(235, 234, 255, 0.00) 49.9%, rgba(64, 89, 255, 0.20) 100%), #D0E3FF;
+  padding: 1rem;
+  border-radius: 32px 32px 0 0;
+  margin-bottom: 1rem;
+  height: 112px;
+  width: 100%;
+  border-bottom-left-radius: 200%;
+  border-bottom-right-radius: 200%;
+  padding-bottom: 20%;
+  margin-bottom: -15%;
+}
+.img_cytisumLogin{
+  padding: 0;
+  padding-top: 0;
+  padding-left: 0;
+  margin-right: 16px;
+  font-size: 24px;
+  margin-bottom: 5px;
+  width: 204px;
+  padding-top: 16px;
+}
+.inicio_sesion {
+  font-size: 16px;
+  padding: 10px;
+  margin-bottom: 8px;
+  width: 100%;
+  width: 100%;
+  color: #919191;
+  font-family: Khmer;
+  background: #EDEDED;
+}
+.footer-links {
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  color: #A191FB;
+  font-family: Khmer;
+font-size: 16px;
+}
+.footer-links a {
+    color: #A191FB;
+  text-decoration: none;
+  font-family: Khmer;
+  font-size: 16px;
+}
+.footer-links a:hover {
+  text-decoration: underline;
+}
+.iniciar{
+  padding: 0 40px;
+  padding-top: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+.mover{
+  padding-top:80px;
+}
+.ingresar{
+  border-radius: 16px;
+  background: #7FA5E5;
+  color: rgb(0, 0, 0);
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s; 
+}
+.con{
+  padding: 0 40px;
+}
+.sesion{
+  text-align:center;
+  color: #000;
+  font-family: "Konkhmer Sleokchher";
+  font-size: 24px;
+  font-style: normal;
+}
+.contra{
+  color: #A191FB;
+  font-family: Khmer;
+  font-size: 16px;
+}

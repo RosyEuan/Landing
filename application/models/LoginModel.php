@@ -1,29 +1,33 @@
 <?php
 
-class LoginModel extends CI_Model {
+class LoginModel extends CI_Model
+{
 
     protected $db;
-  
-    public function __construct() {
+
+    public function __construct()
+    {
         parent::__construct();
         $this->load->library("MedooLib");
         $this->db = $this->medoolib->getInstance();
     }
 
-    public function getLogin($usuario) { 
+    public function getLogin($usuario)
+    {
         try {
             $result = $this->db->select("usuarios", "*", [
                 "usuario" => $usuario
             ]);
-    
+
             return $result;
         } catch (Exception $e) {
             log_message('error', 'Error en consulta: ' . $e->getMessage());
-            return false; 
+            return false;
         }
     }
 
-    public function getobtenerUsuarioPorId($id_usuario) {
+    public function getobtenerUsuarioPorId($id_usuario)
+    {
         try {
             $result = $this->db->select("usuarios(us)", [
                 "[>]empresa(e)" => ["us.id_usuario" => "id_usuario"]
@@ -37,14 +41,14 @@ class LoginModel extends CI_Model {
             ], [
                 "us.id_usuario" => $id_usuario
             ]);
-    
+
             return $result;
         } catch (Exception $e) {
             log_message('error', 'Error en consulta: ' . $e->getMessage());
             return false;
         }
     }
-    
+
 
     public function getRegistro(
         $registro_nombre,
@@ -53,10 +57,10 @@ class LoginModel extends CI_Model {
         $registro_telefono,
         $registro_usuario,
         $registro_contraseña
-    ){
+    ) {
         try {
             $existing_user = $this->db->select('usuarios', '*', [
-                'usuario' => $registro_usuario 
+                'usuario' => $registro_usuario
             ]);
             $existing_email = $this->db->select('usuarios', '*', [
                 'correo' => $registro_correo
@@ -71,7 +75,7 @@ class LoginModel extends CI_Model {
                 return 2;
             } else if ($existing_telefono) {
                 return 3;
-            }  
+            }
 
             $resultado = $this->db->insert('usuarios', [
                 'nombre' => $registro_nombre,
@@ -82,11 +86,10 @@ class LoginModel extends CI_Model {
                 'contraseña' => $registro_contraseña
             ]);
 
-            return $resultado; 
+            return $resultado;
         } catch (Exception $e) {
             log_message('error', 'Error en consulta: ' . $e->getMessage());
             return false;
         }
     }
 }
-?>
