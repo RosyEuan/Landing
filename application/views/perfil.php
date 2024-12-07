@@ -7,7 +7,7 @@
     <title>Perfil</title>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    
+
     <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
@@ -47,13 +47,19 @@
                                     data-bs-toggle="dropdown" aria-expanded="false">
                                     <img class="login" id="iconoLogin" src="imagenes/lgin.png" alt="Icono de login">
                                 </a>
+                                <?php if ($logged_in): ?>
                                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item " data-bs-toggle="modal"
-                                            data-bs-target="#loginModal">Iniciar sesión</a>
-                                    </li>
-                                    <li><a class="dropdown-item" data-bs-toggle="modal"
-                                            data-bs-target="#crearCuentaModal">Crear cuenta</a></li>
+                                    <li><button class="dropdown-item " id="logout_button">Cerrar Sesión</button></li>
+                                    <li><a class="dropdown-item " href="perfil">Ver perfil</a></li>
                                 </ul>
+                                <?php else: ?>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item " data-bs-toggle="modal" data-bs-target="#loginModal">Iniciar sesión</a>
+                                    </li>
+                                    <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#crearCuentaModal">Crear
+                                        cuenta</a></li>
+                                </ul>
+                                <?php endif; ?>
                             </li>
                         </ul>
                     </div>
@@ -299,7 +305,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="cuadro_perfil">
-                    <form class="todito" method = "GET">
+                    <form class="todito" method="GET">
                         <div class="form-row align-items-center mb-3">
                             <div class="col-4">
                                 <label for="usuario" class="lis">Usuario</label>
@@ -362,15 +368,12 @@
                 <div class=" text-center">
                     <img src="img/perfil.png" class="foto-perfil" alt="Foto para perfil">
                 </div>
-                    <h4 id="nombre3" class="jorge"><?php echo $nombre_usuario; ?></h4>
-                    <h4 id="apellido3" class="jorge">Apellidos</h4>
+                
                 <div class="botones">
                     <div class="text-center">
                         <a class="btn btn-primary editarb" href="/Punto_Venta/editar_perfil"> Editar</a>
                     </div><br>
-                    <div class="text-center">
-                        <button type="submit" class="btn btn-primary editar">Cerrar sesion</button>
-                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -446,34 +449,7 @@
         });
     </script>
 
-    <!-- Script específico para cargar nombre del usuario en el perfil -->
-    <script>
-        $(document).ready(function () {
-            $.ajax({
-                url: "<?php echo base_url('nombre'); ?>", // Asegúrate de que esta ruta sea correcta
-                method: 'GET',
-                dataType: 'json',
-                success: function (response) {
-                    if (response.status === 'success') {
-                        const datos = response.data; // La respuesta debe ser un objeto con nombre y apellido
-                        $('#nombre3').text(datos.nombre);
-                        $('#apellido3').text(datos.apellido);
-                    } else {
-                        console.error('Error:', response.message);
-                        $('#nombre3').text('Error al cargar datos');
-                        $('#apellido3').text('Error al cargar datos');
-                    }
-                },
-                error: function (xhr, status, error) {
-                    console.error('Error de AJAX:', error);
-                    console.error('Detalles del error:', xhr.responseText);
-                    alert('Ocurrió un error al obtener el nombre del usuario.');
-                }
-            });
-        });
-    </script>
 
-    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

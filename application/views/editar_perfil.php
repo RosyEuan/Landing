@@ -6,12 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil</title>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Khmer&family=Konkhmer+Sleokchher&family=Suez+One&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
-        integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
-    <link rel="stylesheet" href="/Punto_Venta/style_editarPerfil.css">
+    <link href="https://fonts.googleapis.com/css2?family=Khmer&family=Konkhmer+Sleokchher&family=Suez+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/Punto_Venta/style_perfil.css">
 </head>
 
 <body>
@@ -45,13 +47,19 @@
                                     data-bs-toggle="dropdown" aria-expanded="false">
                                     <img class="login" id="iconoLogin" src="imagenes/lgin.png" alt="Icono de login">
                                 </a>
+                                <?php if ($logged_in): ?>
                                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item " data-bs-toggle="modal"
-                                            data-bs-target="#loginModal">Iniciar sesión</a>
-                                    </li>
-                                    <li><a class="dropdown-item" data-bs-toggle="modal"
-                                            data-bs-target="#crearCuentaModal">Crear cuenta</a></li>
+                                    <li><button class="dropdown-item " id="logout_button">Cerrar Sesión</button></li>
+                                    <li><a class="dropdown-item " href="perfil">Ver perfil</a></li>
                                 </ul>
+                                <?php else: ?>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item " data-bs-toggle="modal" data-bs-target="#loginModal">Iniciar sesión</a>
+                                    </li>
+                                    <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#crearCuentaModal">Crear
+                                        cuenta</a></li>
+                                </ul>
+                                <?php endif; ?>
                             </li>
                         </ul>
                     </div>
@@ -291,109 +299,119 @@
         });
     </script>
 
-    <!-- Editar perfil -->
-    <div class="container mt-5">
-        <h2 class="titulo">Editar Perfil</h2>
+    <!-- Perfil del usuario -->
+    <div class="container mt-3">
+        <h2 class="titulo_perfil">Editar Perfil</h2>
         <div class="row">
             <div class="col-md-6">
-                <div class="cuadre">
-                    <form class="todeto">
+                <div class="cuadro_perfil">
+                    <form class="todito" method="GET">
                         <div class="form-row align-items-center mb-3">
                             <div class="col-4">
-                                <label for="usuario" class="lisp">Usuario</label>
+                                <label for="usuario" class="lis">Usuario</label>
                             </div>
                             <div class="col-8">
-                                <div class="oeste">
+                                <div class="este">
                                     <input type="text" class="form-control" id="usuario1" placeholder="Usuario">
                                 </div>
                             </div>
                         </div>
                         <div class="form-row align-items-center mb-3">
                             <div class="col-4">
-                                <label for="contrasena" class="lisp">Contraseña</label>
+                                <label for="contrasenaa" class="lis">Contraseña</label>
                             </div>
                             <div class="col-8">
-                                <div class="oeste">
-                                    <input type="password" name="password" class="form-control password1"
-                                        id="contraseña3" placeholder="Contraseña">
-                                    <span class="fa fa-fw fa-eye password-icon show-password"></span>
+                                <div class="este">
+                                    <input type="password" name="password" class="form-control password3"
+                                        id="contraseña" placeholder="Contraseña" disabled>
+                                    <span class="fa fa-fw fa-eye password-icon show-password3" style="padding-top: 5px;"></span>
                                 </div>
                             </div>
                         </div>
                         <div class="form-row align-items-center mb-3">
                             <div class="col-4">
-                                <label for="telefono" class="lisp">Teléfono</label>
+                                <label for="telefono" class="lis">Teléfono</label>
                             </div>
                             <div class="col-8">
-                                <div class="oeste">
-                                    <input type="text" class="form-control" id="telefono3" placeholder="xxx xxx xxxx">
+                                <div class="este">
+                                    <input type="text" class="form-control" id="telefono" placeholder="xxx xxx xxxx">
                                 </div>
                             </div>
                         </div>
                         <div class="form-row align-items-center mb-3">
                             <div class="col-4">
-                                <label for="correo" class="lisp">Correo</label>
+                                <label for="correo" class="lis">Correo</label>
                             </div>
                             <div class="col-8">
-                                <div class="oeste">
-                                    <input type="email" class="form-control" id="correo3"
-                                        placeholder="cytisum@gmail.com">
+                                <div class="este">
+                                    <input type="email" class="form-control" id="correo" placeholder="cytisum@gmail.com">
                                 </div>
                             </div>
                         </div>
                         <div class="form-row align-items-center mb-3">
                             <div class="col-4">
-                                <label for="empresa" class="lisp">Empresa</label>
+                                <label for="empresa" class="lis">Empresa</label>
                             </div>
                             <div class="col-8">
-                                <div class="oeste">
-                                    <input type="text" class="form-control" id="empresa3"
+                                <div class="este">
+                                    <input type="text" class="form-control" id="empresa"
                                         placeholder="Nombre de la empresa" disabled>
                                 </div>
                             </div>
                         </div>
                         <div class="guardar">
-                            <button type="submit" class="btn btn-primary bot">Guardar cambios</button>
+                            <button type="submit" id="guardarCambios" class="btn btn-primary bot" >Guardar cambios</button>
                         </div>
                     </form>
                 </div>
             </div>
             <div class="col-md-4 offset-md-1">
                 <div class=" text-center">
-                    <img src="img/perfil.png" class="foto-perfil" alt="Foto de perfil">
+                    <img src="img/perfil.png" class="foto-perfil" alt="Foto para perfil">
                 </div>
-                <h4 id="nombreUsuario" class="jorga">Nombres<br>Apellidos</h4>
+                
+                <div class="botones">
+                    
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary editar" href="/Punto_Venta/perfil">Regresar</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <!-- Script específico para cargar datos del perfil -->
-    <script>
-        $(document).ready(function() {
 
+    <!-- Script específico para modificar los datos del usuario -->
+    <script>
+            $(document).ready(function () {
+        $("#guardarCambios").on("click", function () {
+            // Capturar datos del formulario
+            const datosPerfil = {
+                usuario: $("#usuario1").val(),
+                telefono: $("#telefono").val(),
+                correo: $("#correo").val(),
+            };
+
+            // Enviar datos al backend mediante AJAX
             $.ajax({
-                url: "<?php echo base_url('obtener_perfil'); ?>",
-                method: "GET",
+                url: "<?php echo base_url('actualizar_perfil'); ?>",
+                method: "POST",
+                data: datosPerfil,
                 dataType: "json",
-                success: function(response) {
-                    if (response.status === 'success') {
-                        const datos = response.data[0]; // Medoo devuelve un arreglo, tomamos el primer elemento
-                        $('#usuario1').val(datos.usuario);
-                        $('#contraseña3').val(datos.contraseña); // Si decides mostrarla (en texto cifrado, si es necesario)
-                        $('#telefono3').val(datos.telefono);
-                        $('#correo3').val(datos.correo);
-                        $('#empresa3').val(datos.nombre_empresa || ''); // Maneja si no hay empresa
-                        alert('Todo bien');
+                success: function (response) {
+                    if (response.status === "success") {
+                        alert("Perfil actualizado correctamente");
                     } else {
-                        alert(response.message);
+                        alert("Error: " + response.message);
                     }
                 },
-                error: function(xhr, status, error) {
-                    console.error('Error de AJAX:', error);
-                    console.error('Detalles del error:', xhr.responseText);
-                    alert('Ocurrió un error al obtener los datos del perfil.');
-                }
+                error: function (xhr) {
+                    console.error("Error en la solicitud:", xhr.responseText);
+                    alert("Ocurrió un error al intentar actualizar el perfil");
+                },
             });
         });
+    });
+
     </script>
 
     <!-- Script para la funcion del ojo en la Contraseña -->
@@ -438,12 +456,40 @@
             });
         });
     </script>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+
+    <!-- Script específico para cargar datos del perfil -->
+    <script>
+        $(document).ready(function() {
+            $.ajax({
+                url: "<?php echo base_url('obtener_perfil'); ?>",
+                method: "GET",
+                dataType: "json",
+                success: function(response) {
+                    if (response.status === 'success') {
+                        const datos = response.data[0]; // Medoo devuelve un arreglo, tomamos el primer elemento
+                        $('#usuario1').val(datos.usuario);
+                        $('#contraseña').val(datos.contraseña); // Si decides mostrarla (en texto cifrado, si es necesario)
+                        $('#telefono').val(datos.telefono);
+                        $('#correo').val(datos.correo);
+                        $('#empresa').val(datos.nombre_empresa || ''); // Maneja si no hay empresa
+                    } else {
+                        alert(response.message);
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.error('Error de AJAX:', error);
+                    console.error('Detalles del error:', xhr.responseText);
+                    alert('Ocurrió un error al obtener los datos del perfil.');
+                }
+            });
+        });
+    </script>
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-
-
 </body>
 
 </html>

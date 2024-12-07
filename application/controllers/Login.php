@@ -85,6 +85,49 @@ class Login extends CI_Controller
         }
     }
 
+    public function actualizarPerfil()
+    {
+        if (!$this->session->userdata('logged_in')) {
+            echo json_encode(['status' => 'error', 'message' => 'Debe iniciar sesión para actualizar el perfil']);
+            return;
+        }
+
+        $id_usuario = $this->session->userdata('id_usuario');
+        if (!$id_usuario) {
+            echo json_encode(['status' => 'error', 'message' => 'Sesión no válida o expirada']);
+            return;
+        }
+
+        // Capturar los datos enviados desde el formulario
+        $datos = [
+            'usuario'  => $this->input->post('usuario'),
+            'Telefono' => $this->input->post('telefono'),
+            'Correo'   => $this->input->post('correo')
+        ];
+
+        // Validar los datos (opcional, pero recomendado)
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules('usuario', 'Usuario', 'required|trim');
+        $this->form_validation->set_rules('telefono', 'Teléfono', 'required|numeric|min_length[10]|max_length[10]');
+        $this->form_validation->set_rules('correo', 'Correo', 'required|valid_email');
+
+        if ($this->form_validation->run() === FALSE) {
+            echo json_encode(['status' => 'error', 'message' => validation_errors()]);
+            return;
+        }
+
+        // Actualizar los datos en el modelo
+        $this->load->model('PerfilModel');
+        $resultado = $this->PerfilModel->actualizarUsuario($id_usuario, $datos);
+
+        if ($resultado) {
+            echo json_encode(['status' => 'success', 'message' => 'Perfil actualizado correctamente']);
+        } else {
+            echo json_encode(['status' => 'error', 'message' => 'Error al actualizar el perfil']);
+        }
+    }
+
+
 
     public function logout()
     {

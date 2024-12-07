@@ -27,22 +27,35 @@ class Website extends CI_Controller {
 	public function index()
 	{
 		$logged_in = $this->session->userdata('logged_in');
-		$this->load->view('puntoventa',['logged_in' =>$logged_in]);
+		$this->load->view('puntoventa', ['logged_in' => $logged_in]);
 	}
+
 	public function perfil()
 	{
-	    /*sirve para cargar una vista*/
 		$logged_in = $this->session->userdata('logged_in');
-		$nombre_usuario = $this->session->userdata('nombre_usuario');
-		$this->load->view('perfil',['logged_in'=>$logged_in,'nombre_usuario' =>$nombre_usuario]);
+		
+		if (!$logged_in) {
+			// Redirige a la página principal usando la base_url configurada
+			redirect(base_url());
+			return;
+		}
+
+		$this->load->view('perfil', ['logged_in' => $logged_in]);
 	}
+
 	public function editar_perfil()
 	{
-	    /*sirve para cargar una vista*/
 		$logged_in = $this->session->userdata('logged_in');
-		$nombre_usuario = $this->session->userdata('nombre_usuario');
-		$this->load->view('editar_perfil',['logged_in' =>$logged_in,'nombre_usuario' =>$nombre_usuario	]);
+		
+		if (!$logged_in) {
+			// Redirige a la página principal usando la base_url configurada
+			redirect(base_url());
+			return;
+		}
+
+		$this->load->view('editar_perfil', ['logged_in' => $logged_in]);
 	}
+
 	// Ejemplo pa que vea belen TODO
 	public function datos(){
 

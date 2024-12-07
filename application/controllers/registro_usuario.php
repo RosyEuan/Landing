@@ -35,7 +35,7 @@ class registro_usuario Extends CI_Controller{
         $registro_telefono = $this->input->post('registro_telefono');
         $registro_usuario = $this->input->post('registro_usuario');
         $registro_contrasena = password_hash($this->input->post('registro_contrasena'), PASSWORD_DEFAULT);
-    
+        
         $resultado = $this->LoginModel->getRegistro(
             $registro_nombre,
             $registro_apellido,

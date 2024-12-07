@@ -541,7 +541,7 @@
               <li>✗ Reportes Financieros</li>
             </ul>
             <div class="card-body justify-content-between text-center">
-              <button class="btn btn-custom mt-auto">Adquirir plan</button>
+              <button class="btn btn-custom mt-auto" data-id-plan="1">Adquirir plan</button>
             </div>
           </div>
         </div>
@@ -562,7 +562,7 @@
               <li>✓ Reportes Financieros</li>
             </ul>
             <div class="card-body justify-content-between text-center">
-              <button class="btn btn-custom mt-auto">Adquirir plan</button>
+              <button class="btn btn-custom mt-auto" data-id-plan="3">Adquirir plan</button>
             </div>
           </div>
         </div>
@@ -583,7 +583,7 @@
               <li>✗ Reportes Financieros</li>
             </ul>
             <div class="card-body justify-content-between text-center">
-              <button class="btn btn-custom mt-auto">Adquirir plan</button>
+              <button class="btn btn-custom mt-auto" data-id-plan="2">Adquirir plan</button>
             </div>
           </div>
         </div>
@@ -609,30 +609,30 @@
                   </div>
                 </div>
                 <div class="toc">
-                  <form>
+                  <form id="datosempresa" method="GET">
                     <div class="row mb-3 conti">
                       <div class="col">
                         <label for="companyNombre" class="form-label_compra">Nombre de la empresa (comercial o
                           legal)</label>
-                        <input type="text" class="form-control compra" id="companyNombre" placeholder="Empresa">
+                        <input type="text" class="form-control compra" id="companyNombre" name="nomempresa" placeholder="Empresa">
                       </div>
                     </div>
                     <div class="row mb-3 conti">
                       <div class="col">
                         <label for="tiponegocio" class="form-label_compra">Giro comercial</label>
                         <input type="text" class="form-control compra" id="tiponegocio"
-                          placeholder="¿En qué se dedica tu negocio?">
+                          name="negocio" placeholder="¿En qué se dedica tu negocio?">
                       </div>
                     </div>
                     <div class="row mb-3 conti">
                       <div class="col-5">
                         <!-- Número de empleados -->
                         <label for="empleados" class="form-label_compra">Número de empleados</label>
-                        <select class="form-select_compra" id="empleados">
+                        <select class="form-select_compra" id="empleados" name="cantidad">
                           <option value="0">Seleccione una opción</option>
-                          <option value="1">Menos de 5 empleados</option>
-                          <option value="2">De 5 a 10 empleados</option>
-                          <option value="3">Más de 10 empleados</option>
+                          <option value="Menos de 5 empleados">Menos de 5 empleados</option>
+                          <option value="De 5 a 10 empleados">De 5 a 10 empleados</option>
+                          <option value="Más de 10 empleados">Más de 10 empleados</option>
                         </select>
                       </div>
                     </div>
@@ -641,30 +641,6 @@
                         data-bs-target="#pagoModal">Continuar</a>
                     </div>
                   </form>
-                  <!-- <form>
-                      <div class="row mb-3 conti">
-                        <div class="col">
-                          <label for="companyNombre" class="form-label_compra">Nombre de la empresa(comercial o legal)</label>
-                          <input type="text" class="form-control" id="companyNombre" placeholder="Empresa">
-                          <div class="col">
-                            <label for="tiponegocio" class="form-label_compra">Giro comercial</label>
-                            <input type="text" class="form-control" id="tiponegocio" placeholder="En qué se dedica tu negocio">
-                          </div>
-                          <div class="col-5">
-                            <label for="empleados" class="form-label_compra">Número de empleados</label>
-                            <select class="form-select" id="empleados">
-                              <option value="1">Seleccione una opción</option>
-                              <option value="1">Menos de 5 empleados</option>
-                              <option value="2">De 5 a 10 empleados</option>
-                              <option value="3">Más de 10 empleados</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="text-center">
-                        <a class="btn btn-primary continuar" data-bs-toggle="modal" data-bs-target="#pagoModal">Continuar</a>
-                      </div>
-                    </form>-->
                 </div>
               </div>
             </div>
@@ -725,7 +701,7 @@
                   <div class="row mb-3 cont_pago">
                     <div class="col">
                       <label for="plan" class="form-label lb_tip">Plan</label>
-                      <input type="text" class="form-control tip" id="plan" placeholder="XXX">
+                      <input type="text" class="form-control tip" id="plan" placeholder="XXX" disabled>
                     </div>
                   </div>
                   <div class="text-center">
@@ -744,6 +720,113 @@
     </div>
   </div>
 
+  <!-- Formulario de formularios para pago del plan -->
+  <script>
+    document.querySelector('.todo').addEventListener('submit', async function(e) {
+      e.preventDefault(); // Prevenir que el formulario se recargue.
+
+      // Capturar datos del primer formulario
+      const companyNombre = document.getElementById('companyNombre').value;
+      const tiponegocio = document.getElementById('tiponegocio').value;
+      const empleados = document.getElementById('empleados').value;
+
+      // Capturar datos del segundo formulario
+      const numeroTarjeta = document.getElementById('numeroTarjeta').value;
+      const titularTarjeta = document.getElementById('titularTarjeta').value;
+      const vencimiento = document.getElementById('vencimiento').value;
+      const cvv = document.getElementById('cvv').value;
+      const tipoTarjeta = document.getElementById('tipoTarjeta').value;
+
+      if (!companyNombre || !tiponegocio || empleados === "0") {
+        alert('Por favor completa todos los campos del primer formulario.');
+        return;
+      }
+
+      if (!numeroTarjeta || !titularTarjeta || !vencimiento || !cvv) {
+        alert('Por favor completa todos los campos del segundo formulario.');
+        return;
+      }
+
+
+      // Crear un objeto con los datos recopilados
+      const data = {
+        empresa: {
+          nombre_empresa: companyNombre,
+          giro_comercial: tiponegocio,
+          num_empleados: empleados
+        },
+        tarjeta: {
+          num_tarjeta: numeroTarjeta,
+          titular_tarjeta: titularTarjeta,
+          vencimiento: vencimiento,
+          cvv: cvv,
+          tipo_tarjeta: tipoTarjeta,
+        }
+      };
+
+      try {
+        // Enviar los datos al servidor mediante POST
+        const response = await fetch('Pagar/guardarDatos', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        });
+
+        const result = await response.json();
+        if (result.success) {
+          alert('Pago realizado con éxito.');
+          // Redirigir a la página principal
+          //window.location.href = '';
+          window.location.reload();
+        } else {
+          alert('Hubo un problema al guardar los datos.');
+        }
+      } catch (error) {
+        console.error('Error al enviar datos:', error);
+        alert('Ocurrió un error al procesar la solicitud.');
+      }
+    });
+  </script>
+
+  <!-- Obtener nombre plan -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const buttons = document.querySelectorAll('.btn-custom[data-id-plan]');
+      const planInput = document.getElementById('plan');
+
+      buttons.forEach(button => {
+        button.addEventListener('click', function() {
+          const idPlan = parseInt(this.getAttribute('data-id-plan'));
+
+          // Realizar la petición AJAX al backend
+          fetch('<?= base_url("plan") ?>', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({
+                id_plan: idPlan
+              })
+            })
+            .then(response => response.json())
+            .then(data => {
+              if (data.status === 'success') {
+                // Mostrar el nombre del plan en el campo del formulario
+                planInput.value = data.data;
+              } else {
+                alert('Error: ' + data.message);
+              }
+            })
+            .catch(error => console.error('Error en la petición:', error));
+        });
+      });
+    });
+  </script>
+
+
+  <!-- Previene que adquiera plan si no tiene sesion iniciada -->
   <script>
     $(document).ready(function() {
       // Captura el evento de clic en el botón de adquirir plan
