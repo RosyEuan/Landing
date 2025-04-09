@@ -373,7 +373,7 @@
                 <div class="botones">
                     
                     <div class="text-center">
-                        <button type="submit" class="btn btn-primary editar" href="/Punto_Venta/perfil">Regresar</button>
+                        <a class="btn btn-primary editar" href="/Punto_Venta/perfil"> Regresar</a>
                     </div>
                 </div>
             </div>
